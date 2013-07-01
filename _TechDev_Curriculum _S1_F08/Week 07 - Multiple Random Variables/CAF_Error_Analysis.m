@@ -1,0 +1,172 @@
+% TEAM MCCCXXXVII
+
+clear all;
+close all;
+
+var_tdoa = 15000;       % TDOA Line Width
+var_fdoa =  3000;       % FDOA Line Width
+var_p = 10*(10^-9);     % Position Error
+var_v = 0.01;           % Velocity Error
+alpha = 0.005;          % Sweeping Rate
+lambda = 30;            % Wavelength 
+
+%% Part D: CAF Error Analysis
+
+% Variance calculated for TDOA Error
+
+var_T = 2*(var_p^2) + var_tdoa^2;
+std_T = sqrt(var_T);
+
+% Variance calculated for FDOA Error
+
+var_F = 2*(var_v^2) + ((alpha^2 * var_p^2)/(lambda^2)) + var_fdoa^2;
+std_F = sqrt(var_F);
+
+mult = 1;   % Multiplicity value for increased range
+
+df = 250;
+dt = 250;
+
+M = zeros(3000/df*mult,15000/dt*mult); % Create vector to store data points
+
+count = 1;    % Counter variable to keep track of 
+
+t = -7500*mult:dt:7499*mult;    % Create a vector to iterate over t values.
+
+% Iterate over a range of FDOA values, ranging the 3000 kilometer
+
+for f = -1500*mult:df:1500*mult
+               
+    pdf_f = (1/sqrt(2*pi*var_F))*exp(-.5*((f/std_F)^2));
+    pdf_t = (1/sqrt(2*pi*var_T))*exp(-.5*((t./std_T).^2));
+            
+    M(count,:) = pdf_f * pdf_t;
+    
+    count = count + 1;
+    
+end
+
+%%
+
+x = -7500*mult:dt:7499*mult;
+y = -1500*mult:df:1500*mult;
+
+figure
+surf(x,y,M)
+ylabel('Y distance (m)')
+xlabel('X distance (m)')
+zlabel('PDF(f,t)')
+title('CAF Error Analysis')
+
+%% Part E: Confidence Interval Analysis
+
+% Variance calculated for TDOA Error
+
+var_T = 2*(var_p^2) + var_tdoa^2;
+std_T = sqrt(var_T);
+
+% Variance calculated for FDOA Error
+
+var_F = 2*(var_v^2) + ((alpha^2 * var_p^2)/(lambda^2)) + var_fdoa^2;
+std_F = sqrt(var_F);
+
+mult = 6;   % Multiplicity value for increased range
+
+df = 500;
+dt = 500;
+
+M = zeros(3000/df*mult,15000/dt*mult); % Create vector to store data points
+
+count = 1;    % Counter variable to keep track of 
+
+t = -7500*mult:dt:7499*mult;    % Create a vector to iterate over t values.
+
+% Iterate over a range of FDOA values, ranging the 3000 kilometer
+
+for f = -1500*mult:df:1500*mult
+               
+    pdf_f = (1/sqrt(2*pi*var_F))*exp(-.5*((f/std_F)^2));
+    pdf_t = (1/sqrt(2*pi*var_T))*exp(-.5*((t./std_T).^2));
+            
+    M(count,:) = pdf_f * pdf_t;
+    
+    count = count + 1;
+    
+end
+
+x = -7500*mult:dt:7499*mult;
+y = -1500*mult:df:1500*mult;
+
+%Make a matric to fit an ellipse inside.
+C = zeros(size(M));
+for m = 1:size(M,1)
+    for n = 1:size(M,2)
+        
+        % Which squares are inside the ellipse?  Lets mark them with 1's.
+        % Axis come from 2 std devs, which is ~95%.  COOL!
+        if ((m*df-size(M,1)*df/2)^2/(2*std_F)^2 + (n*dt-size(M,2)*dt/2)^2/(2*std_T)^2)<1
+           C(m,n) = 1; 
+        end
+    end
+end
+
+% Now, use our ellipse to color the hill!
+figure
+surf(x,y,M,C)
+ylabel('Y distance (m)')
+xlabel('X distance (m)')
+zlabel('PDF(f,t)')
+title('95% Confidence Interval for Emitter Location Accuracy')
+
+%% Part F: Helicopter Dynamics
+
+% Tilt the frequency axis by 45 degrees. The variance would change be
+% the square root of 2 to account for the new shift
+
+std_F = std_F * sqrt(2);
+var_F = std_F ^ 2;
+
+count = 1;    % Reset the count variable
+mult = 1;
+df = 250;
+dt = 250;
+
+M = zeros((((3000*sqrt(2)+15000)/df)+1)*mult,15000/dt*mult); 
+
+fprintf('DEBUG1\n')
+
+f = -((3000*sqrt(2)+15000)/2):df:((3000*sqrt(2)+15000)/2);
+
+ fprintf('DEBUG FOR\n')
+
+for t = -7500*mult:dt:7499*mult;
+
+    % To account for the change in frequency, shift the each pdf_f over
+    % by the current number of time steps to account for the 45 deg
+    % angle motion.  Take each pdf at f = f + count_f - 1.
+    
+    pdf_f = (1/sqrt(2*pi*var_F))*exp(-.5*(((f+count-1)./std_F).^2));
+    
+    pdf_t = (1/sqrt(2*pi*var_T))*exp(-.5*((t/std_T)^2));
+    
+    %plot(pdf_f * pdf_t)
+    %pause;
+    
+    M(:,count) = pdf_f * pdf_t;
+
+    
+    count = count + 1;
+    
+end
+
+% Plot the newly shifted pdf.
+
+x = -7500*mult:dt:7499*mult;
+y = -((3000*sqrt(2)+15000)/2)*mult:df:((3000*sqrt(2)+15000)/2)*mult;
+
+figure
+surf(x,y,M)
+ylabel('Y distance (m)')
+xlabel('X distance (m)')
+zlabel('PDF(f,t)')
+title('Helicopter Dynamics - 45 Degree Shift')

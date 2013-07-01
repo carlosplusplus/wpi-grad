@@ -1,0 +1,30 @@
+BODY {
+	FONT-SIZE: x-small; COLOR: #ffffff; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #003366
+}
+BODY.frame {
+	MARGIN-TOP: 60px; FONT-SIZE: x-small; COLOR: #ffffff; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #003366
+}
+TD.searchcell {
+	FONT-SIZE: x-small; COLOR: #ffffff; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #777788
+}
+TD.error {
+	COLOR: #ff3300; BACKGROUND-COLOR: #003366
+}
+SPAN.error {
+	FONT-WEIGHT: bold; FONT-SIZE: small; COLOR: #ff3300; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+A:link {
+	FONT-WEIGHT: bold; COLOR: #ffcc00; TEXT-DECORATION: none
+}
+A:visited {
+	FONT-WEIGHT: bold; COLOR: #ffcc00; TEXT-DECORATION: none
+}
+A:hover {
+	FONT-WEIGHT: bold; TEXT-DECORATION: underline
+}
+TD {
+	FONT-SIZE: x-small; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+LABEL {
+	FONT-SIZE: small; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}

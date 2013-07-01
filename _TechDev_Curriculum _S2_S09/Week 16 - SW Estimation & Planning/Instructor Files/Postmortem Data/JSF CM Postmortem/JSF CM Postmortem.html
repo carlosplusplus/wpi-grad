@@ -1,0 +1,2342 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0088)http://bluas0434:83/SPID/fullPM.asp?programID=JSFCM_0_5&action=View&orig=viewProgram.asp -->
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252"><LINK 
+href="JSF CM Postmortem_files/common.css" type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.2900.3268" name=GENERATOR></HEAD>
+<BODY>
+<CENTER>
+<CENTER><SPAN style="FONT-SIZE: small; MARGIN-BOTTOM: 80px">Program 
+Information</SPAN></CENTER>
+<STYLE>TR.title {
+	FONT-WEIGHT: bold; WIDTH: 600px; COLOR: #ffcc00; BACKGROUND-COLOR: #777788
+}
+TD.data {
+	COLOR: #000000; BACKGROUND-COLOR: #ffffff
+}
+</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=3>JSF CM</TD></TR>
+  <TR>
+    <TD>Program ID:</TD>
+    <TD class=data style="WIDTH: 500px">JSFCM_0_5</TD></TR>
+  <TR>
+    <TD>Business Area:</TD>
+    <TD class=data style="WIDTH: 500px">F33-JSF</TD></TR>
+  <TR>
+    <TD>Program Type:</TD>
+    <TD class=data style="WIDTH: 500px">New Development</TD></TR>
+  <TR>
+    <TD>Customer:</TD>
+    <TD class=data style="WIDTH: 500px">LM-Aero</TD></TR>
+  <TR>
+    <TD>Category:</TD>
+    <TD class=data style="WIDTH: 500px">Tightly Constrained</TD></TR>
+  <TR>
+    <TD>Bid As:</TD>
+    <TD class=data style="WIDTH: 500px">ELOC</TD></TR>
+  <TR>
+    <TD>Process:</TD>
+    <TD class=data style="WIDTH: 500px">IPDP Type 1</TD></TR>
+  <TR>
+    <TD>Complete:</TD>
+    <TD class=data style="WIDTH: 500px">Yes</TD></TR>
+  <TR>
+    <TD>Methodology:</TD>
+    <TD class=data style="WIDTH: 500px">OOA / OOD using ARTiSAN Real-Time 
+      Studio</TD></TR>
+  <TR>
+    <TD>Lifecycle:</TD>
+    <TD class=data style="WIDTH: 500px">The JSF CM software is following an 
+      Evolutionary Spiral Development lifecycle model. In this model, the 
+      software system is built in increments. Each increment is intended to be a 
+      slice of the complete system. For JSF, specific software capabilities are 
+      allocated to each spiral (known as a block) as agreed to with the customer 
+      -- each subsequent block builds upon the previous block, adding new 
+      functionality and/or enhancing existing functionality. The cycle is 
+      repeated until all software capabilities are fully functional. A feature 
+      of this lifecycle is that the full sequence of software development 
+      activities is performed in each spiral (ie., SwRA, DD, CUT and sw 
+      integration). The SW is delivered to Systems I&amp;T in the spirals 
+      (blocks) as shown below: Block 0.5.1, 0.5.2, 0.5.3, 0.5.4 and 0.5.5 Block 
+      1a, 1b, 1c and 1d Block 2a and 2b</TD></TR>
+  <TR>
+    <TD>Standards:</TD>
+    <TD class=data style="WIDTH: 500px">No specific military standards were 
+      imposed. The BAE SYSTEMS OSSP was used on this project (ie., IPDP). This 
+      project is executing as CMM Level 4 for software, and CMM-I Level 3 for 
+      the general program.</TD></TR>
+  <TR>
+    <TD>Start Date:</TD>
+    <TD class=data style="WIDTH: 500px">5/2/2005</TD></TR>
+  <TR>
+    <TD>Finish Date:</TD>
+    <TD class=data style="WIDTH: 500px">12/31/2008</TD></TR>
+  <TR>
+    <TD>Postmortem Date:</TD>
+    <TD class=data style="WIDTH: 500px">8/31/2006</TD></TR>
+  <TR>
+    <TD>Description:</TD>
+    <TD class=data style="WIDTH: 500px">Joint Strike Fighter (JSF) Electronic 
+      Warfare (EW) system for the new F-35 figher aircraft. Provides the full 
+      range of Electronic Support Measures (ESM): including radar warning, 
+      direction finding, emitter location, and advanced targeting. Also provides 
+      the full range of Electronic Countermeasures (ECM): including RF and IR 
+      countermeasure threat detection and response techniques. Thes metrics are 
+      for the System Design and Development (SDD) phase of the EW system. </TD></TR>
+  <TR>
+    <TD>Keywords:</TD>
+    <TD class=data style="WIDTH: 500px"></TD></TR>
+  <TR>
+    <TD>Postmortem Location:</TD>
+    <TD class=data 
+    style="WIDTH: 500px">Z:\SW_PAL\F22_JSF\fcab\FCAB_Data\JSF\CM</TD></TR>
+  <TR>
+    <TD>Comments:</TD>
+    <TD class=data 
+style="WIDTH: 500px"><BR><BR></TD></TR></TBODY></TABLE><BR><BR><BR><BR><BR>
+<HR>
+<LINK href="JSF CM Postmortem_files/common.css" type=text/css rel=stylesheet>
+<CENTER><SPAN style="FONT-SIZE: small; MARGIN-BOTTOM: 80px">Development and 
+Target Environment Description</SPAN></CENTER>
+<STYLE>TR.title {
+	FONT-WEIGHT: bold; WIDTH: 600px; COLOR: #ffcc00; BACKGROUND-COLOR: #777788
+}
+TD.data {
+	COLOR: #000000; BACKGROUND-COLOR: #ffffff
+}
+</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2>JSF CM</TD></TR>
+  <TR class=title>
+    <TD>Development Environment</TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD class=data style="WIDTH: 400px">Software Item Version Description 
+      ------------------------------------ ---------- 
+      ----------------------------------------------------------- ARTiSAN Real 
+      Time Studio 4.4b OO Design Tool DOORS (Customer Mandated) 7.1d 
+      Requirements Management Tool Green Hills Integrity 4.0.9 Target Operating 
+      System Green Hills Multi 2000 C++ 4.0 Cross-Development Environment Green 
+      Hills ISIM 4.0.9 Instruction Set Simulator IOCOMP Plot Pack 3.0.4 Graph 
+      Plotting Package Microsoft Exchange 5.5 Email Microsoft Office (Customer 
+      Mandated) 2000 or XP Documentation Tool, Metrics (Word, Excel, PowerPoint, 
+      Binder required) Microsoft Visual C++ v6.0 C++ Compiler for PC Microsoft 
+      Visual Studio C++ .net v7.1 C++ Compiler for PC PGP 7.0 Secure File 
+      Transfer Rational ClearCase v2002.05.37d Software Configuration Management 
+      Rational ClearQuest v2002.05.20 Software Problem Reporting Signal 
+      Interface Management System (BFE) 3.1 Interface Management Tool (Customer 
+      Furnished) Sun Java Runtime Environment 1.4.2_10 Metrics and Peer Review 
+      tools Verari Systems, Inc. VSI/Pro 1.10 Vector Signal Image Processing 
+      Library Windows NT Operating System 4 PC Operating System Hardware Item 
+      Version Description --------------------------------------------- 
+      ---------- ------------------------------------------------------------ 
+      Encryption Device (NES or KG-235) N/A S/SEE Security Architecture 
+      Multi-Level Secure Gateway/Firewall TBD S/SEE Security Architecture 
+      Pentium 4 Desktop PC N/A Software Development and Management Platform 
+  </TD></TR>
+  <TR class=title>
+    <TD>Target Environment</TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD class=data style="WIDTH: 400px">Hardware Item Version Description 
+      --------------------------------------------- ---------- 
+      ------------------------------------------------------------ SBS PowerPC 
+      processor board N/A Target processor Green Hills Integrity Real-Time OS 
+      4.09b Target o/s</TD></TR></TBODY></TABLE><BR><BR><BR><BR><BR>
+<HR>
+<LINK href="JSF CM Postmortem_files/common.css" type=text/css rel=stylesheet>
+<CENTER><SPAN style="FONT-SIZE: small; MARGIN-BOTTOM: 80px">Program Size And 
+Productivity</SPAN></CENTER><BR><BR>
+<STYLE>TR.title {
+	FONT-WEIGHT: bold; WIDTH: 600px; COLOR: #ffcc00; BACKGROUND-COLOR: #777788
+}
+TD.data {
+	COLOR: #000000; BACKGROUND-COLOR: #ffffff
+}
+</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>ELOC History</TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>OriginalNegotiatedBaseline:</TD>
+    <TD class=data style="WIDTH: 100px">69728</TD></TR>
+  <TR>
+    <TD>Baseline Adjusted For Scope Changes:</TD>
+    <TD class=data style="WIDTH: 100px">69728</TD></TR>
+  <TR>
+    <TD>Final:</TD>
+    <TD class=data style="WIDTH: 100px">71186</TD></TR>
+  <TR>
+    <TD>ELOC Growth:</TD>
+    <TD class=data style="WIDTH: 100px">2.1%</TD></TR>
+  <TR class=title>
+    <TD>ELOC Activity</TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>Acceptance Of Allocated Requirements:</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Software Requirements</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Software Design:</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Code And Unit Test:</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Software Integration And Test:</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>System Integration And Test:</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR class=title>
+    <TD>DLOC Composition</TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>New:</TD>
+    <TD class=data style="WIDTH: 100px">71186</TD></TR>
+  <TR>
+    <TD>Adapted:</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Reused:</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR class=title>
+    <TD>Productivity</TD>
+    <TD>Baseline</TD>
+    <TD>Final</TD></TR>
+  <TR>
+    <TD>ELOC</TD>
+    <TD class=data style="WIDTH: 100px">7.53</TD>
+    <TD class=data style="WIDTH: 100px">7.68</TD></TR>
+  <TR>
+    <TD>DLOC</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">7.682806</TD></TR>
+  <TR>
+    <TD>Actual ELOC Productivity vs Baseline</TD>
+    <TD class=data 
+style="WIDTH: 100px">2%</TD></TR></TBODY></TABLE><BR><BR><BR><BR><BR><BR><BR>
+<HR>
+<LINK href="JSF CM Postmortem_files/common.css" type=text/css rel=stylesheet>
+<CENTER><SPAN style="FONT-SIZE: small; MARGIN-BOTTOM: 80px">Hours 
+Staffing</SPAN></CENTER>
+<STYLE>TR.title {
+	FONT-WEIGHT: bold; WIDTH: 600px; COLOR: #ffcc00; BACKGROUND-COLOR: #777788
+}
+TD.data {
+	COLOR: #000000; BACKGROUND-COLOR: #ffffff
+}
+</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=4>JSF CM</TD></TR>
+  <TR class=title>
+    <TD>Productivity Hours</TD>
+    <TD>Planned Hours</TD>
+    <TD>Actual Hours</TD>
+    <TD>Percent</TD></TR>
+  <TR>
+    <TD>SW Management:</TD>
+    <TD class=data style="WIDTH: 100px">6607</TD>
+    <TD class=data style="WIDTH: 100px">6223</TD>
+    <TD class=data style="WIDTH: 100px">9.93</TD></TR>
+  <TR>
+    <TD>Software Engineering Environment:</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>SDP Development:</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Software Postmortem Development:</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Inprocess Reviews:</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Evaluation of Reusable Software:</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Peer Reviews:</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>BSP Development/Modification:</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Requirements Analysis:</TD>
+    <TD class=data style="WIDTH: 100px">6836</TD>
+    <TD class=data style="WIDTH: 100px">5983</TD>
+    <TD class=data style="WIDTH: 100px">9.55</TD></TR>
+  <TR>
+    <TD>Preliminary Design:</TD>
+    <TD class=data style="WIDTH: 100px">3903</TD>
+    <TD class=data style="WIDTH: 100px">4294</TD>
+    <TD class=data style="WIDTH: 100px">6.85</TD></TR>
+  <TR>
+    <TD>Detailed Design:</TD>
+    <TD class=data style="WIDTH: 100px">9250</TD>
+    <TD class=data style="WIDTH: 100px">9516</TD>
+    <TD class=data style="WIDTH: 100px">15.19</TD></TR>
+  <TR>
+    <TD>Code &amp; Unit Test:</TD>
+    <TD class=data style="WIDTH: 100px">21896</TD>
+    <TD class=data style="WIDTH: 100px">22822</TD>
+    <TD class=data style="WIDTH: 100px">36.43</TD></TR>
+  <TR>
+    <TD>Software Integration/Verification:</TD>
+    <TD class=data style="WIDTH: 100px">10208</TD>
+    <TD class=data style="WIDTH: 100px">10037</TD>
+    <TD class=data style="WIDTH: 100px">16.02</TD></TR>
+  <TR>
+    <TD>Software Validation:</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Software Transition:</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Documentation:</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>SW Subcontract Management:</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Other:</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR class=title>
+    <TD>Non-Productivity Hours</TD>
+    <TD>Planned Hours</TD>
+    <TD>Actual Hours</TD>
+    <TD>Percent</TD></TR>
+  <TR>
+    <TD>Prototypes:</TD>
+    <TD class=data style="WIDTH: 100px">715</TD>
+    <TD class=data style="WIDTH: 100px">573</TD>
+    <TD class=data style="WIDTH: 100px">0.91</TD></TR>
+  <TR>
+    <TD>Software Support:</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Post-Selloff Rework:</TD>
+    <TD class=data style="WIDTH: 100px">3610</TD>
+    <TD class=data style="WIDTH: 100px">3766</TD>
+    <TD class=data style="WIDTH: 100px">6.01</TD></TR>
+  <TR>
+    <TD>Auto-Generated Code:</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Non-Development Activity:</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR class=title>
+    <TD>Total SW Hours</TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>Total Planned Hours:</TD>
+    <TD class=data style="WIDTH: 100px">62310</TD></TR>
+  <TR>
+    <TD>Total Actual Hours:</TD>
+    <TD class=data style="WIDTH: 100px">62641</TD></TR>
+  <TR>
+    <TD>Actual SW Hours vs Planned:</TD>
+    <TD class=data style="WIDTH: 100px">0.531%</TD></TR>
+  <TR class=title>
+    <TD>Hours and Staffing</TD>
+    <TD>Baseline</TD>
+    <TD>Final</TD></TR>
+  <TR>
+    <TD>Productivity Hours</TD>
+    <TD class=data style="WIDTH: 100px">58700</TD>
+    <TD class=data style="WIDTH: 100px">58875</TD></TR>
+  <TR>
+    <TD>Peak Staff</TD>
+    <TD class=data style="WIDTH: 100px">16</TD>
+    <TD class=data style="WIDTH: 100px">13</TD></TR>
+  <TR>
+    <TD>AD1 Hours</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>PG1 Hours</TD>
+    <TD class=data style="WIDTH: 100px">17064</TD>
+    <TD class=data style="WIDTH: 100px">13044</TD></TR>
+  <TR>
+    <TD>PG2 Hours</TD>
+    <TD class=data style="WIDTH: 100px">4461</TD>
+    <TD class=data style="WIDTH: 100px">9017</TD></TR>
+  <TR>
+    <TD>PG3 Hours</TD>
+    <TD class=data style="WIDTH: 100px">131</TD>
+    <TD class=data style="WIDTH: 100px">322</TD></TR>
+  <TR>
+    <TD>EN1 Hours</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">2</TD></TR>
+  <TR>
+    <TD>EN2 Hours</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>ET1 Hours</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>ET2 Hours</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR class=title>
+    <TD>Rework</TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>Baseline Rework %</TD>
+    <TD class=data style="WIDTH: 100px">6.15%</TD></TR>
+  <TR>
+    <TD>Final Rework %</TD>
+    <TD class=data style="WIDTH: 100px">6.4%</TD></TR>
+  <TR>
+    <TD>Actual Rework Hours vs Baseline</TD>
+    <TD class=data style="WIDTH: 100px">4.32%</TD></TR>
+  <TR>
+    <TD>Actual Rework % vs Baseline</TD>
+    <TD class=data 
+style="WIDTH: 100px">4.07%</TD></TR></TBODY></TABLE><BR><BR><BR><BR><BR><BR><BR>
+<HR>
+<LINK href="JSF CM Postmortem_files/common.css" type=text/css rel=stylesheet>
+<CENTER><SPAN 
+style="FONT-SIZE: small; MARGIN-BOTTOM: 80px">Requirements</SPAN></CENTER>
+<STYLE>TR.title {
+	FONT-WEIGHT: bold; WIDTH: 600px; COLOR: #ffcc00; BACKGROUND-COLOR: #777788
+}
+TD.data {
+	COLOR: #000000; BACKGROUND-COLOR: #ffffff
+}
+</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=3>JSF CM</TD></TR>
+  <TR class=title>
+    <TD>Requirements </TD>
+    <TD>Baseline</TD>
+    <TD>Final</TD></TR>
+  <TR>
+    <TD>History</TD>
+    <TD class=data style="WIDTH: 100px">634</TD>
+    <TD class=data style="WIDTH: 100px">666</TD></TR>
+  <TR>
+    <TD>Stability (%)</TD>
+    <TD class=data style="WIDTH: 100px">145</TD>
+    <TD class=data 
+style="WIDTH: 100px">44.39</TD></TR></TBODY></TABLE><BR><BR><BR><BR><BR>
+<HR>
+<LINK href="JSF CM Postmortem_files/common.css" type=text/css rel=stylesheet>
+<CENTER><SPAN style="FONT-SIZE: small; MARGIN-BOTTOM: 80px">Defects &amp; 
+PCR's</SPAN></CENTER>
+<STYLE>TR.title {
+	FONT-WEIGHT: bold; WIDTH: 600px; COLOR: #ffcc00; BACKGROUND-COLOR: #777788
+}
+TD.data {
+	COLOR: #000000; BACKGROUND-COLOR: #ffffff
+}
+</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=3>JSF CM</TD></TR>
+  <TR class=title>
+    <TD>Defects By Activity</TD>
+    <TD>Introduced</TD>
+    <TD>Discovered</TD></TR>
+  <TR>
+    <TD>System Requirements</TD>
+    <TD class=data style="WIDTH: 100px">1</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>System Design</TD>
+    <TD class=data style="WIDTH: 100px">1</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Software Requirements</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Software Architecture Design</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Software Detailed Design</TD>
+    <TD class=data style="WIDTH: 100px">12</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Implementation</TD>
+    <TD class=data style="WIDTH: 100px">32</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Software Integration</TD>
+    <TD class=data style="WIDTH: 100px">4</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Software Verification</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Software Validation</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Legacy Software</TD>
+    <TD class=data style="WIDTH: 100px">1</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Latent Software</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Documentation</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR class=title>
+    <TD>Defects By Priority</TD>
+    <TD>Discovered</TD>
+    <TD>Fixed</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>1</TD>
+    <TD class=data style="WIDTH: 100px">9</TD>
+    <TD class=data style="WIDTH: 100px">9</TD></TR>
+  <TR>
+    <TD>2</TD>
+    <TD class=data style="WIDTH: 100px">7</TD>
+    <TD class=data style="WIDTH: 100px">7</TD></TR>
+  <TR>
+    <TD>3</TD>
+    <TD class=data style="WIDTH: 100px">19</TD>
+    <TD class=data style="WIDTH: 100px">19</TD></TR>
+  <TR>
+    <TD>4</TD>
+    <TD class=data style="WIDTH: 100px">21</TD>
+    <TD class=data style="WIDTH: 100px">21</TD></TR>
+  <TR>
+    <TD>5</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR class=title>
+    <TD>Defects By Problem Type</TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>None</TD>
+    <TD class=data style="WIDTH: 100px">1</TD></TR>
+  <TR>
+    <TD>Duplicate</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Analogy</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Assumption</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Clarity</TD>
+    <TD class=data style="WIDTH: 100px">3</TD></TR>
+  <TR>
+    <TD>Clerical</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Coding Error</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Completeness</TD>
+    <TD class=data style="WIDTH: 100px">9</TD></TR>
+  <TR>
+    <TD>Complexity</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Consistency</TD>
+    <TD class=data style="WIDTH: 100px">5</TD></TR>
+  <TR>
+    <TD>Correctness</TD>
+    <TD class=data style="WIDTH: 100px">36</TD></TR>
+  <TR>
+    <TD>Definition</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Ease of Use</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Efficiency</TD>
+    <TD class=data style="WIDTH: 100px">1</TD></TR>
+  <TR>
+    <TD>Error Handling</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Gold Plating</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Implementability</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Level Of Detail</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Logic/Data</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Maintainability</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Memory Allocation</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Missing Content</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Precision</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Realism</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Resources</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Reusability</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Reuse/COTS</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Risk</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Safety</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Security</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Standards</TD>
+    <TD class=data style="WIDTH: 100px">1</TD></TR>
+  <TR>
+    <TD>Structure</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Software Interface</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Testability</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Traceability</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>User Interface</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Other</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>N/A</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 100px">0</TD></TR>
+  <TR class=title>
+    <TD>PCRs</TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>Actual PCRs</TD>
+    <TD class=data style="WIDTH: 100px">56</TD></TR>
+  <TR>
+    <TD>Actual PCRs/KELOC</TD>
+    <TD class=data style="WIDTH: 100px">0.79</TD></TR>
+  <TR>
+    <TD>Actual PCRs/KDLOC</TD>
+    <TD class=data style="WIDTH: 100px">0.79</TD></TR>
+  <TR>
+    <TD>Actual Hours/PCR</TD>
+    <TD class=data 
+style="WIDTH: 100px">67.25</TD></TR></TBODY></TABLE><BR><BR><BR><BR><BR>
+<HR>
+<LINK href="JSF CM Postmortem_files/common.css" type=text/css rel=stylesheet>
+<CENTER><SPAN 
+style="FONT-SIZE: small; MARGIN-BOTTOM: 80px">Documentation</SPAN></CENTER>
+<STYLE>TR.title {
+	FONT-WEIGHT: bold; WIDTH: 600px; COLOR: #ffcc00; BACKGROUND-COLOR: #777788
+}
+TD.data {
+	COLOR: #000000; BACKGROUND-COLOR: #ffffff
+}
+</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=4>JSF CM</TD></TR>
+  <TR class=title>
+    <TD>Title</TD>
+    <TD>Number of Pages</TD>
+    <TD>Staff Hours</TD>
+    <TD>Multiple Submissions</TD></TR>
+  <TR>
+    <TD class=data style="WIDTH: 100px">Software Development Plan (SDP)</TD>
+    <TD class=data style="WIDTH: 100px">90</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">Y</TD></TR>
+  <TR>
+    <TD class=data style="WIDTH: 100px">Software Development Status Report 
+      (SDSR)</TD>
+    <TD class=data style="WIDTH: 100px">43</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">Y</TD></TR>
+  <TR>
+    <TD class=data style="WIDTH: 100px">Software Requirement Specification 
+      (SRS)</TD>
+    <TD class=data style="WIDTH: 100px">100</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">Y</TD></TR>
+  <TR>
+    <TD class=data style="WIDTH: 100px">Software Design Document (SDD)</TD>
+    <TD class=data style="WIDTH: 100px">500</TD>
+    <TD class=data style="WIDTH: 100px">0</TD>
+    <TD class=data style="WIDTH: 100px">Y 
+</TD></TR></TBODY></TABLE><BR><BR><BR><BR><BR>
+<HR>
+</CENTER><LINK href="JSF CM Postmortem_files/common.css" type=text/css 
+rel=stylesheet>
+<CENTER><SPAN style="FONT-SIZE: small; MARGIN-BOTTOM: 80px">Subsystems and 
+Components (sizes are DLOC)</SPAN></CENTER>
+<STYLE type=text/css>.indented {
+	PADDING-RIGHT: 50pt; PADDING-LEFT: 50pt
+}
+</STYLE>
+<BR><BR>
+<STYLE>TR.title {
+	FONT-WEIGHT: bold; WIDTH: 600px; COLOR: #ffcc00; BACKGROUND-COLOR: #777788
+}
+TD.data {
+	COLOR: #000000; BACKGROUND-COLOR: #ffffff
+}
+</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Subsystem: Countermeasures Controller</TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD class=data style="WIDTH: 472px">The CSC CSCI controls the overall 
+      capabilities of the on-board countermeasures sw and 
+hw.</TD></TR></TBODY></TABLE>
+<STYLE>TR.title {
+	FONT-WEIGHT: bold; WIDTH: 600px; COLOR: #ffcc00; BACKGROUND-COLOR: #777788
+}
+TD.data {
+	COLOR: #000000; BACKGROUND-COLOR: #ffffff
+}
+</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD>
+    <TD>Total</TD></TR>
+  <TR>
+    <TD class=data style="WIDTH: 134px">43255</TD>
+    <TD class=data style="WIDTH: 134px">0</TD>
+    <TD class=data style="WIDTH: 134px">0</TD>
+    <TD class=data style="WIDTH: 135px">43255</TD></TR></TBODY></TABLE><BR>
+<DIV class=indented>
+<STYLE>TR.title {
+	FONT-WEIGHT: bold; WIDTH: 600px; COLOR: #ffcc00; BACKGROUND-COLOR: #777788
+}
+TD.data {
+	COLOR: #000000; BACKGROUND-COLOR: #ffffff
+}
+</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: BSP</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Real Time O/S board support package 
+      for the SBS computer.</TD></TR></TBODY></TABLE>
+<STYLE>TR.title {
+	FONT-WEIGHT: bold; WIDTH: 600px; COLOR: #ffcc00; BACKGROUND-COLOR: #777788
+}
+TD.data {
+	COLOR: #000000; BACKGROUND-COLOR: #ffffff
+}
+</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">400</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>TR.title {
+	FONT-WEIGHT: bold; WIDTH: 600px; COLOR: #ffcc00; BACKGROUND-COLOR: #777788
+}
+TD.data {
+	COLOR: #000000; BACKGROUND-COLOR: #ffffff
+}
+</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: BTP Implementer</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Supports block transfer protocol over 
+      the NIU.</TD></TR></TBODY></TABLE>
+<STYLE>TR.title {
+	FONT-WEIGHT: bold; WIDTH: 600px; COLOR: #ffcc00; BACKGROUND-COLOR: #777788
+}
+TD.data {
+	COLOR: #000000; BACKGROUND-COLOR: #ffffff
+}
+</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">700</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>TR.title {
+	FONT-WEIGHT: bold; WIDTH: 600px; COLOR: #ffcc00; BACKGROUND-COLOR: #777788
+}
+TD.data {
+	COLOR: #000000; BACKGROUND-COLOR: #ffffff
+}
+</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: Boot</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Initial boot up 
+code.</TD></TR></TBODY></TABLE>
+<STYLE>TR.title {
+	FONT-WEIGHT: bold; WIDTH: 600px; COLOR: #ffcc00; BACKGROUND-COLOR: #777788
+}
+TD.data {
+	COLOR: #000000; BACKGROUND-COLOR: #ffffff
+}
+</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">950</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>TR.title {
+	FONT-WEIGHT: bold; WIDTH: 600px; COLOR: #ffcc00; BACKGROUND-COLOR: #777788
+}
+TD.data {
+	COLOR: #000000; BACKGROUND-COLOR: #ffffff
+}
+</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: CM Control Hardware</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Interfaces with and controls the CM 
+      hardware.</TD></TR></TBODY></TABLE>
+<STYLE>TR.title {
+	FONT-WEIGHT: bold; WIDTH: 600px; COLOR: #ffcc00; BACKGROUND-COLOR: #777788
+}
+TD.data {
+	COLOR: #000000; BACKGROUND-COLOR: #ffffff
+}
+</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">6051</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>TR.title {
+	FONT-WEIGHT: bold; WIDTH: 600px; COLOR: #ffcc00; BACKGROUND-COLOR: #777788
+}
+TD.data {
+	COLOR: #000000; BACKGROUND-COLOR: #ffffff
+}
+</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: CM Controller BIT</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Provides built-in-test of specific CM 
+      hardware.</TD></TR></TBODY></TABLE>
+<STYLE>TR.title {
+	FONT-WEIGHT: bold; WIDTH: 600px; COLOR: #ffcc00; BACKGROUND-COLOR: #777788
+}
+TD.data {
+	COLOR: #000000; BACKGROUND-COLOR: #ffffff
+}
+</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">5790</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>TR.title {
+	FONT-WEIGHT: bold; WIDTH: 600px; COLOR: #ffcc00; BACKGROUND-COLOR: #777788
+}
+TD.data {
+	COLOR: #000000; BACKGROUND-COLOR: #ffffff
+}
+</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: CM Controller Management</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Provides state control and monitoring 
+      of the various CM functions and capabilities.</TD></TR></TBODY></TABLE>
+<STYLE>TR.title {
+	FONT-WEIGHT: bold; WIDTH: 600px; COLOR: #ffcc00; BACKGROUND-COLOR: #777788
+}
+TD.data {
+	COLOR: #000000; BACKGROUND-COLOR: #ffffff
+}
+</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">3634</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>TR.title {
+	FONT-WEIGHT: bold; WIDTH: 600px; COLOR: #ffcc00; BACKGROUND-COLOR: #777788
+}
+TD.data {
+	COLOR: #000000; BACKGROUND-COLOR: #ffffff
+}
+</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: CM Inventory</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Manages the on-board inventory of CM 
+      techniques.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">2500</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: CMC Activity Manager</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Oversees and coordinates activities 
+      among the CM capabilities.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">3000</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: CMC Data Collector</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Collects data on the operation of the 
+      CMC CSCI for later analysis.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">150</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: CMC Data Types and Constants</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Provides specific data types and 
+      constants for the CM CSCI code.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">50</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: CMC Interface Management</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Manages interfaces to / from the 
+      countermeasures subsystem.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">800</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: CMC Internal Messages</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Manages interfaces internal to the CM 
+      CSCI's.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">7000</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: CMC MDF</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Parses and processes specific mission 
+      data file paramenter provided pre-flight.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">1298</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: CMC Resource Handler</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Manages specific classified CM 
+      resources.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">1250</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: CMC Safety</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Routines for handling safety issues 
+      regarding countermeasures deployment.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">1285</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: CMC Utilities</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Provides common utilities for use by 
+      several components of the CMC CSCI code.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">1000</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: Door Control</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Manages the state of the CM 
+  doors.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">1905</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: IRCM Dispensing Control</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Manages the Infrared CM dispensing 
+      capability.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">1511</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: OFP Kernel</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Operating System kernel 
+  code.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">236</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: Persistent Data Storage</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Controls the non-volatile data storage 
+      area.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">561</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: RFCM Dispensing Control</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Controls the Radio Frequency CM 
+      techniques.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">3184</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR></DIV><BR><BR><BR><BR>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Subsystem: RM CSCI - Common</TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD class=data style="WIDTH: 472px">Common code used by both the RM and 
+      CMC CSCI's.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD>
+    <TD>Total</TD></TR>
+  <TR>
+    <TD class=data style="WIDTH: 134px">25399</TD>
+    <TD class=data style="WIDTH: 134px">0</TD>
+    <TD class=data style="WIDTH: 134px">0</TD>
+    <TD class=data style="WIDTH: 135px">25399</TD></TR></TBODY></TABLE><BR>
+<DIV class=indented>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: CM Activity Manager</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Common activity manager 
+  code.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">2050</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: CM BIT</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Common built-in-test routines used by 
+      both RM and CMC CSCI's.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">126</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: CM Data Collector</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Common data collecting 
+  code.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">500</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: CM Data Types and Constants</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Common data types and 
+  constants.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">700</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: CM External Messages Library</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Common external messages to/from ESM 
+      and/or Mission Systems.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">9172</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: CM Internal Messages</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Common code for the internal messages 
+      within CM subsystem.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">400</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: CM Library</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Library of common 
+code.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">3250</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: CM MDF/NMSDF</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">General routines to process the 
+      mission specific and the non-mission specific parameters that are loaded 
+      pre-flight.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">7701</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: CM Utilities</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Common utilities used by RM and CMC 
+      CSCI's.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">1500</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR></DIV><BR><BR><BR><BR>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Subsystem: Response Manager</TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD class=data style="WIDTH: 472px">Coordinated countermeasures indicated 
+      by mission systems.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD>
+    <TD>Total</TD></TR>
+  <TR>
+    <TD class=data style="WIDTH: 134px">15888</TD>
+    <TD class=data style="WIDTH: 134px">0</TD>
+    <TD class=data style="WIDTH: 134px">0</TD>
+    <TD class=data style="WIDTH: 135px">15888</TD></TR></TBODY></TABLE><BR>
+<DIV class=indented>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: RM Activity Manager</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Manages the various activities being 
+      carried out by the RM CSCI as countermeasures are being 
+  deployed.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">1987</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: RM BIT</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Built in test for h/w associated with 
+      cm responses.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">1668</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: RM Control</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Coordinates the response manager 
+      functions and interfaces.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">3589</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: RM Data Collector</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Collects response system classified 
+      data.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">461</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: RM ES Msgs</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Handles message interfaces between 
+      Countermeasures and the Electronic Support Measures 
+CSCI.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">1204</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: RM Interface Management</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Interface to the CMU message handling 
+      sw infrastructure.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">100</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: RM Internal Msgs</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Handles interfaces within the Response 
+      Manager.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">1001</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: RM MDF</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Parses and process the Mission Data 
+      File information provided at flight time.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">546</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: RM Resource Handler</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Coordinates the appropriate 
+      countermeasures response h/w as directed.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">1987</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: RM Threat Manager</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Determines techniques needed to handle 
+      detected, potential threats.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">1500</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR class=title>
+    <TD colSpan=2>Component: RM Utilities</TD></TR>
+  <TR>
+    <TD>&nbsp;Description</TD>
+    <TD class=data style="WIDTH: 400px">Provides a set of common utilities for 
+      use within the RM CSCI.</TD></TR></TBODY></TABLE>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD>Languages</TD>
+    <TD>New</TD>
+    <TD>Adapted</TD>
+    <TD>Reused</TD></TR>
+  <TR>
+    <TD>Unspecified</TD>
+    <TD class=data style="WIDTH: 130px">1845</TD>
+    <TD class=data style="WIDTH: 131px">0</TD>
+    <TD class=data style="WIDTH: 131px">0</TD></TR>
+  <TR class=title>
+    <TD colSpan=4></TD></TR></TBODY></TABLE><BR></DIV><BR><BR><BR><BR>
+<CENTER><BR><BR><BR><BR><BR>
+<HR>
+<LINK href="Common/common.css" type=text/css rel=stylesheet>
+<CENTER><SPAN style="FONT-SIZE: small; MARGIN-BOTTOM: 80px">Lessons 
+Learned</SPAN></CENTER>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR>
+    <TD>Problem</TD>
+    <TD class=data style="WIDTH: 500px">Complete JSF program replan mid-stream 
+      created a major challenge for the continuity of metrics and the generation 
+      of intermediate postmortems.</TD></TR>
+  <TR>
+    <TD>Phase</TD>
+    <TD class=data style="WIDTH: 500px">Software Management</TD></TR>
+  <TR>
+    <TD>Cause</TD>
+    <TD class=data style="WIDTH: 500px">The JSF underwent a program replan 
+      with the customeron 2-May-2005. New budgets and schedules were 
+      established. CAM's were able to replan the cost to complete the job by 
+      submiting estimates to the program office. New cost accounts and WBS's 
+      were established, along with new schedules and task descriptions. The 
+      program essentially reset itself and archived financial data before the 
+      replan.</TD></TR>
+  <TR>
+    <TD>Action</TD>
+    <TD class=data style="WIDTH: 500px">It took several months to get the 
+      metrics to reflect what was really executing on the program. Even then, 
+      there was still a level of uncertainty in the metics data.</TD></TR>
+  <TR>
+    <TD>Impact</TD>
+    <TD class=data style="WIDTH: 500px">Took a lot of effort to restructure 
+      the JSF sw metrics after the replan. DevProg was out of sync with the new 
+      tasks and hours budget, Codesize was out of sync, as new estimates were 
+      generated for much of the remaining work. The quad chart cost and hours 
+      info had to be changed. History and continuity were lost in some 
+  cases.</TD></TR>
+  <TR>
+    <TD>Recommendations</TD>
+    <TD class=data style="WIDTH: 500px">Look into a way to facilitate a 
+      program replan in the Java Metric Tool. Or adopt a policy that should a 
+      program do a re-plan or re-start, we archive the metrics at that point and 
+      start a new set.</TD></TR>
+  <TR class=title>
+    <TD colSpan=2></TD></TR></TBODY></TABLE><BR><BR>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=2></TD></TR>
+  <TR>
+    <TD>Problem</TD>
+    <TD class=data style="WIDTH: 500px">Late requirements from Systems 
+      Engineering caused heavy schedule delays in software.</TD></TR>
+  <TR>
+    <TD>Phase</TD>
+    <TD class=data style="WIDTH: 500px">SW Requirements Analysis</TD></TR>
+  <TR>
+    <TD>Cause</TD>
+    <TD class=data style="WIDTH: 500px">Not enough Systems Engineering 
+      resources assigned to CM requirements for Block 1.</TD></TR>
+  <TR>
+    <TD>Action</TD>
+    <TD class=data style="WIDTH: 500px">A Tiger Team was formed that included 
+      members from Systems Engineeing and SW Engineering to focus on developing 
+      and completing Block 1 requirements. Rules of engagement were developed by 
+      the SW and Systems CAM's. Tiger Team progress was monitored closely.</TD></TR>
+  <TR>
+    <TD>Impact</TD>
+    <TD class=data style="WIDTH: 500px">Got off to a slow start. Spent a lot 
+      of time on 1 or 2 functional areas. After that, progress picked up and the 
+      requirements were completed.</TD></TR>
+  <TR>
+    <TD>Recommendations</TD>
+    <TD class=data style="WIDTH: 500px">Monitor progress of hand-ins from 
+      Systems Engineering closeely. Raise potential schedule impacts from other 
+      organizations to the program office early. Put the hand-in on the critical 
+      path.</TD></TR>
+  <TR class=title>
+    <TD colSpan=2></TD></TR></TBODY></TABLE><BR><BR><BR><BR><BR><BR><BR>
+<HR>
+<LINK href="Common/common.css" type=text/css rel=stylesheet>
+<CENTER><SPAN style="FONT-SIZE: small; MARGIN-BOTTOM: 80px">Peer Reviews 
+Data</SPAN></CENTER>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=8>Review Summary:</TD></TR>
+  <TR class=title>
+    <TD>Lifecycle Phase</TD>
+    <TD>KDLOC for Phase</TD>
+    <TD>Observables</TD>
+    <TD>Problems</TD>
+    <TD>Saves</TD>
+    <TD>Escapes</TD>
+    <TD>Number of Reviews</TD>
+    <TD>Ubar</TD></TR>
+  <TR>
+    <TD>Systems Requirements Development</TD>
+    <TD class=data style="WIDTH: 80px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD></TR>
+  <TR>
+    <TD>Systems Design</TD>
+    <TD class=data style="WIDTH: 80px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD></TR>
+  <TR>
+    <TD>Requirements Analysis</TD>
+    <TD class=data style="WIDTH: 80px">47047</TD>
+    <TD class=data style="WIDTH: 50px">173</TD>
+    <TD class=data style="WIDTH: 50px">176</TD>
+    <TD class=data style="WIDTH: 50px">161</TD>
+    <TD class=data style="WIDTH: 50px">14</TD>
+    <TD class=data style="WIDTH: 50px">40</TD>
+    <TD class=data style="WIDTH: 50px">3</TD></TR>
+  <TR>
+    <TD>Architectural Design</TD>
+    <TD class=data style="WIDTH: 80px">66610</TD>
+    <TD class=data style="WIDTH: 50px">150</TD>
+    <TD class=data style="WIDTH: 50px">154</TD>
+    <TD class=data style="WIDTH: 50px">147</TD>
+    <TD class=data style="WIDTH: 50px">5</TD>
+    <TD class=data style="WIDTH: 50px">37</TD>
+    <TD class=data style="WIDTH: 50px">1.9</TD></TR>
+  <TR>
+    <TD>Detailed Design</TD>
+    <TD class=data style="WIDTH: 80px">83031</TD>
+    <TD class=data style="WIDTH: 50px">971</TD>
+    <TD class=data style="WIDTH: 50px">975</TD>
+    <TD class=data style="WIDTH: 50px">988</TD>
+    <TD class=data style="WIDTH: 50px">18</TD>
+    <TD class=data style="WIDTH: 50px">107</TD>
+    <TD class=data style="WIDTH: 50px">12.1</TD></TR>
+  <TR>
+    <TD>Implementation</TD>
+    <TD class=data style="WIDTH: 80px">92153</TD>
+    <TD class=data style="WIDTH: 50px">1299</TD>
+    <TD class=data style="WIDTH: 50px">1316</TD>
+    <TD class=data style="WIDTH: 50px">1207</TD>
+    <TD class=data style="WIDTH: 50px">105</TD>
+    <TD class=data style="WIDTH: 50px">158</TD>
+    <TD class=data style="WIDTH: 50px">13.3</TD></TR>
+  <TR>
+    <TD>Integration</TD>
+    <TD class=data style="WIDTH: 80px">71186</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD></TR>
+  <TR>
+    <TD>Verification</TD>
+    <TD class=data style="WIDTH: 80px">71186</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD></TR>
+  <TR>
+    <TD>Systems Integration</TD>
+    <TD class=data style="WIDTH: 80px">71186</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD></TR>
+  <TR>
+    <TD>Systems Verification</TD>
+    <TD class=data style="WIDTH: 80px">71186</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD></TR>
+  <TR>
+    <TD>Systems Validation</TD>
+    <TD class=data style="WIDTH: 80px">71186</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD></TR>
+  <TR>
+    <TD>Latent</TD>
+    <TD class=data style="WIDTH: 80px">71186</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD></TR>
+  <TR>
+    <TD>Legacy</TD>
+    <TD class=data style="WIDTH: 80px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data style="WIDTH: 50px">0</TD>
+    <TD class=data 
+style="WIDTH: 50px">0</TD></TR></TBODY></TABLE><BR><BR><BR><BR><BR>
+<HR>
+<LINK href="Common/common.css" type=text/css rel=stylesheet>
+<CENTER><SPAN 
+style="FONT-SIZE: small; MARGIN-BOTTOM: 80px">Flags</SPAN></CENTER>
+<STYLE>tr.title	{background-color: #777788;	/* Blue-Grey */     	 color:            #FFCC00; /* Gold */     	 font-weight: bold;       width:        600px}td.data {background-color: #FFFFFF;  /* White */         color:            #000000}  /* Black */</STYLE>
+
+<TABLE>
+  <TBODY>
+  <TR class=title>
+    <TD colSpan=3>JSF CM</TD></TR>
+  <TR class=title>
+    <TD>Include in Rollup</TD>
+    <TD>Y/N</TD></TR>
+  <TR>
+    <TD>Productivity</TD>
+    <TD class=data>Yes</TD></TR>
+  <TR>
+    <TD>ELOC Growth</TD>
+    <TD class=data>Yes</TD></TR>
+  <TR>
+    <TD>Rework</TD>
+    <TD class=data>Yes</TD></TR>
+  <TR>
+    <TD>CPI</TD>
+    <TD class=data>Yes</TD></TR>
+  <TR>
+    <TD>PR Effectiveness</TD>
+    <TD class=data>Yes</TD></TR>
+  <TR class=title>
+    <TD>Include in Productivity Hours</TD>
+    <TD>Y/N</TD></TR>
+  <TR>
+    <TD>SW Validation Hours</TD>
+    <TD class=data>No</TD></TR>
+  <TR>
+    <TD>Other Hours</TD>
+    <TD class=data>No</TD></TR></TBODY></TABLE></CENTER></BODY></HTML>

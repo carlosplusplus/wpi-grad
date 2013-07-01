@@ -1,0 +1,110 @@
+clear all;
+close all;
+
+xLA = 3719800;
+Re = 6378100;
+yLA = 5181040-Re;
+hit = false;
+last = 'X';
+step = 1000;
+
+minV = 10000000000;
+minAngle = 0;
+
+        yi = 0;
+        xi = 0;
+        vi = 600;
+        
+for angle = 40:90
+    while ~hit;
+        
+        theta = angle*pi/180;
+        vyi = vi*cos(theta);
+        vxi = vi*sin(theta);
+
+        y=yi;
+        x=xi;
+        vx=vyi;
+        vy=vyi;
+        %tmax=1500;
+        h=.02;
+        %n = ceil(tmax/h);
+
+        %yf = [];
+        %xf = [];
+        %vyf = [];
+        %vxf = [];
+
+        while y>=sqrt(-x^2+Re^2)-Re && x<Re
+            [x,y,vx,vy]=findNextStepTwo(h,x,y,vy,vx);
+            %yf=[yf y];
+            %xf=[xf x];
+            %vyf=[vyf vy];
+            %vxf=[vxf vx];
+        end
+        
+        dist = xLA-x;
+        y
+        if xLA-100000<x && x<xLA+100000
+            last = 'H';
+            if vi<minV
+                minV=vi
+                minAngle = angle
+            end
+            hit = true;
+            %worldx = 0:10:4000000;
+            %worldy = sqrt(6378100^2-worldx.^2)-6378100;
+            %plot([xi xf],[yi yf],worldx,worldy,3719800,5181040-6378100,'X');
+            
+        elseif xLA-100000>=x
+            if last == 'O'
+                step = step/5;
+            end
+            last = 'U';
+            vi = vi+step;
+
+        else
+            if last == 'U'
+                step = step/5;
+            end
+            last = 'O';
+            vi = vi-step;
+            
+        end
+    end
+    hit = false;
+end
+ 
+
+
+
+        
+        theta = minAngle*pi/180;
+        vyi = minV*cos(theta);
+        vxi = minV*sin(theta);
+vyi
+vxi
+        y=yi;
+        x=xi;
+        vx=vyi;
+        vy=vyi;
+        
+        h=.02;
+        
+
+        yf = [];
+        xf = [];
+        vyf = [];
+        vxf = [];
+
+        while y>=sqrt(-x^2+Re^2)-Re && x<Re
+            [x,y,vx,vy]=findNextStepTwo(h,x,y,vy,vx);
+            yf=[yf y];
+            xf=[xf x];
+            vyf=[vyf vy];
+            vxf=[vxf vx];
+        end
+
+worldx = 0:10:4000000;
+worldy = sqrt(6378100^2-worldx.^2)-6378100;
+plot([xi xf],[yi yf],worldx,worldy,3719800,5181040-6378100,'X');

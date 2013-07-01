@@ -1,0 +1,25 @@
+function eldp3(data, bits)
+
+A = 100000;                     % Upper limit, A must be greater than 64K
+B = -100000;                     % Lower limit
+
+tempData = data;                    % Temp storage
+
+maxData = max(abs(data));       % Max data value
+
+scaleFactor = A/maxData;        
+
+tempData = tempData * scaleFactor;      % Scaled signal
+
+temp(tempData < -A/2) = -A;
+
+% for i = 1:bits
+%     
+%     
+%     
+% end
+
+
+end
+
+

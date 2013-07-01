@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+  <title>Software Postmortem</title>
+  <link rel='stylesheet' href='style/postmortem.css'>
+</head>
+<body>
+  <div id='header'>
+  Software Postmortem<br/>
+  BAE SYSTEMS INC., E&IS<br/>
+  Software Engineering Directorate<br/>
+  </div>
+  <div id='logo' align=center>
+    <img src='images/wordmark.gif'>
+  </div>
+  <hr>
+  <div id='toolbar'>	
+    <a href='generalinfo.html'>General Information</a> | <a href='sysdesc.html'>System Descriptions</a> | <a href='sandm.html'>Standards/Methodologies</a> | <a href='lifecycle.html'>Life Cycle</a> | <a href='retret.html'>Retention/Retrieval</a> | <a href='pch.html'>Project Change History</a> | <a href='sizing.html'>Sizing Data</a> | <a href='cssummary.html'>Code Size Summary</a> | <a href='defects.html'>Defect Profile Summary</a>| <a href='hrspkstaff.html'>Hours Summary/Peak Staff</a> | <a href='hours.html'>Hours By Activity</a> | <a href='teamlabor.html'>Team Labor Mix</a> | <a href='productivity.html'>Productivity</a> | <a href='requirements.html'>Requirements Stability</a> | <a href='documentation.html'>Documentation</a> | <a href='subcontracts.html'>Software Subcontracts</a> | <a href='lessons.html'>Lessons Learned</a> | <a href='all.html'>Full Postmortem</a>
+  </div>
+  <hr>
+<br><br>
+<table>
+  <tr>
+    <td class="section_header">Software Sizing Data: DLOC by Language</td>
+  </tr>
+</table>
+<br><br>
+<h4>Index</h4>
+<ul class='index'>
+<li><a href='#project'>Entire Project</a></li>
+  <ul class='index'>
+<li><a href='#Subsystem1'>Mother</a></li>
+    <ul class='index'>
+<li><a href='#Component1'>Messaging</a></li>
+<li><a href='#Component2'>Display</a></li>
+<li><a href='#Component3'>Sensor</a></li>
+<li><a href='#Component4'>Countermeasure</a></li>
+<li><a href='#Component5'>Executive</a></li>
+<li><a href='#Component6'>INU</a></li>
+    </ul>
+  </ul>
+</ul>
+<hr>
+  <FONT COLOR="#FF0000"> *Counts in red are estimated </FONT></br>
+<h3><a name='project'>Entire Project</a></h3>
+<div id='sizing_table'>
+<table class='hba'>
+  <tr>
+    <td class='noborder'></td>
+  </tr>
+  <tr>
+    <td class='colhead'>Language</td>
+    <td class='colhead'>New</td>
+    <td class='colhead'>Adapted</td>
+    <td class='colhead'>Reused</td>
+    <td class='colhead'>Total</td>
+  </tr>
+  <tr>
+    <td><FONT COLOR="#000000">C</FONT></td>
+    <td><FONT COLOR="#000000">211</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">211</FONT></td>
+  <tr>
+    <td><FONT COLOR="#000000">C++</FONT></td>
+    <td><FONT COLOR="#000000">492</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">492</FONT></td>
+  <tr>
+    <td><b>TOTAL</b></td>
+    <td><FONT COLOR="#000000">703</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">703</FONT></td>
+</table>
+<br>
+</div>
+<br>
+<h3><a name='Subsystem1'>Subsystem: Mother</a></h3>
+<p><i></i></p>
+<div id='sizing_table'>
+<h4>Entire Subsystem</h4>
+<table class='hba'>
+  <tr>
+    <td class='noborder'></td>
+  </tr>
+  <tr>
+    <td class='colhead'>Language</td>
+    <td class='colhead'>New</td>
+    <td class='colhead'>Adapted</td>
+    <td class='colhead'>Reused</td>
+    <td class='colhead'>Total</td>
+  </tr>
+  <tr>
+    <td><FONT COLOR="#000000">C</FONT></td>
+    <td><FONT COLOR="#000000">211</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">211</FONT></td>
+  <tr>
+    <td><FONT COLOR="#000000">C++</FONT></td>
+    <td><FONT COLOR="#000000">492</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">492</FONT></td>
+  <tr>
+    <td><b>TOTAL</b></td>
+    <td><FONT COLOR="#000000">703</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">703</FONT></td>
+</table>
+<br>
+<h4><a name='Component1'>Component: Messaging</a></h4>
+<p><i>Handles all communcations and messages in Mother.  Implements a TCP interface.</i></p>
+<table class='hba'>
+  <tr>
+    <td class='noborder'></td>
+  </tr>
+  <tr>
+    <td class='colhead'>Language</td>
+    <td class='colhead'>New</td>
+    <td class='colhead'>Adapted</td>
+    <td class='colhead'>Reused</td>
+    <td class='colhead'>Total</td>
+  </tr>
+  <tr>
+    <td><FONT COLOR="#000000">C</FONT></td>
+    <td><FONT COLOR="#000000">58</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">58</FONT></td>
+  <tr>
+    <td><FONT COLOR="#000000">C++</FONT></td>
+    <td><FONT COLOR="#000000">102</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">102</FONT></td>
+  <tr>
+    <td><b>TOTAL</b></td>
+    <td><FONT COLOR="#000000">160</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">160</FONT></td>
+</table>
+<br>
+<h4><a name='Component2'>Component: Display</a></h4>
+<p><i>Manages the WY-TD-2 display.  Displays threats and countermeasure engagements.</i></p>
+<table class='hba'>
+  <tr>
+    <td class='noborder'></td>
+  </tr>
+  <tr>
+    <td class='colhead'>Language</td>
+    <td class='colhead'>New</td>
+    <td class='colhead'>Adapted</td>
+    <td class='colhead'>Reused</td>
+    <td class='colhead'>Total</td>
+  </tr>
+  <tr>
+    <td><FONT COLOR="#000000">C++</FONT></td>
+    <td><FONT COLOR="#000000">130</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">130</FONT></td>
+  <tr>
+    <td><FONT COLOR="#000000">C</FONT></td>
+    <td><FONT COLOR="#000000">35</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">35</FONT></td>
+  <tr>
+    <td><b>TOTAL</b></td>
+    <td><FONT COLOR="#000000">165</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">165</FONT></td>
+</table>
+<br>
+<h4><a name='Component3'>Component: Sensor</a></h4>
+<p><i>Emulates the HAP sensor and sends threat reports to the SACC.</i></p>
+<table class='hba'>
+  <tr>
+    <td class='noborder'></td>
+  </tr>
+  <tr>
+    <td class='colhead'>Language</td>
+    <td class='colhead'>New</td>
+    <td class='colhead'>Adapted</td>
+    <td class='colhead'>Reused</td>
+    <td class='colhead'>Total</td>
+  </tr>
+  <tr>
+    <td><FONT COLOR="#000000">C++</FONT></td>
+    <td><FONT COLOR="#000000">82</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">82</FONT></td>
+  <tr>
+    <td><FONT COLOR="#000000">C</FONT></td>
+    <td><FONT COLOR="#000000">44</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">44</FONT></td>
+  <tr>
+    <td><b>TOTAL</b></td>
+    <td><FONT COLOR="#000000">126</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">126</FONT></td>
+</table>
+<br>
+<h4><a name='Component4'>Component: Countermeasure</a></h4>
+<p><i>emulates the HAP countermeasure.</i></p>
+<table class='hba'>
+  <tr>
+    <td class='noborder'></td>
+  </tr>
+  <tr>
+    <td class='colhead'>Language</td>
+    <td class='colhead'>New</td>
+    <td class='colhead'>Adapted</td>
+    <td class='colhead'>Reused</td>
+    <td class='colhead'>Total</td>
+  </tr>
+  <tr>
+    <td><FONT COLOR="#000000">C++</FONT></td>
+    <td><FONT COLOR="#000000">34</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">34</FONT></td>
+  <tr>
+    <td><FONT COLOR="#000000">C</FONT></td>
+    <td><FONT COLOR="#000000">15</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">15</FONT></td>
+  <tr>
+    <td><b>TOTAL</b></td>
+    <td><FONT COLOR="#000000">49</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">49</FONT></td>
+</table>
+<br>
+<h4><a name='Component5'>Component: Executive</a></h4>
+<p><i>Executive procesing for Mother.  Handles the main window, callback, and timer processing.</i></p>
+<table class='hba'>
+  <tr>
+    <td class='noborder'></td>
+  </tr>
+  <tr>
+    <td class='colhead'>Language</td>
+    <td class='colhead'>New</td>
+    <td class='colhead'>Adapted</td>
+    <td class='colhead'>Reused</td>
+    <td class='colhead'>Total</td>
+  </tr>
+  <tr>
+    <td><FONT COLOR="#000000">C</FONT></td>
+    <td><FONT COLOR="#000000">44</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">44</FONT></td>
+  <tr>
+    <td><FONT COLOR="#000000">C++</FONT></td>
+    <td><FONT COLOR="#000000">118</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">118</FONT></td>
+  <tr>
+    <td><b>TOTAL</b></td>
+    <td><FONT COLOR="#000000">162</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">162</FONT></td>
+</table>
+<br>
+<h4><a name='Component6'>Component: INU</a></h4>
+<p><i>Emulates the inertial navigation unit.</i></p>
+<table class='hba'>
+  <tr>
+    <td class='noborder'></td>
+  </tr>
+  <tr>
+    <td class='colhead'>Language</td>
+    <td class='colhead'>New</td>
+    <td class='colhead'>Adapted</td>
+    <td class='colhead'>Reused</td>
+    <td class='colhead'>Total</td>
+  </tr>
+  <tr>
+    <td><FONT COLOR="#000000">C++</FONT></td>
+    <td><FONT COLOR="#000000">26</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">26</FONT></td>
+  <tr>
+    <td><FONT COLOR="#000000">C</FONT></td>
+    <td><FONT COLOR="#000000">15</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">15</FONT></td>
+  <tr>
+    <td><b>TOTAL</b></td>
+    <td><FONT COLOR="#000000">41</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">41</FONT></td>
+</table>
+<br>
+</div>
+<br>

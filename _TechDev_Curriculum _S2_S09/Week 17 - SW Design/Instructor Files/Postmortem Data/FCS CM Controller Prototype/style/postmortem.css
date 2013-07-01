@@ -1,0 +1,157 @@
+body {
+  font-family: sans-serif;
+}
+
+hr {
+  color: #999999;
+}
+
+table.dp {
+  border-collapse: collapse;
+}
+
+table.dp td {
+  border: 1px solid #000000;
+  width: 100px;
+}
+
+table.dp tr.colhead {
+  width: auto;
+  background: #CCCCCC;
+  font-weight: bold;
+  text-align: center;
+}
+
+table.dp td.rowhead {
+  width: auto;
+  background: #CCCCCC;
+}
+
+table.dp td.shaded {
+  background: #CCCCCC;
+}
+
+table.dp td.lightshade {
+  background: #DDDDDD;
+}
+
+table.dp td.noborder {
+  border: none;
+}
+
+
+table.hba {
+  border-collapse: collapse;
+}
+
+table.hba td {
+  border: 1px solid #000000;
+  width: 100px;
+}
+
+table.hba td.colhead {
+  width: auto;
+  background: #CCCCCC;
+  font-weight: bold;
+  text-align: center;
+}
+
+table.hba td.rowhead {
+  width: auto;
+  background: #CCCCCC;
+}
+
+table.hba td.shaded {
+  background: #CCCCCC;
+}
+
+table.hba td.lightshade {
+  background: #DDDDDD;
+}
+
+table.hba td.noborder {
+  border: none;
+}
+
+table td.tan {
+  background: #efdfb2;
+}
+
+
+table.pch {
+  border-collapse: collapse;
+}
+
+table.pch td {
+  border: 1px solid #000000;
+  padding: 5px;
+}
+
+table.pch td.shaded {
+  background: #CCCCCC;
+  padding: 5px;
+}
+
+
+#header {
+  text-align: center;
+  font-weight: bold;  
+}
+
+#footer {
+  text-align: center;
+  font-size: 70%;
+}
+
+#logo {
+  padding: 18px;
+}
+
+#toolbar {
+  text-align: center;
+}
+
+#toolbar a{
+  text-decoration: none;
+  font-size:70%;
+  font-weight: bold;
+  color: #CC0000;
+}
+
+#toolbar a:hover{
+  color: #000033;
+}
+
+#box {
+  border: solid 1px #000000;
+  width: 600px;
+  padding: 5px;
+}
+
+td.section_header{
+  background-color: #FF0000;
+  color:            #FFFFFF;
+  border: solid 2px #000000;
+  padding: 5px;
+  font-weight: bold;
+  width:        600px
+}
+
+#tbl_heading {
+  text-align: center;
+  font-weight: bold;
+}
+
+#sizing_table {
+  border: solid 1px #000000;
+  padding: 20px;
+  margin: 10px;
+}
+
+#page {
+  page-break-after: always;
+}
+
+.landscape {
+  writing-mode: tb-rl;
+}

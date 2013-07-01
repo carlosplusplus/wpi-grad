@@ -1,0 +1,15 @@
+Distance Estimate 01:
+
+http://www.geobytes.com/CityDistanceTool.htm?loadpage
+
+
+
+Distance Estimate 02:
+
+http://www.daftlogic.com/projects-google-maps-distance-calculator.htm
+
+
+
+Distance Estimate 03:
+
+http://distancecalculator.globefeed.com/World_Distance_Result.asp?fromplace=New%20York%20City%20(New%20York,The%20Bronx,US)&toplace=Los%20Angeles%20International%20Airport%20(California,Los%20Angeles%20County,US)%20[Airport]&fromlat=40.7142691&tolat=33.9425129&fromlng=-74.0059729&tolng=-118.4089655

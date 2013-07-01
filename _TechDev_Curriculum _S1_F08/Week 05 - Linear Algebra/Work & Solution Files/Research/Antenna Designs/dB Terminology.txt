@@ -1,0 +1,34 @@
+General Eqns:
+------------
+
+dBw = 10 log (Power in Watts)		===> Power expressed in decibels relative to 1 W.
+
+Watts = 10 ^ (dBW / 10)
+
+MilliWatts = 10 ^ ((dBw + 30) / 10)
+
+*****
+
+dBm = 10 log (Power in Watts) + 30	===> Power expressed in decibles relative to 1 mW.
+
+Watts = 10 ^ ((dBm - 30) / 10)
+
+MilliWatts = 10 ^ (dBm / 10)
+
+
+====> Referenced website: http://www.worleys.com/ieee80211/conversion.index.html
+
+
+################################################################################
+################################################################################
+
+
+dBM <---> Watt conversion calculator:
+-------------------------------------
+
+http://www.moonblinkwifi.com/dbm_to_watt_conversion.cfm
+
+
+
+
+!!! NOTE : ALL CONVERSIONS ARE ASSUMED AT AN ANTENNA RESISTANCE FOR 50 OHM IMPEDANCE. !!!

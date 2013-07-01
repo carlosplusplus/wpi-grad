@@ -1,0 +1,79 @@
+% BAE Systems ELDP Program
+% TDC 1 - Controls
+% PD Controller automatic tuning based on criteria
+% Coded by Christopher C. Rappa
+% 12/19/2008
+function [Kp,Kd,tolerance] = tunePDController(plant,t,m, KpLow, KpHigh, KdLow, KdHigh, c)
+    % This function iterates through all gain values in the inputted range
+    % with the give
+    % plant - Plant transfer function
+    % t - Input time vector
+    % m - Resolution mesh size [mxm]
+    % KpLow, KpHigh - Porportional gain limits
+    % KdLow, KdHigh - Differential gain limits
+    % c - Criteria structure
+    
+    KpRng = linspace(KpLow,KpHigh,m); % Create vectors of iterating gains
+    KdRng = linspace(KdLow,KdHigh,m);
+    final = zeros(m);                 % Create point matrix for gains
+
+    minSettle = c.settleTime;         % Default minimums
+    minCC = 100;
+
+    for in = 1:m
+        for jn = 1:m
+            % Use gains at current index, to create PD Controller and
+            % generate step response and spec for these gains
+            PIDcontrol = tf([KdRng(in) KpRng(jn) 0],[1 0]);
+            sys_cl = feedback(PIDcontrol*plant,1);
+            y = step(sys_cl,t);
+            [os, ts, tr] = stepspecs(t,y,1,c.settleTolerance); %#ok<NASGU>
+
+            % If these gains meet desired criteria
+            if (os < c.percentOvershoot && ts < c.settleTime)
+                % Assign points to these gain values
+                final(in,jn) = final(in,jn) + 2;
+
+                % Check if settle time is new minimum
+                minSettle = min(minSettle,ts);
+
+                % If minimum, save indexes for new minimum
+                if (minSettle == ts)
+                    minKd = in;
+                    minKp = jn;
+                end
+
+                % Examine Cross-Coupling at this point
+                [cc,w] = crossCoupling(t,y,ts,c.ccThreshold); %#ok<NASGU>
+
+                % If minimum cc, store index values
+                minCC = min(minCC,cc);
+                if (minCC == cc)
+                    minCCKd = in;
+                    minCCKp = jn;
+                end
+            end
+        end
+    end
+    figure; % Plot criteria point matix for these gains
+    final(minKd,minKp) = final(minKd,minKp) + 2;
+    final(minCCKd,minCCKp) = final(minCCKd,minCCKp) + 4;
+    imagesc(KpRng,KdRng,final);
+    xlabel('Porportional Gain (Kp)'); ylabel('Differential Gain (Kd)');
+    title({'Gains that Meet Criteria','Light Blue - Passed',...
+           'Yellow - Minimum Settle Time','Red - Minimum Cross Coupling'})
+
+    % Selection toggle for returned gains
+    if c.minimizeCCnorST == 1
+        % Minimized cross coupling gains
+        Kp = KpRng(minCCKp);
+        Kd = KdRng(minCCKd);
+    else
+        % Minimized settle time gains
+        Kp = KpRng(minKp);
+        Kd = KdRng(minKd);
+    end
+
+    % Return precision tolerance for gain ranges
+    tolerance = min(KpRng(2)-KpRng(1),KdRng(2)-KdRng(1));
+end

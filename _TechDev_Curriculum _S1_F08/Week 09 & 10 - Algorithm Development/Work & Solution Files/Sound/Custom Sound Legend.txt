@@ -1,0 +1,5 @@
+CustomSound001 = You Must Construct Additional Pylons
+CustomSound002 = All Your Base Are Belong To Us
+CustomSound003 = Captain Planet
+CustomSound004 = Ocarina of Time - Small Item Catch
+CustomSound005 = Ocarina of Time - Item Catch

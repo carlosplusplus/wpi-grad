@@ -1,0 +1,32 @@
+function out = eldp3(data, bits)
+
+A = 100000;                                   % Upper limit, A must be greater than 64K
+
+bWidth = 66666;                               % Bin width
+
+transData = data;                             % Temp storage
+
+maxData = max(abs(data));                     % Max data value
+
+scaleFactor = A/maxData;
+
+scaledData = transData * scaleFactor;         % Scaled signal
+scaledData(scaledData == 0) = 10^-6;
+
+encData = zeros(size(data,1),bits);           % Encoded data
+
+for z = 1:bits
+
+    encData(:,bits) = (scaledData./abs(scaledData)).*floor((abs(scaledData)+bWidth/2)/bWidth);
+    encData(encData>=2) = 1;
+
+    scaledData(encData(:,bits)==1) = scaledData(encData(:,bits)==1) - bWidth;
+    
+    
+end
+
+out = endData;
+
+end
+
+

@@ -1,0 +1,818 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+  <title>Software Postmortem</title>
+  <link rel='stylesheet' href='style/postmortem.css'>
+</head>
+<body>
+  <div id='header'>
+  Software Postmortem<br/>
+  BAE SYSTEMS INC., E&IS<br/>
+  Software Engineering Directorate<br/>
+  </div>
+  <div id='logo' align=center>
+    <img src='images/wordmark.gif'>
+  </div>
+  <hr>
+  <div id='toolbar'>	
+    <a href='generalinfo.html'>General Information</a> | <a href='sysdesc.html'>System Descriptions</a> | <a href='sandm.html'>Standards/Methodologies</a> | <a href='lifecycle.html'>Life Cycle</a> | <a href='retret.html'>Retention/Retrieval</a> | <a href='pch.html'>Project Change History</a> | <a href='sizing.html'>Sizing Data</a> | <a href='cssummary.html'>Code Size Summary</a> | <a href='defects.html'>Defect Profile Summary</a>| <a href='hrspkstaff.html'>Hours Summary/Peak Staff</a> | <a href='hours.html'>Hours By Activity</a> | <a href='teamlabor.html'>Team Labor Mix</a> | <a href='productivity.html'>Productivity</a> | <a href='requirements.html'>Requirements Stability</a> | <a href='documentation.html'>Documentation</a> | <a href='subcontracts.html'>Software Subcontracts</a> | <a href='lessons.html'>Lessons Learned</a> | <a href='all.html'>Full Postmortem</a>
+  </div>
+  <hr>
+<br><br>
+<table>
+  <tr>
+    <td class="section_header">General Program Information</td>
+  </tr>
+</table>
+<br><br>
+<table>
+  <tr>
+    <td><b>Project Name:</b></td><td>FCS CM Controller Prototype</td>
+ </tr>
+ <tr>
+    <td><b>Business Area:</b></td><td>IRCM</td>
+ </tr>
+ <tr>
+    <td><b>Program Type:</b></td><td>New Development<td/>
+ </tr>
+ <tr>
+    <td><b>Process:</b></td><td>IPDP Type 3</td>
+ </tr>
+ <tr>
+    <td><b>Software Category:</b></td><td>Loosely Constrained</td>
+ </tr>
+ <tr>
+     <td><b>Software Bid As:</b></td><td>ELOC</td>
+ </tr>
+ <tr>
+    <td><b>Customer:</b></td><td>BAE Land and Armaments</td>
+ </tr>
+</table></br><br>
+  <b>Project Description:</b><br>
+The FCS CM Controller Prototype program built a prototype of a counter measure controller to use for the FCS survivability program.  The goal of the prototype was to demonstrate handoff capabilities between a single sensor and countermeasure.
+  <br><br>
+<b>Product Description/Comments:</b><br>
+
+<br><br>
+  <b>Submission Schedule</b>
+  <table class='pch'>
+    <tr>
+      <td class='shaded'><b>Submission Name</b></td>
+      <td class='shaded'><b>Date Due</b></td>
+      <td class='shaded'><b>Date Submitted</b></td>
+      <td class='shaded'><b>Submitter</b></td>
+    </tr>
+    <tr>
+      <td>Final</td>
+      <td>Oct 26, 2007</td>
+      <td>Nov 1, 2007</td>
+      <td>Alex Zivojinovich</td>
+    </tr>
+  </table>
+<br><br>
+<br><br>
+<table>
+  <tr>
+    <td class="section_header">Development and Target System Descriptions</td>
+  </tr>
+</table>
+<br><br>
+  <b>Software Development System Description:</b><br>
+Visual Studio .NET<br>Microsoft XP<br>ClearCase<br><br>
+  <br>
+  <b>Target System Description:</b><br>
+Windows XP based system.<br><br>
+<br><br>
+<br><br>
+<table>
+  <tr>
+    <td class="section_header">Standards/Methodologies</td>
+  </tr>
+</table>
+<br><br>
+  <b>Development Standards Used:</b><br>
+None<br><br>
+  <b>Development Methodologies:</b><br>
+OO<br>Requirements were updated each spiral and tracked in Excel.<br>Test Procedures were updated with each spiral.<br><br>
+<br><br>
+<br><br>
+<table>
+  <tr>
+    <td class="section_header">Life Cycle</td>
+  </tr>
+</table>
+<br><br>
+  <b>Development Life Cycle Used:</b><br>
+Spiral.  Three spirals, each approximately 2 months in duration.<br><br>
+  <br>
+  <b>Unusual Aspects:</b><br>
+None<br><br>
+<br><br>
+<br><br>
+<table>
+  <tr>
+    <td class="section_header">Retention/Retrieval</td>
+  </tr>
+</table>
+<br><br>
+  <b>Retention and Retrieval Information:</b><br>
+FCS Prototype ClearCase VOB<br><br>
+<br><br>
+<br><br>
+<table>
+  <tr>
+    <td class="section_header">Project Change History</td>
+  </tr>
+</table>
+<br><br>
+  <table class='pch'>
+    <tr>
+      <td class='shaded'><b>Date</b></td>
+      <td class='shaded'><b>Description</b></td>
+      <td class='shaded'><b>Hours Change</b></td>
+      <td class='shaded'><b>Reqts Changed</b></td>
+    </tr>
+    <tr>
+      <td>May - 2007</td>
+      <td>Set the initial hours for project.</td>
+      <td>350.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td style='text-align: right;'><b>Latest Total Value:</b></td>
+      <td class='shaded'>350.0</td>
+      <td class='shaded'>0.0</td>
+    </tr>
+  </table>
+<br><br>
+<br><br>
+<table>
+  <tr>
+    <td class="section_header">Software Sizing Data: DLOC by Language</td>
+  </tr>
+</table>
+<br><br>
+<h4>Index</h4>
+<ul class='index'>
+<li><a href='#project'>Entire Project</a></li>
+  <ul class='index'>
+<li><a href='#Subsystem1'>CM Controller</a></li>
+    <ul class='index'>
+<li><a href='#Component1'>Sensor Interface</a></li>
+<li><a href='#Component2'>Countermeasure Interface</a></li>
+<li><a href='#Component3'>Threat Processing</a></li>
+<li><a href='#Component4'>Mission Computer Interface</a></li>
+<li><a href='#Component5'>Comms</a></li>
+<li><a href='#Component6'>Framework</a></li>
+    </ul>
+  </ul>
+</ul>
+<hr>
+  <FONT COLOR="#FF0000"> *Counts in red are estimated </FONT></br>
+<h3><a name='project'>Entire Project</a></h3>
+<div id='sizing_table'>
+<table class='hba'>
+  <tr>
+    <td class='noborder'></td>
+  </tr>
+  <tr>
+    <td class='colhead'>Language</td>
+    <td class='colhead'>New</td>
+    <td class='colhead'>Adapted</td>
+    <td class='colhead'>Reused</td>
+    <td class='colhead'>Total</td>
+  </tr>
+  <tr>
+    <td><FONT COLOR="#000000">C++</FONT></td>
+    <td><FONT COLOR="#000000">414</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">414</FONT></td>
+  <tr>
+    <td><FONT COLOR="#000000">C</FONT></td>
+    <td><FONT COLOR="#000000">220</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">220</FONT></td>
+  <tr>
+    <td><b>TOTAL</b></td>
+    <td><FONT COLOR="#000000">634</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">634</FONT></td>
+</table>
+<br>
+</div>
+<br>
+<h3><a name='Subsystem1'>Subsystem: CM Controller</a></h3>
+<p><i></i></p>
+<div id='sizing_table'>
+<h4>Entire Subsystem</h4>
+<table class='hba'>
+  <tr>
+    <td class='noborder'></td>
+  </tr>
+  <tr>
+    <td class='colhead'>Language</td>
+    <td class='colhead'>New</td>
+    <td class='colhead'>Adapted</td>
+    <td class='colhead'>Reused</td>
+    <td class='colhead'>Total</td>
+  </tr>
+  <tr>
+    <td><FONT COLOR="#000000">C++</FONT></td>
+    <td><FONT COLOR="#000000">414</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">414</FONT></td>
+  <tr>
+    <td><FONT COLOR="#000000">C</FONT></td>
+    <td><FONT COLOR="#000000">220</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">220</FONT></td>
+  <tr>
+    <td><b>TOTAL</b></td>
+    <td><FONT COLOR="#000000">634</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">634</FONT></td>
+</table>
+<br>
+<h4><a name='Component1'>Component: Sensor Interface</a></h4>
+<p><i>Code that handles the sensor interface, including the messages.  Does not include track management code.</i></p>
+<table class='hba'>
+  <tr>
+    <td class='noborder'></td>
+  </tr>
+  <tr>
+    <td class='colhead'>Language</td>
+    <td class='colhead'>New</td>
+    <td class='colhead'>Adapted</td>
+    <td class='colhead'>Reused</td>
+    <td class='colhead'>Total</td>
+  </tr>
+  <tr>
+    <td><FONT COLOR="#000000">C++</FONT></td>
+    <td><FONT COLOR="#000000">30</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">30</FONT></td>
+  <tr>
+    <td><FONT COLOR="#000000">C</FONT></td>
+    <td><FONT COLOR="#000000">17</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">17</FONT></td>
+  <tr>
+    <td><b>TOTAL</b></td>
+    <td><FONT COLOR="#000000">47</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">47</FONT></td>
+</table>
+<br>
+<h4><a name='Component2'>Component: Countermeasure Interface</a></h4>
+<p><i>All code related to the CM interface.</i></p>
+<table class='hba'>
+  <tr>
+    <td class='noborder'></td>
+  </tr>
+  <tr>
+    <td class='colhead'>Language</td>
+    <td class='colhead'>New</td>
+    <td class='colhead'>Adapted</td>
+    <td class='colhead'>Reused</td>
+    <td class='colhead'>Total</td>
+  </tr>
+  <tr>
+    <td><FONT COLOR="#000000">C++</FONT></td>
+    <td><FONT COLOR="#000000">68</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">68</FONT></td>
+  <tr>
+    <td><FONT COLOR="#000000">C</FONT></td>
+    <td><FONT COLOR="#000000">32</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">32</FONT></td>
+  <tr>
+    <td><b>TOTAL</b></td>
+    <td><FONT COLOR="#000000">100</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">100</FONT></td>
+</table>
+<br>
+<h4><a name='Component3'>Component: Threat Processing</a></h4>
+<p><i>Handles the threat processing, including allocating the countermeasure.</i></p>
+<table class='hba'>
+  <tr>
+    <td class='noborder'></td>
+  </tr>
+  <tr>
+    <td class='colhead'>Language</td>
+    <td class='colhead'>New</td>
+    <td class='colhead'>Adapted</td>
+    <td class='colhead'>Reused</td>
+    <td class='colhead'>Total</td>
+  </tr>
+  <tr>
+    <td><FONT COLOR="#000000">C++</FONT></td>
+    <td><FONT COLOR="#000000">75</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">75</FONT></td>
+  <tr>
+    <td><FONT COLOR="#000000">C</FONT></td>
+    <td><FONT COLOR="#000000">46</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">46</FONT></td>
+  <tr>
+    <td><b>TOTAL</b></td>
+    <td><FONT COLOR="#000000">121</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">121</FONT></td>
+</table>
+<br>
+<h4><a name='Component4'>Component: Mission Computer Interface</a></h4>
+<p><i>Interface with the mission computer.  Handles reprting threats and engagements, receiving attitude data, and receiving time data.</i></p>
+<table class='hba'>
+  <tr>
+    <td class='noborder'></td>
+  </tr>
+  <tr>
+    <td class='colhead'>Language</td>
+    <td class='colhead'>New</td>
+    <td class='colhead'>Adapted</td>
+    <td class='colhead'>Reused</td>
+    <td class='colhead'>Total</td>
+  </tr>
+  <tr>
+    <td><FONT COLOR="#000000">C</FONT></td>
+    <td><FONT COLOR="#000000">34</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">34</FONT></td>
+  <tr>
+    <td><FONT COLOR="#000000">C++</FONT></td>
+    <td><FONT COLOR="#000000">26</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">26</FONT></td>
+  <tr>
+    <td><b>TOTAL</b></td>
+    <td><FONT COLOR="#000000">60</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">60</FONT></td>
+</table>
+<br>
+<h4><a name='Component5'>Component: Comms</a></h4>
+<p><i>Low-level and common communications stuff.</i></p>
+<table class='hba'>
+  <tr>
+    <td class='noborder'></td>
+  </tr>
+  <tr>
+    <td class='colhead'>Language</td>
+    <td class='colhead'>New</td>
+    <td class='colhead'>Adapted</td>
+    <td class='colhead'>Reused</td>
+    <td class='colhead'>Total</td>
+  </tr>
+  <tr>
+    <td><FONT COLOR="#000000">C++</FONT></td>
+    <td><FONT COLOR="#000000">188</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">188</FONT></td>
+  <tr>
+    <td><FONT COLOR="#000000">C</FONT></td>
+    <td><FONT COLOR="#000000">83</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">83</FONT></td>
+  <tr>
+    <td><b>TOTAL</b></td>
+    <td><FONT COLOR="#000000">271</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">271</FONT></td>
+</table>
+<br>
+<h4><a name='Component6'>Component: Framework</a></h4>
+<p><i>Code that manages the prototype.  Basically, anything not belonging to the other subsystems.</i></p>
+<table class='hba'>
+  <tr>
+    <td class='noborder'></td>
+  </tr>
+  <tr>
+    <td class='colhead'>Language</td>
+    <td class='colhead'>New</td>
+    <td class='colhead'>Adapted</td>
+    <td class='colhead'>Reused</td>
+    <td class='colhead'>Total</td>
+  </tr>
+  <tr>
+    <td><FONT COLOR="#000000">C++</FONT></td>
+    <td><FONT COLOR="#000000">27</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">27</FONT></td>
+  <tr>
+    <td><FONT COLOR="#000000">C</FONT></td>
+    <td><FONT COLOR="#000000">8</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">8</FONT></td>
+  <tr>
+    <td><b>TOTAL</b></td>
+    <td><FONT COLOR="#000000">35</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td><FONT COLOR="#000000">0</FONT></td>
+    <td class='lightshade'><FONT COLOR="#000000">35</FONT></td>
+</table>
+<br>
+</div>
+<br>
+<br><br>
+<br><br>
+<table>
+  <tr>
+    <td class="section_header">Hours By Activity</td>
+  </tr>
+</table>
+<br><br>
+  <table class='hba'>
+    <tr>
+      <td class='noborder'></td>
+      <td class='colhead' colspan=2><div id='tbl_heading'>
+  Final<br>
+  Oct 26, 2007
+</div>
+</td>
+    </tr>
+      <td class='noborder'></td>
+      <td><center><b>Budgeted</b></center></td>
+      <td><center><b>Actual</b></center></td>
+    <tr>
+      <td class='rowhead'><b>Software Management</b></td>
+      <td>49</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b>    Software Manager</b></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b>    Software Eng. Environment Support</b></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b>    Software Development Plan</b></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b>    Software Postmortem</b></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b>Prototypes</b></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b>Software Engineering Support</b></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b>Rework After Sell-off to Systems</b></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b>Auto Generated Code Effort</b></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b>Non-Development Tasks</b></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b>In-Process Reviews</b></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b>Evaluation of Reusable Software</b></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b>Peer Reviews</b></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b>BSP Development/Modifications</b></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b>SW Requirements Analysis</b></td>
+      <td>21</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b>SW Preliminary Design</b></td>
+      <td>42</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b>SW Detailed Design</b></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b>SW Code and Test</b></td>
+      <td>238</td>
+      <td>260</td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b>SW Product Integration and Verification</b></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b>SW Product Validation</b></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b>SW Product Transition</b></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b>Total Productivity Hours</b></td>
+      <td>350</td>
+      <td>365</td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b>Total</b></td>
+      <td>350</td>
+      <td>365</td>
+    </tr>
+  </table>
+<FONT COLOR = #FF0000>  <br><br>
+      EAC Rework Hours are 100% off the actual Rework hours. <br>
+      BAC Rework Hours are 100% off the baseline Rework hours. <br>
+<b><br>     Hours should be within 3%</b></FONT><br></n><br><br>
+<br><br>
+<table>
+  <tr>
+    <td class="section_header">Documentation Produced</td>
+  </tr>
+</table>
+<br><br>
+  <h4>SDP</h4>
+  <table class='pch'>
+    <tr>
+      <td><b>Number of Pages:</b></td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <td><b>Staff Hours:</b></td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <td><b>Hours/Page:</b></td>
+      <td>0.571</td>
+    </tr>
+    <tr>
+      <td><b>Multiple<br>Submissions:</b></td>
+      <td>N</td>
+    </tr>
+  </table>
+  <h4>SRS</h4>
+  <table class='pch'>
+    <tr>
+      <td><b>Number of Pages:</b></td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td><b>Staff Hours:</b></td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td><b>Hours/Page:</b></td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <td><b>Multiple<br>Submissions:</b></td>
+      <td>N</td>
+    </tr>
+  </table>
+  <h4>Test Plan/Procedures</h4>
+  <table class='pch'>
+    <tr>
+      <td><b>Number of Pages:</b></td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <td><b>Staff Hours:</b></td>
+      <td>17.0</td>
+    </tr>
+    <tr>
+      <td><b>Hours/Page:</b></td>
+      <td>0.567</td>
+    </tr>
+    <tr>
+      <td><b>Multiple<br>Submissions:</b></td>
+      <td>N</td>
+    </tr>
+  </table>
+<br><br>
+<br><br>
+<table>
+  <tr>
+    <td class="section_header">Software Subcontracts</td>
+  </tr>
+</table>
+<br><br>
+None.<br><br>
+<br><br>
+<table>
+  <tr>
+    <td class="section_header">Lessons Learned
+</td>
+  </tr>
+</table>
+<br><br>
+None.<br><br>
+<br><br>
+<table>
+  <tr>
+    <td class="section_header">Code Size Summary</td>
+  </tr>
+</table>
+<br><br>
+  <table class='hba'>
+    <tr>
+      <td class='noborder'></td>
+        <td class='colhead'><div id='tbl_heading'><br>
+          Final<br>
+          Oct 26, 2007
+        </div></td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b><u>ELOC HISTORY</u></b></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b>Original Negotiated Baseline</b></td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b>Baseline Adjusted for Scope Changes</b></td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b>Current Estimate</b></td>
+      <td>634</td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b><u>DLOC COMPOSITION</b></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b>New</b></td>
+      <td>634</td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b>Adapted</b></td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b>Reused</b></td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b>Total</b></td>
+      <td>634</td>
+    </tr>
+  </table>
+<br><br>
+<br><br>
+<table>
+  <tr>
+    <td class="section_header">Productivity Hours Summary</td>
+  </tr>
+</table>
+<br><br>
+  <table class='hba'>
+    <tr>
+      <td class='noborder'></td>
+        <td class='colhead'><div id='tbl_heading'><br>
+          Final<br>
+          Oct 26, 2007
+        </div></td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b>Budgeted</b></td>
+      <td>350.0</td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b>EAC</b></td>
+      <td>365.0</td>
+    </tr>
+  </table>
+<br><br>
+<table>
+  <tr>
+    <td class="section_header">Peak Staff</td>
+  </tr>
+</table>
+<br><br>
+ No Staffing Tool associated with this submission.<br>
+<br><br>
+<br><br>
+<table>
+  <tr>
+    <td class="section_header">Summary Of SW Team Labor Mix</td>
+  </tr>
+</table>
+<br><br>
+ No Staffing Tool associated with this submission.<br>
+<br><br>
+<br><br>
+<table>
+  <tr>
+    <td class="section_header">Productivity</td>
+  </tr>
+</table>
+<br><br>
+  <p>For ELOC/day:<br> 'Planned' uses the Baseline Size Adjusted for Scope Changes and the Budgeted Hours.<br> 'Current Estimate' uses the Current Size Estimate and the EAC Hours.</p>  <p>For DLOC/day:<br> 'Planned' uses DLOC Size and the Budgeted Hours 'Current Estimate' uses the DLOC Size and the EAC Hours.</p><br>  <table class='hba'>
+    <tr>
+      <td class='noborder'></td>
+        <td class='colhead'><div id='tbl_heading'><br>
+          Final<br>
+          Oct 26, 2007
+        </div></td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b><u>ELOC/day</u></b></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b>Planned</b></td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b>Current Estimate</b></td>
+      <td>13.9</td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b><u>DLOC/day</u></b></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b>Planned</b></td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td class='rowhead'><b>Current Estimate</b></td>
+      <td>13.9</td>
+    </tr>
+  </table>
+<br><br>
+<br><br>
+<table>
+  <tr>
+    <td class="section_header">Requirements Stability</td>
+  </tr>
+</table>
+<br><br>
+ No Requirements Stability Tools associated with this submission.<br>
+<br><br>
+<br><br>
+<table>
+  <tr>
+    <td class="section_header">Defect Profile</td>
+  </tr>
+</table>
+<br><br>
+No Defect Profile Tool associated with this submission.<br>
+<br><br>

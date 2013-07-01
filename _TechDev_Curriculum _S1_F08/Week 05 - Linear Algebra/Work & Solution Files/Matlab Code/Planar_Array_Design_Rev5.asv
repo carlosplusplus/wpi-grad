@@ -1,0 +1,267 @@
+close all;
+clear all;
+%% Define Initial Parameters %%
+
+fprintf('-INPUTS------------------------\n');
+
+% These are the variables we can adjust:
+v = 160000/3600;    % Velocity in m/s
+h = 18923;          % Initial height (m) ceiling is 15km, cruising alt is 7.5km
+ele_wt = .5;        % Weight per element (lbs)
+ele_pwr = .005;     % Power per element (W)
+
+fprintf('Velocity: %f m/s\n',v);
+fprintf('Altitude: %f m\n',h);
+fprintf('Weight per Element: %f lbs\n',ele_wt);
+fprintf('Power per Element: %f W\n',ele_pwr);
+
+% Define constants:
+c = 3e8;                        % Speed of Light (m/s)
+freq_l = 3.5e9;                 % Lower frequency bound of antenna bandwidth
+freq_u = 5.8e9;                 % Upper frequency bound of antenna bandwidth
+freq_m = (freq_l + freq_u)/2;   % Middle frequency of antenna bandwidth
+
+lambda_l = c / freq_l;    % Wavelength at 3.50 GHz
+lambda_u = c / freq_u;    % Wavelength at 5.80 GHz
+lambda_m = c / freq_m;    % Wavelength at 4.65 GHz
+
+dx = (1/)*lambda_u;        % Spacing of elements in the x direction.
+dy = dx;                % Set dy = dx for a square planar array.
+
+%% Define parametric equations based on Initial Parameters %%
+
+fprintf('-OUTPUTS-----------------------\n');
+
+xi = v * 600;           % X Position at time t=0 (600 seconds from target)              
+Ri = sqrt(h^2 + xi^2);  % Radial distance from the start point to target.
+
+% Calculate the BeamWidth (BW) at boresight (t = 10 minutes)
+Bw = 2* atan(9260/h);
+fprintf('Beamwidth: %f degrees\n',Bw*180/pi);
+
+% Calculate dimensions of phased antenna array.
+D = lambda_u / Bw;          % D = dx*nx | dy*ny
+fprintf('Array Size: %f meters\n',D);
+fprintf('Element Spacing: %f meters\n',dx);
+
+nx = ceil(D / dx);          % # of elements in x direction based on dimensions
+ny = ceil(D / dy);          % # of elements in y direction based on dimensions
+fprintf('Elements per Row: %i\n',nx);
+
+tot_ele = nx * ny;           % Total # of elements in array.
+fprintf('Total Elements: %i\n',tot_ele);
+
+tot_wt  = tot_ele * ele_wt;  % Total weight of the antenna array.
+fprintf('Weight of Elements: %f lbs\n',tot_wt);
+
+tot_pwr = tot_ele * ele_pwr; % Total power of antenna array.
+fprintf('Power Consumption: %f W\n',tot_pwr);
+
+% Calculate the total power needed for transmission :
+% dBW (Receiver) = dBW (Antenna Gain + HPA) - FreeSpacePathLoss
+%       ==> Need 22dBW to be seen at the enemy receiver.
+
+        % FSP = 20 * log((4*pi*Ri*freq_u)/c) ~~~ in dB
+        %         ===> Ri = Furthest radial distance (at t = 0)
+        
+FSPL = 20 * log10((4*pi*Ri*freq_u)/c);
+   
+% Calculate required power given all specifications.
+%   22 = dBW seen at receiver
+
+Req_TPwr_dB = 22 + FSPL;                % Required dB at trasmitter.
+fprintf('Required Tx Power: %f dB\n',Req_TPwr_dB);
+
+Req_TPwr = 10^((Req_TPwr_dB)/10);       % Calculate req. pwr in Watts (W)
+
+ant_gain = (4*pi*dx*dy)/(lambda_l^2);   % Gain of antenna array
+fprintf('Gain of Antenna: %f dB\n',ant_gain);
+hpa_gain = 22 - ant_gain + FSPL;        % Required Amp Gain
+fprintf('Gain of HPA: %f dB\n',hpa_gain);
+
+
+
+%% Graph #1 - Lowest Freq @ 0 deg
+
+lambda = lambda_u;
+
+Wtel = ones(1,ny); % weights in elevation
+bu = zeros(1,nx); % voltage in dB given to each element
+WndBu = 10.^(-0.05.*bu); % voltage in watts
+k = 2*pi/lambda; % wave number
+phi = 0;     % steering angle
+%G = 10000 + 30dB %input power
+
+theta=pi/180:pi/3600:pi;
+for l = 1:nx
+    Au(l,:) = sum(Wtel)*WndBu(l)*exp((j*k*l*dx).*(cos(theta+ phi)));
+end
+
+G = 1;
+Au_log = 20*log10(abs(sum(Au)).*sqrt(G));
+
+figure(1);
+    plot(theta*180/pi,real(Au_log),'g',...
+        1:180,ones(1,180)*max(real(Au_log)),'r:',...
+        1:180,ones(1,180)*max(real(Au_log))-13,'r:');
+    title('Antenna Gain vs. Angle - 3.50 GHz at 0 deg Steering Angle')
+    xlabel('Azimuth Angle, in degrees')
+    ylabel('Antenna Gain, in dB');
+    
+%% Graph #2 - Lowest Freq @ 45 deg
+
+lambda = lambda_l;
+
+Wtel = ones(1,ny); % weights in elevation
+bu = zeros(1,nx); % voltage in dB given to each element
+WndBu = 10.^(-0.05.*bu); % voltage in watts
+k = 2*pi/lambda; % wave number
+phi = deg2rad(45);     % steering angle
+%G = 10000 + 30dB %input power
+
+theta=pi/180:pi/3600:pi;
+for l = 1:nx
+    Au(l,:) = sum(Wtel)*WndBu(l)*exp((j*k*l*dx).*(cos(theta+ phi)));
+end
+
+G = 1;
+Au_log = 20*log10(abs(sum(Au)).*sqrt(G));
+
+figure(2);
+    plot(theta*180/pi,real(Au_log),'g',...
+        1:180,ones(1,180)*max(real(Au_log)),'r:',...
+        1:180,ones(1,180)*max(real(Au_log))-13,'r:');
+    title('Antenna Gain vs. Angle - 3.50 GHz at 45 deg Steering Angle')
+    xlabel('Azimuth Angle, in degrees')
+    ylabel('Antenna Gain, in dB');
+    
+%% Graph #3 - Middle Freq @ 0 deg
+
+lambda = lambda_m;
+
+Wtel = ones(1,ny); % weights in elevation
+bu = zeros(1,nx); % voltage in dB given to each element
+WndBu = 10.^(-0.05.*bu); % voltage in watts
+k = 2*pi/lambda; % wave number
+phi = deg2rad(0);     % steering angle;
+%G = 10000 + 30dB %input power
+
+theta=pi/180:pi/3600:pi;
+for l = 1:nx
+    Au(l,:) = sum(Wtel)*WndBu(l)*exp((j*k*l*dx).*(cos(theta+ phi)));
+end
+
+G = 1;
+Au_log = 20*log10(abs(sum(Au)).*sqrt(G));
+
+figure(3);
+    plot(theta*180/pi,real(Au_log),'g',...
+        1:180,ones(1,180)*max(real(Au_log)),'r:',...
+        1:180,ones(1,180)*max(real(Au_log))-13,'r:');
+    title('Antenna Gain vs. Angle - 4.65 GHz at 0 deg Steering Angle')
+    xlabel('Azimuth Angle, in degrees')
+    ylabel('Antenna Gain, in dB');
+    
+%% Graph #4 - Lower Freq @ 45 deg
+
+lambda = lambda_m;
+
+Wtel = ones(1,ny); % weights in elevation
+bu = zeros(1,nx); % voltage in dB given to each element
+WndBu = 10.^(-0.05.*bu); % voltage in watts
+k = 2*pi/lambda; % wave number
+phi = deg2rad(45);
+%G = 10000 + 30dB %input power
+
+theta=pi/180:pi/3600:pi;
+for l = 1:nx
+    Au(l,:) = sum(Wtel)*WndBu(l)*exp((j*k*l*dx).*(cos(theta+ phi)));
+end
+
+G = 1;
+Au_log = 20*log10(abs(sum(Au)).*sqrt(G));
+
+figure(4);
+    plot(theta*180/pi,real(Au_log),'g',...
+        1:180,ones(1,180)*max(real(Au_log)),'r:',...
+        1:180,ones(1,180)*max(real(Au_log))-13,'r:');
+    title('Antenna Gain vs. Angle - 4.65 GHz at 45 deg Steering Angle')
+    xlabel('Azimuth Angle, in degrees')
+    ylabel('Antenna Gain, in dB');
+
+%% Graph #5 - Highest Freq @ 0 deg
+
+lambda = lambda_u;
+
+Wtel = ones(1,ny); % weights in elevation
+bu = zeros(1,nx); % voltage in dB given to each element
+WndBu = 10.^(-0.05.*bu); % voltage in watts
+k = 2*pi/lambda; % wave number
+phi = deg2rad(0);     % steering angle
+%G = 10000 + 30dB %input power
+
+theta=pi/180:pi/3600:pi;
+for l = 1:nx
+    Au(l,:) = sum(Wtel)*WndBu(l)*exp((j*k*l*dx).*(cos(theta + phi)));
+end
+
+G = 1;
+Au_log = 20*log10(abs(sum(Au)).*sqrt(G));
+
+figure(5);
+    plot(theta*180/pi,real(Au_log),'g',...
+        1:180,ones(1,180)*max(real(Au_log)),'r:',...
+        1:180,ones(1,180)*max(real(Au_log))-13,'r:');
+    title('Antenna Gain vs. Angle - 5.80 GHz at 0 deg Steering Angle')
+    xlabel('Azimuth Angle, in degrees')
+    ylabel('Antenna Gain, in dB');
+    
+%% Graph #6 - Highest Freq @ 45 deg
+
+lambda = lambda_u;
+
+Wtel = ones(1,ny); % weights in elevation
+bu = zeros(1,nx); % voltage in dB given to each element
+WndBu = 10.^(-0.05.*bu); % voltage in watts
+k = 2*pi/lambda; % wave number
+phi = deg2rad(45);
+%G = 10000 + 30dB %input power
+
+theta=pi/180:pi/3600:pi;
+
+for l = 1:nx
+    Au(l,:) = sum(Wtel)*WndBu(l)*exp((j*k*l*dx).*(cos(theta+ phi)));
+end
+
+G = 1;
+Au_log = 20*log10(abs(sum(Au)).*sqrt(G));
+
+figure(6);
+    plot(theta*180/pi,real(Au_log),'g',...
+        1:180,ones(1,180)*max(real(Au_log)),'r:',...
+        1:180,ones(1,180)*max(real(Au_log))-13,'r:');
+    title('Antenna Gain vs. Angle - 5.80 GHz at 45 deg Steering Angle')
+    xlabel('Azimuth Angle, in degrees')
+    ylabel('Antenna Gain, in dB');
+   
+%% Antenna Gain vs Frequency %%
+
+freqs = [3.5:.1:5.8]*10^9;
+lambdas = c./freqs;
+Gs = 20*log10(4*pi*dx*dy./lambdas.^2);
+
+figure(7);
+    plot(freqs,Gs);
+    title('Antenna gain vs. Frequency');
+    xlabel('Frequency (Hz)');
+    ylabel('Gain (dB)');
+    
+%% Beamwidth vs Frequency %%
+
+BWs = (180/pi)*(lambdas./D);
+
+figure(8);
+    plot(freqs,BWs,freqs,Bw*180/pi*ones(1,length(freqs)),'r:');
+    title('Antenna Beamwidth vs. Frequency');
+    xlabel('Frequency (Hz)');
+    ylabel('Beamwidth (degrees)');
