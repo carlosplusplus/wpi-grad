@@ -1,0 +1,39 @@
+m255
+K3
+13
+cModel Technology
+dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Homework\HW2\Pt3
+vFullAdder
+IF@64JY20LY?0:MohMLzKf2
+Vg;9>ezg?<CUD]ZShjSl=_1
+Z0 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Homework\HW3\Pt1
+w1266599653
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW3/Pt1/FullAdder.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW3/Pt1/FullAdder.v
+L0 9
+Z1 OV;L;6.5b;42
+r1
+31
+Z2 !s102 -nocovercells
+Z3 o-work work -nocovercells -O0
+n@full@adder
+!s100 [zjl2TC<YFVA;HJc;5kPS3
+!s85 0
+!s101 -O0
+vFullAdderTester
+!s100 lC<DAX2:44FCad4EB><Y[2
+INQ]XaZCol08AV]@Xc8JfX1
+V6JK;@ahiT7m]k:7O8NcQN1
+Z4 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Homework\HW3\Pt1
+w1266597915
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW3/Pt1/FullAdderTester.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW3/Pt1/FullAdderTester.v
+L0 9
+R1
+r1
+!s85 0
+31
+!s101 -O0
+R2
+R3
+n@full@adder@tester

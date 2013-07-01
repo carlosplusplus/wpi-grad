@@ -1,0 +1,73 @@
+m255
+K3
+13
+cModel Technology
+dC:\altera\91\modelsim_ase\examples
+vALU16bit
+I7jMHN<4T?212RW?^LEE9?2
+ViM0>A=5Ybm?]PogE7=doQ1
+Z0 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Exams\Midterm\Pt 2\Pt F
+w1268176832
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Exams/Midterm/Pt 2/Pt F/ALU16bit.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Exams/Midterm/Pt 2/Pt F/ALU16bit.v
+L0 10
+Z1 OV;L;6.5b;42
+r1
+31
+Z2 !s102 -nocovercells
+Z3 o-work work -nocovercells -O0
+n@a@l@u16bit
+!s100 nKlWle]ZG@@IlC=34:jGK1
+!s85 0
+!s101 -O0
+vALU16bitAlways
+!s100 IZ:OzGgPMZCEjR^^_EIY42
+IhSl:h55J6KKVU^AEK7[b00
+VIQZhiQWC`@5Nm@GWdU4Mk0
+Z4 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Exams\Midterm\Pt 2\Pt F
+w1268182518
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Exams/Midterm/Pt 2/Pt F/ALU16bitAlways.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Exams/Midterm/Pt 2/Pt F/ALU16bitAlways.v
+L0 10
+R1
+r1
+!s85 0
+31
+!s101 -O0
+R2
+R3
+n@a@l@u16bit@always
+vALU16bitModelComparison
+IJd9f1D3^kdnPa>IKmPS:N2
+VN7^1gAISQ6?ZB2LR``NJ:1
+R4
+w1268181859
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Exams/Midterm/Pt 2/Pt F/ALU16bitModelComparison.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Exams/Midterm/Pt 2/Pt F/ALU16bitModelComparison.v
+L0 10
+R1
+r1
+31
+R2
+R3
+n@a@l@u16bit@model@comparison
+!s100 f3<WdzaMZ=`;4]T4PP?VH1
+!s85 0
+!s101 -O0
+vALU2bit
+IRT=jbY<5Cf4[FLh_OF9`j0
+V=Cd10:IkCAN>oUV[FUd5:3
+R4
+w1268177533
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Exams/Midterm/Pt 2/Pt F/ALU2bit.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Exams/Midterm/Pt 2/Pt F/ALU2bit.v
+L0 10
+R1
+r1
+31
+R2
+R3
+n@a@l@u2bit
+!s100 WWTd;eUhOA@G:EBP>b?ia2
+!s85 0
+!s101 -O0

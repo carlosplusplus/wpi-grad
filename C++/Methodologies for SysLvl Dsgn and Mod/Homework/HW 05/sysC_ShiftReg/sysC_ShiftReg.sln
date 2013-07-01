@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sysC_ShiftReg", "sysC_ShiftReg\sysC_ShiftReg.vcproj", "{CCC80BFC-C112-4F6A-B42E-6DA50D1925B2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CCC80BFC-C112-4F6A-B42E-6DA50D1925B2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CCC80BFC-C112-4F6A-B42E-6DA50D1925B2}.Debug|Win32.Build.0 = Debug|Win32
+		{CCC80BFC-C112-4F6A-B42E-6DA50D1925B2}.Release|Win32.ActiveCfg = Release|Win32
+		{CCC80BFC-C112-4F6A-B42E-6DA50D1925B2}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

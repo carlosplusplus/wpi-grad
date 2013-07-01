@@ -1,0 +1,48 @@
+// Carlos Lazo
+// ECE505
+// Homework 02 - Pt3
+
+// S2PC TestBench
+
+`timescale 1ns/100ps
+
+module S2PC_Tester;
+  
+  // Initialize inputs and outputs:
+  
+  reg clk, start, s_in;
+  wire [8:0] parout;
+  wire ready;
+  
+  // Instantiate a S2PC module:
+  
+  S2PC UUT (clk, start, s_in, parout, ready);
+  
+  // Initialize all registers to initial values:
+  
+  initial begin
+    
+    clk   = 0;
+    start = 0;
+    s_in  = 0;
+    
+  end
+  
+  // Initialize the clock:
+  
+  initial repeat (25) #10 clk = ~clk;
+  
+  // Assign the serial input to a random value every 7ns
+  
+  initial repeat (35) #7 s_in = $random;
+  
+  // Begin the sequence of serial input:
+  
+  initial begin
+    
+    start <= #25 1;
+    start <= #35 0;
+    
+  end
+  
+endmodule

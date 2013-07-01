@@ -1,0 +1,39 @@
+// Carlos Lazo
+// ECE574
+// Homework #7
+
+// Part 1: Transistor-Level Circuit Implementation
+//         Testbench
+
+`timescale 1ns/100ps
+
+module transistorCircuitTestbench;
+  
+  // Define inputs and outputs:
+  
+  reg a, b, c, d;
+  wire y;
+  
+  transistorCircuit MUT (a,b,c,d,y);
+  
+  initial begin
+    
+    a = 0; b = 0; c = 0; d = 0;
+    
+  end
+  
+  initial begin
+    
+    repeat (5) begin
+      
+      a <= $random;
+      b <= $random;
+      c <= $random;
+      d <= $random;
+      
+      #100;
+      
+    end
+  end
+  
+endmodule

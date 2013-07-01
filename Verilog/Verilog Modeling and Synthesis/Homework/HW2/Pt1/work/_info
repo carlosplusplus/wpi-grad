@@ -1,0 +1,56 @@
+m255
+K3
+13
+cModel Technology
+dC:\altera\91\modelsim_ase\examples
+vHW2Pt1
+IB[NFfiRSYbd?gI]=MdIPi3
+V10WBcL<foaS@gzPo[KL8z2
+Z0 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Homework\HW2\Pt1
+w1266198495
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW2/Pt1/HW2Pt1.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW2/Pt1/HW2Pt1.v
+L0 9
+Z1 OV;L;6.5b;42
+r1
+31
+Z2 !s102 -nocovercells
+Z3 o-work work -nocovercells -O0
+n@h@w2@pt1
+!s100 Y6><P587]1kdhKMCAWjZU0
+!s85 0
+!s101 -O0
+vHW2Pt1PS
+I<JI78:o`M9f3F^aQI1`kF2
+VAXK=1QJ]>@4nmEC>[k_=92
+Z4 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Homework\HW2\Pt1
+w1266171848
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW2/Pt1/HW2Pt1.vo
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW2/Pt1/HW2Pt1.vo
+L0 31
+R1
+r1
+31
+R2
+R3
+n@h@w2@pt1@p@s
+!s100 iQb`iGhkTLeoIdE29Ynza0
+!s85 0
+!s101 -O0
+vHW2Pt1Tester
+!s100 nSz87GjNTLPmAi;4^TF[[3
+I?_hX5F@@znhCSaL1L3V[Y3
+VGHemm;5SW85oSUYYV<aAz2
+R4
+w1266198516
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW2/Pt1/HW2Pt1Tester.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW2/Pt1/HW2Pt1Tester.v
+L0 10
+R1
+r1
+!s85 0
+31
+!s101 -O0
+R2
+R3
+n@h@w2@pt1@tester

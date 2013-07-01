@@ -1,0 +1,90 @@
+m255
+K3
+13
+cModel Technology
+dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Homework\HW7\Pt2
+vAC
+II3cMB1FYA3fIm5kf9f<So0
+V71K^SUe>mJCXRTCKOCB9j3
+Z0 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Project\Pt 1\Pt A
+w1271618777
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project/Pt 1/Pt A/AC.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project/Pt 1/Pt A/AC.v
+L0 10
+Z1 OV;L;6.5b;42
+r1
+31
+Z2 !s102 -nocovercells
+Z3 o-work work -nocovercells -O0
+n@a@c
+!s100 =O[hzbVI83kM<m^>K@5ID3
+!s85 0
+!s101 -O0
+vALU
+IK^IfT9hGE6f9Elb`@aYWW0
+Vf`OA85hO<F73`ndEaR;Mn3
+Z4 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Project\Pt 1\Pt A
+w1271626159
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project/Pt 1/Pt A/ALU.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project/Pt 1/Pt A/ALU.v
+L0 10
+R1
+r1
+31
+R2
+R3
+n@a@l@u
+!s100 2Q<B2oG_D6=h<Lo5YNhW;2
+!s85 0
+!s101 -O0
+vDataPath
+I<BSG3963bdj:FgAM:nQ3[2
+V_C?[EWacA2fo_A0b=Qcg83
+R4
+w1271625008
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project/Pt 1/Pt A/DataPath.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project/Pt 1/Pt A/DataPath.v
+L0 10
+R1
+r1
+31
+R2
+R3
+n@data@path
+!s100 OML=03jd45Kf4HOLLZF=:2
+!s85 0
+!s101 -O0
+vDataPathTester
+!s100 iIn4=C9gE1Nbf;RhNi3IJ1
+I_k]ODoVm5de4hBUQ9@I9N2
+VoBibRF7o@WE=PVc=Sd?9:2
+R4
+w1271629297
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project/Pt 1/Pt A/DataPathTester.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project/Pt 1/Pt A/DataPathTester.v
+L0 10
+R1
+r1
+!s85 0
+31
+!s101 -O0
+R2
+R3
+n@data@path@tester
+vMultiplier
+IMQk1P7Aj]SWofP4^3nHJ52
+VjZDghFSR6WzT:E9lRfe_G1
+R4
+w1271627268
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project/Pt 1/Pt A/Multiplier.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project/Pt 1/Pt A/Multiplier.v
+L0 10
+R1
+r1
+31
+R2
+R3
+n@multiplier
+!s100 C`Am2K`XIXI@>111Bdj9^3
+!s85 0
+!s101 -O0

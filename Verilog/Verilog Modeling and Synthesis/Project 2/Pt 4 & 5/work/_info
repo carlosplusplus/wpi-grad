@@ -1,0 +1,107 @@
+m255
+K3
+13
+cModel Technology
+dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Project 1\Pt C
+vController
+IXJbfVYDIdPd2m9zhXEhQf3
+VF2ZE]I5BCAEg?oQmD<9F^3
+Z0 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Project 2\Pt 4 & 5
+w1272660109
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 2/Pt 4 & 5/Controller.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 2/Pt 4 & 5/Controller.v
+L0 15
+Z1 OV;L;6.5b;42
+r1
+31
+Z2 !s102 -nocovercells
+Z3 o-work work -nocovercells -O0
+n@controller
+!s100 F5Heg[[AaRTc9U]2LJFSz3
+!s85 0
+!s101 -O0
+vDataPath
+I^iR5@YV_oaAml:Rk9JMah1
+VAj[Ch8QgPGV8Qd_A;L2if2
+Z4 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Project 2\Pt 4 & 5
+w1272659197
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 2/Pt 4 & 5/DataPath.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 2/Pt 4 & 5/DataPath.v
+L0 10
+R1
+r1
+31
+R2
+R3
+n@data@path
+!s100 <doF7hIXGi;dCb`aeQ@0:0
+!s85 0
+!s101 -O0
+vDataPort
+IL^Vjbd;Nj[<4NmiiahOIa1
+VJGaCZAW^fLo_8`]SZIi6`2
+R4
+w1272640681
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 2/Pt 4 & 5/DataPort.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 2/Pt 4 & 5/DataPort.v
+L0 13
+R1
+r1
+31
+R2
+R3
+n@data@port
+!s100 SS2d>_C:d?BJS4S<mY6S02
+!s85 0
+!s101 -O0
+vRouter
+IB]hHY]CEG:AU_1=6]<IAe0
+VfVGYgLL9IMSjjbgQ0bdk@1
+R4
+w1272659312
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 2/Pt 4 & 5/Router.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 2/Pt 4 & 5/Router.v
+L0 10
+R1
+r1
+31
+R2
+R3
+n@router
+!s100 n=Lg:D92PKM2OddMFLJfG1
+!s85 0
+!s101 -O0
+vrtlRouter
+IjPY^?DIM?2`LhjRb_oLUV1
+V4UnV:?z^F3DUh_DVIVIHA0
+R4
+w1272657294
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 2/Pt 4 & 5/rtlRouter.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 2/Pt 4 & 5/rtlRouter.v
+L0 9
+R1
+r1
+31
+R2
+R3
+nrtl@router
+!s100 Z13e>aTSG00G5gT60@1`D0
+!s85 0
+!s101 -O0
+vrtlRouterTester
+!s100 P9^4H_VO>Xm8DBnUma^:41
+I>Wcd?JUZVD11nFUF37<Td2
+Vi`DgE[MR>K@hGfD?DMVS91
+R4
+w1272662257
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 2/Pt 4 & 5/rtlRouterTester.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 2/Pt 4 & 5/rtlRouterTester.v
+L0 10
+R1
+r1
+!s85 0
+31
+!s101 -O0
+R2
+R3
+nrtl@router@tester

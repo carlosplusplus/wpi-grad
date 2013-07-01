@@ -1,0 +1,61 @@
+// Carlos Lazo
+// ECE574
+// Test 1
+
+// Part 2: Arithmtic Logic Unit (ALU)
+// Part B: 16-bit ALU using Generate Statements
+
+`timescale 1ns/100ps
+
+module ALU16bit (A, B, S, Ci, R, Co, V, Z);
+
+   // Define a parameter so that the adder can be any size:
+  
+  parameter SIZE = 16;
+  
+  // Define inputs and outputs:
+  
+  input  [SIZE-1:0] A, B;
+  input  [1:0]      S;
+  input             Ci;
+  
+  output [SIZE-1:0] R;
+  output            Co, V, Z; 
+
+  // Variable for moving current Co to the Ci of the next ALU;
+  // only need half as many since each ALU represents 2 bits.
+  
+  
+  wire [(SIZE/2)-1:0] carry;
+  
+  genvar i; // Loop variable.
+  
+  // Generate all instances of the 2bit ALUs, and link them together.
+  
+  generate
+    
+    for (i=0; i < SIZE/2; i=i+1) begin : alus_2bit
+      
+      // If this is the first run, take in the first
+      // Ci value, and begin processing accordingly.
+      
+      if (i == 0)
+        ALU2bit alu (A[1:0], B[1:0], S, Ci, R[1:0], carry[0], V, Z);
+        
+      // If we are at the last index, do the final calculation
+      // and set the final carry out value to Co.
+      
+      else if (i == (SIZE/2)-1)
+        ALU2bit alu (A[(2*i+1):(2*i)], B[(2*i+1):(2*i)], S, carry[i-1], R[(2*i+1):(2*i)], Co, V, Z);
+      
+      // Otherwise, the current cin is the previous cout,
+      // and the current cout is the newly generated cout.
+      
+      else
+        ALU2bit alu (A[(2*i+1):(2*i)], B[(2*i+1):(2*i)], S, carry[i-1], R[(2*i+1):(2*i)], carry[i], V, Z);
+                
+    end
+ 
+  endgenerate
+  
+endmodule 

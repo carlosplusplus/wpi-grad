@@ -1,0 +1,15 @@
+{C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW6/Pt1&2/multTester.v} {1 {vlog -work work -nocovercells {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW6/Pt1&2/multTester.v}
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module multTester
+
+Top level modules:
+	multTester
+
+} {} {}} {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW6/Pt1&2/mult.v} {1 {vlog -work work -nocovercells {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW6/Pt1&2/mult.v}
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module mult
+
+Top level modules:
+	mult
+
+} {} {}}

@@ -1,0 +1,42 @@
+// Carlos Lazo
+// ECE574
+// Homework #3
+
+// Part 1: Full Adder testbench implementation.
+
+`timescale 1ns/100ps
+
+module FullAdderTester;
+  
+  // Declare all inputs as reg and outputs as wire:
+  
+  reg  a = 0, b = 0, cin = 0;
+  
+  // Instantiate a FullAdder:
+  
+  FullAdder UUT (a,b,cin,s,cout);
+  
+  // Create the testbench sequence, showing expected results.
+  
+  initial begin
+    
+    // Start by forcing all inputs to 1 to prove functionality.
+    
+    #25 a   = 1'b1; // --> sum = 1  cout = 0
+    #25 b   = 1'b1; // --> sum = 0, cout = 1
+    #25 cin = 1'b1; // --> sum = 1, cout = 1
+    
+    // Now that all inputs are 1,
+    // change them all to 0, but in a different order.
+     
+    #25 b   = 1'b0; // --> sum = 0, cout = 1
+    #25 cin = 1'b0; // --> sum = 1, cout = 0 
+    #25 a   = 1'b0; // --> sum = 0, cout = 0
+    
+    // End testbench simulation.
+    
+    #25 $finish;
+    
+  end
+  
+endmodule

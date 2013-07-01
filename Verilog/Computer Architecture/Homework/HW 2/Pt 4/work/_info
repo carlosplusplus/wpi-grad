@@ -1,0 +1,56 @@
+m255
+K3
+13
+cModel Technology
+dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 505 - Computer Architecture\Homework\HW 2\Pt 2
+vALU
+IoT2MfGoUgm4IW>`ZjP92]1
+VdfLb8=YB8CI<[ifn[TB;=3
+Z0 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 505 - Computer Architecture\Homework\HW 2\Pt 4
+w1277076486
+Z1 8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 2/Pt 4/ALU8bit.v
+Z2 FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 2/Pt 4/ALU8bit.v
+L0 9
+Z3 OV;L;6.5b;42
+r1
+31
+Z4 o-work work -nocovercells -O0
+n@a@l@u
+Z5 !s102 -nocovercells
+!s100 9@oNbQ;0O]72]bN=WnSKY3
+!s85 0
+!s101 -O0
+vALU8bit
+IeafJRK=R9;`n<<b>_4e082
+Vee00^KImB`5:g>]8YhXgS2
+Z6 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 505 - Computer Architecture\Homework\HW 2\Pt 4
+w1277078368
+R1
+R2
+L0 9
+R3
+r1
+31
+R5
+R4
+n@a@l@u8bit
+!s100 MNaF4U[1?DKI@<e3GlJUB1
+!s85 0
+!s101 -O0
+vALU8bitTester
+!s100 ^g[^HQz7n`Q^;a2Ak?0io1
+IWmge^RBZ]Mi1WbHzCakHE1
+V0OQY^TdaBh22=>l2LaWE<3
+R6
+w1277077642
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 2/Pt 4/ALU8bitTester.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 2/Pt 4/ALU8bitTester.v
+L0 9
+R3
+r1
+!s85 0
+31
+!s101 -O0
+R5
+R4
+n@a@l@u8bit@tester

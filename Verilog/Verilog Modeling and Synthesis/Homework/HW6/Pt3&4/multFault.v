@@ -1,0 +1,130 @@
+// Carlos Lazo
+// ECE574
+// Homework #6
+
+// Part 3: 8-bit 2's Compliment Multiplier
+//         Faulty Model
+
+`timescale 1ns/100ps
+
+module mult (a, b, start, clk, r, done);
+
+  // Define inputs and outputs:
+  
+  input [7:0] a, b;
+  input start, clk;
+  
+  output [15:0] r;
+  output done;
+  
+  // Create a signed, internal wire to perform
+  // the 2's compliment operation. Also create
+  // other necessary internal signals:
+  
+  reg im_done, allow_mult;
+  
+  reg [15:0] im_r;
+  reg [ 7:0] im_a, im_b;
+  
+  reg isNegA, isNegB, isNegR;
+  
+  integer insertError;
+  
+  // Set outputs to initial values: 
+  
+  initial begin
+    
+    im_done    <= 1;
+    allow_mult <= 0;
+    
+    im_a = 0;
+    im_b = 0;
+    
+    isNegA = 0;
+    isNegB = 0;
+    isNegR = 0;
+    
+    insertError = 0;
+    
+  end
+  
+  always @ (posedge clk) begin
+    
+    if (start) begin
+      
+      allow_mult <= 0;
+      im_done    <= 0;
+      
+      isNegA = 0;
+      isNegB = 0;
+      isNegR = 0;
+      
+      // Check to see if a and b are negative values.
+      // If we get a negative value, find it's absolute value
+      // in order to use the multiplication operation correctly.
+      
+      if (a[7] == 1) begin
+        isNegA = 1;
+        im_a   = ~(a - 1);
+      end
+      else
+        im_a   = a;
+        
+      if (b[7] == 1) begin
+        isNegB = 1;
+        im_b   = ~(b - 1);
+      end
+      else
+        im_b   = b;
+      
+      // If only 1 of the values is negative,
+      // then result will be a negative number.
+      
+      if ((isNegA && ~isNegB) || (~isNegA && isNegB)) isNegR = 1;
+        
+      // If we expect a negative result, perform multiplication
+      // of the magnitudes of the inputs, and translate result into
+      // 2's complement. If not, perform mutliplication regulary.
+      
+      if (isNegR)
+        im_r = ~(im_a * im_b) + 1;
+      else
+        im_r = im_a * im_b;
+        
+      // If at the 10th multiplication in a row, force-insert an error.
+      
+      if (insertError == 9)
+        im_r = im_r / 2;
+      
+      // Wait 2 clk pulses to mimic and RTL delay before performing multiplication:
+      
+      @ (posedge clk);
+      @ (posedge clk);
+
+      // Allow for multiplication of 2 inputs:
+      
+      allow_mult <= 1;
+      im_done    <= 1;
+      
+      // Reset insertError if after the 10th multiplication.
+      // If not, simply increment the counter.
+      
+      if (insertError == 9)
+        insertError = 0;
+      else
+        insertError = insertError + 1;
+      
+    end
+    
+  end
+    
+  // Set all variables appropriately.
+      
+  assign done = im_done;
+  
+  // If the number is negative, extend the negative sign bit.
+  // Otherwise 
+  
+  assign r = allow_mult ? im_r : 16'bXXXXXXXXXXXXXXXX;
+
+endmodule

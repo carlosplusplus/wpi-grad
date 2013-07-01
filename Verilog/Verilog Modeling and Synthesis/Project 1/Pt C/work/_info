@@ -1,0 +1,124 @@
+m255
+K3
+13
+cModel Technology
+dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Project\Pt 1\Pt B
+vAC
+II3cMB1FYA3fIm5kf9f<So0
+V71K^SUe>mJCXRTCKOCB9j3
+Z0 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Project 1\Pt C
+w1271618760
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 1/Pt C/AC.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 1/Pt C/AC.v
+L0 10
+Z1 OV;L;6.5b;42
+r1
+31
+Z2 !s102 -nocovercells
+Z3 o-work work -nocovercells -O0
+n@a@c
+!s100 =O[hzbVI83kM<m^>K@5ID3
+!s85 0
+!s101 -O0
+vALU
+IkA]EzLgSGY]?cY=FfR<DO3
+Vf`OA85hO<F73`ndEaR;Mn3
+Z4 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Project 1\Pt C
+w1271632380
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 1/Pt C/ALU.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 1/Pt C/ALU.v
+L0 10
+R1
+r1
+31
+R2
+R3
+n@a@l@u
+!s100 NfRR5KWjJj_6SRX1`U2nE0
+!s85 0
+!s101 -O0
+valuCPU
+I>E8L4zDN[>[Q7483JgC891
+VVoOk>jU;cU1RC=HYP`NmL2
+R4
+w1271641020
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 1/Pt C/aluCPU.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 1/Pt C/aluCPU.v
+L0 10
+R1
+r1
+31
+R2
+R3
+nalu@c@p@u
+!s100 R7^>n:ROo76NU57>5eD@C1
+!s85 0
+!s101 -O0
+valuCPUTester
+IIN1F<HDC9doHeo1=e[Jh82
+Vm3[?zHB7nIj<6bTDUJlG^2
+R4
+w1271645160
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 1/Pt C/aluCPUTester.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 1/Pt C/aluCPUTester.v
+L0 10
+R1
+r1
+31
+R2
+R3
+nalu@c@p@u@tester
+!s100 CVEMH2Ojk[8FUWd5hhjOP1
+!s85 0
+!s101 -O0
+vController
+IkCC?b<kg2CCdW]D50Zz9L0
+VBOA?A2=hlgzHY^ji3iD6E0
+R4
+w1271645400
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 1/Pt C/Controller.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 1/Pt C/Controller.v
+L0 15
+R1
+r1
+31
+R2
+R3
+n@controller
+!s100 =LbPAK2=lUjBzbYYj9ee_2
+!s85 0
+!s101 -O0
+vDataPath
+IPgVT<7UX3:7E;D9]oS1bX2
+V_C?[EWacA2fo_A0b=Qcg83
+R4
+w1271645340
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 1/Pt C/DataPath.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 1/Pt C/DataPath.v
+L0 10
+R1
+r1
+31
+R2
+R3
+n@data@path
+!s100 7SYUG??Df;W<U5>B@ABJZ1
+!s85 0
+!s101 -O0
+vMultiplier
+!s100 UbLKBP]RHefN^JfMXUSNe1
+Ib0U<?`bJeCMgZ>oYETX_O0
+V4j]ak>@`b=i4U`C5hXKc32
+R4
+w1271644800
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 1/Pt C/Multiplier.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 1/Pt C/Multiplier.v
+L0 10
+R1
+r1
+!s85 0
+31
+!s101 -O0
+R2
+R3
+n@multiplier

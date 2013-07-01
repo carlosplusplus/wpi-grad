@@ -1,0 +1,22 @@
+{C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW3/Pt2/FullAdder.v} {1 {vlog -work work -nocovercells {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW3/Pt2/FullAdder.v}
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module FullAdder
+
+Top level modules:
+	FullAdder
+
+} {} {}} {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW3/Pt2/FullAdder4bitTester.v} {1 {vlog -work work -nocovercells {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW3/Pt2/FullAdder4bitTester.v}
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module FullAdder4bitTester
+
+Top level modules:
+	FullAdder4bitTester
+
+} {} {}} {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW3/Pt2/FullAdder4bit.v} {1 {vlog -work work -nocovercells {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW3/Pt2/FullAdder4bit.v}
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module FullAdder4bit
+
+Top level modules:
+	FullAdder4bit
+
+} {} {}}

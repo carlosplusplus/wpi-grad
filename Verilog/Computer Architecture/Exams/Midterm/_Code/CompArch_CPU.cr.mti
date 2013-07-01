@@ -1,0 +1,50 @@
+{C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Exams/Midterm/_Code/BM_Datapath.v} {1 {vlog -work work -nocovercells {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Exams/Midterm/_Code/BM_Datapath.v}
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module BM_Datapath
+
+Top level modules:
+	BM_Datapath
+
+} {} {}} {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Exams/Midterm/_Code/CompArch_CPU_Tester.v} {1 {vlog -work work -nocovercells {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Exams/Midterm/_Code/CompArch_CPU_Tester.v}
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module CompArch_CPU_Tester
+
+Top level modules:
+	CompArch_CPU_Tester
+
+} {} {}} {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Exams/Midterm/_Code/BM_Controller.v} {1 {vlog -work work -nocovercells {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Exams/Midterm/_Code/BM_Controller.v}
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module BM_Controller
+
+Top level modules:
+	BM_Controller
+
+} {} {}} {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Exams/Midterm/_Code/Datapath.v} {1 {vlog -work work -nocovercells {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Exams/Midterm/_Code/Datapath.v}
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module Datapath
+
+Top level modules:
+	Datapath
+
+} {} {}} {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Exams/Midterm/_Code/BoothMultiplier.v} {1 {vlog -work work -nocovercells {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Exams/Midterm/_Code/BoothMultiplier.v}
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module BoothMultiplier
+
+Top level modules:
+	BoothMultiplier
+
+} {} {}} {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Exams/Midterm/_Code/Controller.v} {1 {vlog -work work -nocovercells {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Exams/Midterm/_Code/Controller.v}
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module Controller
+
+Top level modules:
+	Controller
+
+} {} {}} {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Exams/Midterm/_Code/CompArch_CPU.v} {1 {vlog -work work -nocovercells {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Exams/Midterm/_Code/CompArch_CPU.v}
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module CompArch_CPU
+
+Top level modules:
+	CompArch_CPU
+
+} {} {}}

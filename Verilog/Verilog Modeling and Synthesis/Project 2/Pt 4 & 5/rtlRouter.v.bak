@@ -1,0 +1,38 @@
+// Carlos Lazo
+// ECE574
+// Project 2
+
+// rtlRouter Definition
+
+`timescale 1ns/100ps
+
+module rtlRouter(input  [7:0] inData1, inData2, inData3, inData4,
+                 input  clk, rst, request1, request2, request3, request4,
+                 output [7:0] output_port,
+                 output ready1, ready2, ready3, ready4);
+
+  // Nets to store intermediate signals from the DataPorts:
+  
+  wire dp1_on_bus, dp2_on_bus, dp3_on_bus, dp4_on_bus;
+  
+  // Nets used to store all signals from the controller:
+  
+  integer inAddr, outAddr;
+  wire en_out, ld_router, st_router, fw_router;
+  
+  // Instantiate the DataPath:
+  
+  DataPath dp (inData1, inData2, inData3, inData4,
+               dp1_on_bus, dp2_on_bus, dp3_on_bus, dp4_on_bus,
+               clk, st_router, fw_router, inAddr, outAddr, rst,
+               output_port,
+               acknowledged, ready1, ready2, ready3, ready4, received);
+                 
+  // Instantiate the Controller:
+  
+  Controller cu (request1, request2, request3, request4,
+                 clk, rst, acknowledged, received,
+                 dp1_on_bus, dp2_on_bus, dp3_on_bus, dp4_on_bus,
+                 st_router, fw_router, inAddr, outAddr);
+                          
+endmodule

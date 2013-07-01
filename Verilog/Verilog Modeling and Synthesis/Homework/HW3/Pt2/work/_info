@@ -1,0 +1,56 @@
+m255
+K3
+13
+cModel Technology
+dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Homework\HW3\Pt1
+vFullAdder
+IF@64JY20LY?0:MohMLzKf2
+Vg;9>ezg?<CUD]ZShjSl=_1
+Z0 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Homework\HW3\Pt2
+w1266599653
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW3/Pt2/FullAdder.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW3/Pt2/FullAdder.v
+L0 9
+Z1 OV;L;6.5b;42
+r1
+31
+Z2 !s102 -nocovercells
+Z3 o-work work -nocovercells -O0
+n@full@adder
+!s100 [zjl2TC<YFVA;HJc;5kPS3
+!s85 0
+!s101 -O0
+vFullAdder4bit
+I>U<bX@jY[n7e9UoIUU3=b1
+V864_HWUHafDoT7eQMcnid3
+Z4 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Homework\HW3\Pt2
+w1266620909
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW3/Pt2/FullAdder4bit.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW3/Pt2/FullAdder4bit.v
+L0 9
+R1
+r1
+31
+R2
+R3
+n@full@adder4bit
+!s100 Eeo7?KfTWLJgj=VT6MBOA2
+!s85 0
+!s101 -O0
+vFullAdder4bitTester
+!s100 5A9Qojg5KDnJKRlN:44^M2
+IUR7mMWUWV4?>DJ5mz6R?E2
+V:hdRN64D=4^0_97=hikTS3
+R4
+w1266620724
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW3/Pt2/FullAdder4bitTester.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW3/Pt2/FullAdder4bitTester.v
+L0 9
+R1
+r1
+!s85 0
+31
+!s101 -O0
+R2
+R3
+n@full@adder4bit@tester

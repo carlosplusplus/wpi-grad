@@ -1,0 +1,124 @@
+m255
+K3
+13
+cModel Technology
+dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 505 - Computer Architecture\Homework\HW 4\_Code
+vBM_Controller
+IdC`XHGK;9>CI1G>Y=7jZW2
+V07?^4PEdaP:7h13MHRKQF1
+Z0 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 505 - Computer Architecture\Exams\Midterm\_Code
+w1280101538
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Exams/Midterm/_Code/BM_Controller.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Exams/Midterm/_Code/BM_Controller.v
+L0 13
+Z1 OV;L;6.5b;42
+r1
+31
+Z2 !s102 -nocovercells
+Z3 o-work work -nocovercells -O0
+n@b@m_@controller
+!s100 nPA:?1i[BAjmZzkBkQ`ic2
+!s85 0
+!s101 -O0
+vBM_Datapath
+ImDOSkJhQo[e@NM^ZlXBmi0
+VS2R24m[o8[lEU09oXOUKZ3
+Z4 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 505 - Computer Architecture\Exams\Midterm\_Code
+w1280101554
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Exams/Midterm/_Code/BM_Datapath.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Exams/Midterm/_Code/BM_Datapath.v
+L0 9
+R1
+r1
+31
+R2
+R3
+n@b@m_@datapath
+!s100 04Df`Kb=igaILDQVoMoBG2
+!s85 0
+!s101 -O0
+vBoothMultiplier
+I4Xa@S28?SPScH`<EVIVS>2
+VC6TgWoc;b?<?WVgm4=5G]3
+R4
+w1280194144
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Exams/Midterm/_Code/BoothMultiplier.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Exams/Midterm/_Code/BoothMultiplier.v
+L0 9
+R1
+r1
+31
+R2
+R3
+n@booth@multiplier
+!s100 9QQc<<ikMg?`IjFQh0iY22
+!s85 0
+!s101 -O0
+vCompArch_CPU
+IYD]h[ih9eSLUKA><`FQch0
+V;_i01J9h3CL@aUjh=U44Z1
+R4
+w1280192933
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Exams/Midterm/_Code/CompArch_CPU.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Exams/Midterm/_Code/CompArch_CPU.v
+L0 9
+R1
+r1
+31
+R2
+R3
+n@comp@arch_@c@p@u
+!s100 _gdI<^3iI5545LkjYc=W32
+!s85 0
+!s101 -O0
+vCompArch_CPU_Tester
+!s100 HEz2RlbLnbb6c=TS9SD@N2
+I:@4kd=>OdA=UAz>cP<_5c3
+V5HgSaXN^klzMDWeWE1FDV3
+R4
+w1280253492
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Exams/Midterm/_Code/CompArch_CPU_Tester.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Exams/Midterm/_Code/CompArch_CPU_Tester.v
+L0 9
+R1
+r1
+!s85 0
+31
+!s101 -O0
+R2
+R3
+n@comp@arch_@c@p@u_@tester
+vController
+I2i65ZE`lVMzEWP46XogQD0
+VRB<mN^WUE77IY_ikbR90d1
+R4
+w1280233743
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Exams/Midterm/_Code/Controller.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Exams/Midterm/_Code/Controller.v
+L0 14
+R1
+r1
+31
+R2
+R3
+n@controller
+!s100 Z@RAgOCC]_XH1McfS>8L42
+!s85 0
+!s101 -O0
+vDatapath
+I8AMkZ>A4K@Ued?_;BXS8Z2
+VMccOZ>IDj=H22YRLiz0]Y3
+R4
+w1280194190
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Exams/Midterm/_Code/Datapath.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Exams/Midterm/_Code/Datapath.v
+L0 9
+R1
+r1
+31
+R2
+R3
+n@datapath
+!s100 01GKK:ofnJTj_HUNV1VUb3
+!s85 0
+!s101 -O0

@@ -1,0 +1,15 @@
+{C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW2/Pt1/HW2Pt1.vo} {1 {vlog -work work -nocovercells {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW2/Pt1/HW2Pt1.vo}
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module HW2Pt1PS
+
+Top level modules:
+	HW2Pt1PS
+
+} {} {}} {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW2/Pt1/HW2Pt1.v} {1 {vlog -work work -nocovercells {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW2/Pt1/HW2Pt1Tester.v}
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module HW2Pt1Tester
+
+Top level modules:
+	HW2Pt1Tester
+
+} {} {}}

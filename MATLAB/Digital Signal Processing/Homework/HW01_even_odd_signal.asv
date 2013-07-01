@@ -1,0 +1,8 @@
+function [x_e x_o] = HW01_even_odd_signal (x)
+
+xk     = x
+x_negk = fliplr(x)
+
+x_e = 1/2 * (xk + x_negk));
+x_o = 1/2 *(x - (-x));
+    

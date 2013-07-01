@@ -1,0 +1,163 @@
+// Carlos Lazo
+// ECE574
+// Homework #2
+
+// This is the module that will be used to write the
+// tasks for Homework #2 Part 3.
+
+module TextIO();
+  
+  
+  // Define memory array that can account for ALL possible
+  // locations for a 4'H memory location.
+  
+  reg [7:0] myMem [0:65535];
+  
+  reg [8*11:1]  in_File;
+  reg [8*12:1] out_File;
+  
+  integer oper;
+  
+  // in_File will only contain TEN entries, for this exercise.
+  
+  initial begin
+    in_File  =  "myInput.txt";
+    out_File = "myOutput.txt";
+    oper     = 0;
+  end
+  
+  /* Define the FIRST task, init_mem. */
+  
+  task init_mem;
+  
+    // Set input variables.
+    
+    input [7:0] passMem [0:65535];
+    input [8*11:1] read_File;
+    
+    // Create local memory which will aid in placing the input
+    // received from our modeled input file, which is hardcoded
+    // to have a total of 10 different memory locations and values.
+    // This means we will need 20 values for testing.
+    
+    reg [15:0] localMem [0:19];
+    
+    // Define a counter variable for looping.
+    
+    reg [15:0] addr;
+    reg  [7:0] value;
+    integer i;    
+    
+    begin
+      
+      // Begin by reading out memory contents.
+      
+      $readmemh (read_File, localMem);
+      
+      // Use the 1st part to find the location in the current memory
+      // where you need to place the data, and the next location in
+      // the array to set the actual data.
+      
+      for (i = 0; i < 10; i = i + 1)
+      
+        addr  = localMem[2*i];          // Take all 16 bits (4'H)
+        value = localMem[2*i + 1][7:0]; // Take only last 8 bits (2'H)
+        
+        passMem[addr] = value;
+        
+    end
+    
+  endtask
+  
+  /* Define the SECOND task, init_mem. */
+
+  task dump_mem;
+  
+    // Set input variables.
+    
+    input [7:0] passMem [0:65535];
+    input [8*12:1] write_File;
+    
+    integer i, outfile;
+    
+    begin
+    
+    // Assume that passMem is populated with all necessary
+    // data according to its definition and size.
+    
+      outfile = $fopen(write_File, "w");
+
+      for (i = 0; i < 65536; i = i + 1)
+        $fdisplayh(outfile, passMem[i]);
+
+      $fflush(outfile);
+      $fclose(outfile);
+      
+    end    
+      
+  endtask  
+  
+  /* Define the THIRD task, oper_mem.
+     This is a hybrid of tasks 1 & 2. */
+  
+  task oper_mem;
+  
+    // Set input variables.
+    
+    input [7:0] passMem [0:65535];
+    input [8*11:1] read_File;
+    input [8*12:1] write_File;
+    
+    // Define a counter variable for looping, and
+    // define all other possibly needed variables.
+  
+    integer i;
+  
+      // Needed if oper == 1
+        
+    reg [15:0] localMem [0:19];
+    reg [15:0] addr;
+    reg  [7:0] value;
+    
+      // Needed if oper == 0
+    
+    integer outfile;
+    
+    begin
+      
+      if (oper) begin
+      
+        // Begin by reading out memory contents.
+      
+        $readmemh (read_File, localMem);
+      
+        // Use the 1st part to find the location in the current memory
+        // where you need to place the data, and the next location in
+        // the array to set the actual data.
+      
+        for (i = 0; i < 10; i = i + 1)
+      
+          addr  = localMem[2*i];          // Take all 16 bits (4'H)
+          value = localMem[2*i + 1][7:0]; // Take only last 8 bits (2'H)
+        
+          passMem[addr] = value;
+          
+      end else begin
+        
+        // Assume that passMem is populated with all necessary
+        // data according to its definition and size.
+    
+        outfile = $fopen(write_File, "w");
+
+        for (i = 0; i < 65536; i = i + 1)
+          $fdisplayh(outfile, passMem[i]);
+
+        $fflush(outfile);
+        $fclose(outfile);
+      
+      end
+    end
+  endtask
+  
+  
+endmodule

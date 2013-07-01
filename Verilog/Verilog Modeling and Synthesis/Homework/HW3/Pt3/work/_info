@@ -1,0 +1,73 @@
+m255
+K3
+13
+cModel Technology
+dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Homework\HW3\Pt2
+vFullAdder
+IF@64JY20LY?0:MohMLzKf2
+Vg;9>ezg?<CUD]ZShjSl=_1
+Z0 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Homework\HW3\Pt3
+w1266599653
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW3/Pt3/FullAdder.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW3/Pt3/FullAdder.v
+L0 9
+Z1 OV;L;6.5b;42
+r1
+31
+Z2 !s102 -nocovercells
+Z3 o-work work -nocovercells -O0
+n@full@adder
+!s100 [zjl2TC<YFVA;HJc;5kPS3
+!s85 0
+!s101 -O0
+vFullAdder4bit
+I>U<bX@jY[n7e9UoIUU3=b1
+V864_HWUHafDoT7eQMcnid3
+Z4 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Homework\HW3\Pt3
+w1266620909
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW3/Pt3/FullAdder4bit.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW3/Pt3/FullAdder4bit.v
+L0 9
+R1
+r1
+31
+R2
+R3
+n@full@adder4bit
+!s100 Eeo7?KfTWLJgj=VT6MBOA2
+!s85 0
+!s101 -O0
+vFullAdder4bit_Pt3
+I;JcTKa?Mi:R[b`7e5OY=E2
+V;;l]PW;hH1BCSRJH8W26A3
+R4
+w1266689610
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW3/Pt3/FullAdder4bit_Pt3.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW3/Pt3/FullAdder4bit_Pt3.v
+L0 10
+R1
+r1
+31
+R2
+R3
+n@full@adder4bit_@pt3
+!s100 CF9=ASKU7DR=Vg<zo[=^K0
+!s85 0
+!s101 -O0
+vFullAdder4bit_Pt3Tester
+!s100 ;<`CAM]RREI>4HH9]XXM:1
+ICOo_U<A[S@<4T]=kL<GOi1
+VNN32XZJWPOET5?lcc9aGR1
+R4
+w1266689292
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW3/Pt3/FullAdder4bit_Pt3Tester.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW3/Pt3/FullAdder4bit_Pt3Tester.v
+L0 11
+R1
+r1
+!s85 0
+31
+!s101 -O0
+R2
+R3
+n@full@adder4bit_@pt3@tester

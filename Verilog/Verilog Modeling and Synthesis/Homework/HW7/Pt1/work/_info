@@ -1,0 +1,39 @@
+m255
+K3
+13
+cModel Technology
+dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Homework\HW6\Pt3&4
+vtransistorCircuit
+Im0KIXf[L2VS9>G6WH2RZW3
+V4nHNAGV@al6W62eRb]@Ll2
+Z0 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Homework\HW7\Pt1
+w1270347357
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW7/Pt1/transistorCircuit.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW7/Pt1/transistorCircuit.v
+L0 9
+Z1 OV;L;6.5b;42
+r1
+31
+Z2 !s102 -nocovercells
+Z3 o-work work -nocovercells -O0
+ntransistor@circuit
+!s100 bZ?;NTgz7DdE7D3aen3Kf3
+!s85 0
+!s101 -O0
+vtransistorCircuitTestbench
+!s100 4^>BEWhiC^1e7E`zBYIbi1
+Igd9T@m:Mgo]0VmW4a04YP3
+VmbMH_Ed@E2dhF1aDICSEG0
+Z4 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Homework\HW7\Pt1
+w1270343107
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW7/Pt1/transistorCircuitTester.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW7/Pt1/transistorCircuitTester.v
+L0 10
+R1
+r1
+!s85 0
+31
+!s101 -O0
+R2
+R3
+ntransistor@circuit@testbench

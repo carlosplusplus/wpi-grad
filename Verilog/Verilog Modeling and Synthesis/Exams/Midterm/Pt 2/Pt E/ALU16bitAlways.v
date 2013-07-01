@@ -1,0 +1,104 @@
+// Carlos Lazo
+// ECE574
+// Test 1
+
+// Part 2: Arithmtic Logic Unit (ALU)
+// Part E: 16-bit ALU using Always Statement, Back-Annotated
+
+`timescale 1ns/100ps
+
+module ALU16bitAlways (A, B, S, Ci, R, Co, V, Z);
+
+   // Define a parameter so that the adder can be any size:
+  
+  parameter SIZE = 16;
+  
+  // Define inputs and outputs:
+  
+  input  [SIZE-1:0] A, B;
+  input  [1:0]      S;
+  input             Ci;
+  
+  output reg [SIZE-1:0] R;
+  output reg            Co, V, Z;
+  
+  // Use an always statement to detect changes in either:
+  // Ain or Bin (inputs), S (mode of ALU), or Ci (carry-in)
+  
+  always @(A, B, S, Ci) begin
+    
+    // In order to prevent values from being saved,
+    // reset all internal and output variables:
+    
+    R = 0; Co = 0; V = 0; Z = 0;
+    
+    case (S)
+    
+      // When S = 00, perform an ADD operation:
+    
+     0: begin
+      
+        {Co, R} = A + B + Ci;
+      
+        // Compute V, the overflow flag:
+      
+       V = (A[SIZE-1] == B[SIZE-1]) && (A[SIZE-1] != R[SIZE-1]);
+      
+       // Compute Z, the zero flag:
+      
+       Z = (R == 16'b0);
+      
+        end
+    
+      // When S = 01, perform the XOR operation:
+      
+      1: begin
+      
+        R = A ^ B;
+      
+        // Compute Z, the zero flag:
+      
+        Z = (R == 16'b0);
+      
+      end
+    
+      // When SS = 10, perform the AND operation:
+    
+      2: begin
+      
+        R = A & B;
+      
+        // Compute Z, the zero flag:
+      
+        Z = (R == 16'b0);
+      
+      end
+    
+      // When S = 11, perform the Transparent operation:
+    
+      3: begin
+        
+        R = A;
+    
+        // Compute Z, the zero flag:
+    
+        Z = (R == 16'b0);
+      
+      end
+      
+      // Set default values just in-case:
+    
+      default: begin
+      
+        R  = 16'bX;
+        Co = 1'b0;
+        V  = 1'b0;
+        Z  = 1'b0;
+      
+      end
+    
+    endcase
+    
+  end
+  
+endmodule

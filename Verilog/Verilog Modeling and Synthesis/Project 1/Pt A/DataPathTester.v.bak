@@ -1,0 +1,66 @@
+// Carlos Lazo
+// ECE574
+// Project Part 1
+
+// Part A: DataPath Design
+// DataPath Testbench
+
+`timescale 1ns/100ps
+
+module DataPathTester;
+  
+  reg [15:0]  DataInput;
+  reg Reset_AC, ShiftRight_AC, Add_Input_AC, Increment_AC;
+  reg Swaprightleft_AC, Complement_AC, Multiply_AC;
+  reg alu_on_bus, clk, ld_AC;
+  
+  wire [15:0] DataOutput;
+  
+  DataPath dp (DataInput, Reset_AC, ShiftRight_AC, Add_Input_AC, Increment_AC,
+               Swaprightleft_AC, Complement_AC, Multiply_AC, alu_on_bus, clk, ld_AC,
+               DataOutput);
+               
+  initial begin
+    DataInput = 0; Reset_AC = 0; ShiftRight_AC = 0; Add_Input_AC = 0;
+    Increment_AC = 0; Swaprightleft_AC = 0; Complement_AC = 0; Multiply_AC = 0;
+    alu_on_bus = 0; clk = 0; ld_AC = 1;
+    
+  end
+  
+  initial repeat (18) #25 clk = ~clk;
+  
+  initial begin
+    
+    alu_on_bus <= #0  1;
+    
+    Reset_AC   <= #0  1;
+    
+    Reset_AC      <= #50 0;
+    Increment_AC  <= #50 1; 
+    
+    Increment_AC     <= #100 0;
+    Swaprightleft_AC <= #100 1;
+    
+    Swaprightleft_AC <= #150 0;
+    ShiftRight_AC    <= #150 1;
+    
+    ShiftRight_AC    <= #200 0;
+    DataInput        <= #200 16'b1111000000001111;
+    Add_Input_AC     <= #200 1;
+    
+    Add_Input_AC     <= #250 0;
+    Complement_AC    <= #250 1;
+
+    Complement_AC    <= #300 0;
+    DataInput        <= #300 16'b0000001000000000;
+    Multiply_AC      <= #300 1;
+    
+    ld_AC            <= #324 0;
+    ld_AC            <= #326 1;    
+
+    alu_on_bus       <= #350 0;
+    Multiply_AC      <= #350 0;
+    
+    
+  end       
+endmodule

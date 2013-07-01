@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sun Mar 21 22:17:43 2010
+Quartus II Version : 9.1 Build 222 10/21/2009 SJ Web Edition
+Revision Name : MaxValStaticRAM
+Top-level Entity Name : MaxValStaticRAM
+Family : Cyclone II
+Device : EP2C35F672C6
+Timing Models : Final
+Total logic elements : 64 / 33,216 ( < 1 % )
+    Total combinational functions : 64 / 33,216 ( < 1 % )
+    Dedicated logic registers : 28 / 33,216 ( < 1 % )
+Total registers : 28
+Total pins : 39 / 475 ( 8 % )
+Total virtual pins : 0
+Total memory bits : 8,192 / 483,840 ( 2 % )
+Embedded Multiplier 9-bit elements : 0 / 70 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

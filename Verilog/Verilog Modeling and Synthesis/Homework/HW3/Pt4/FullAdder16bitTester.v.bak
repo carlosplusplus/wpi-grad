@@ -1,0 +1,113 @@
+// Carlos Lazo
+// ECE574
+// Homework #3
+
+// Part 4: Full Adder, 16 bit testbench implementation.
+
+`timescale 1ns/100ps
+
+module FullAdder16bitTester;
+  
+  // Define a parameter so that the adder can be any size:
+  
+  parameter SIZE = 16;
+   
+  // Declare all inputs as reg and outputs as wire:
+  
+  reg  [SIZE-1:0] a, b;
+  reg  cin;
+  
+  wire [SIZE-1:0] s;
+  wire cout;
+  
+  // Instantiate a FullAdder4bit:
+  
+  FullAdder16bit UUT (a,b,cin,s,cout);
+    
+  // Define a parameter to choose the appropriate simulation:
+  
+  parameter SIM_CHOICE = 4;
+  
+  // Create the testbench sequences:
+  
+  initial begin
+    
+    // Simulation #1:
+    
+    // Add the values:
+    // a = 0000000011111111 and b = 1111111100000000 with cin = 0:
+    // Result should be s = 1111111111111111, cout = 0.
+    
+    if (SIM_CHOICE == 1) begin
+      
+      a   <= 16'b0000000011111111;      
+      b   <= 16'b1111111100000000;
+      cin <= 0;
+      
+      // End testbench simulation.
+      
+      #150;
+      
+    end 
+
+    // Simulation #2:
+    
+    // Add the values:
+    // a = 0111111111111111 and b = 0000000000000000 with cin = 1:
+    // Result should be s = 1111111111111111, cout = 0.
+      
+    else if (SIM_CHOICE == 2) begin
+      
+      a   <= 16'b0111111111111111;
+      b   <= 16'b0000000000000000;
+      cin <= 1;
+    
+      // End testbench simulation.
+      
+      #150;
+      
+    end
+         
+    // Simulation #3:
+    
+    // Add the values:
+    // a = 1111111111111111 and b = 1111111111111111 with cin = 0:
+    // Result should be s = 1111111111111110, cout = 1.
+    
+    else if (SIM_CHOICE == 3) begin
+      
+      a   <= 16'b1111111111111111;
+      b   <= 16'b1111111111111111;
+      cin <= 0;
+      
+      // End testbench simulation.
+      
+      #150;
+      
+    end
+    
+    // Simulation #4:
+    
+    // Add the values:
+    // a = 0000000011111111 and b = 1111111100000000 with cin = 1:
+    //Result should be s = 0000000000000000, cout = 1.
+    
+    else if (SIM_CHOICE == 4) begin
+      
+      a   <= 16'0000000011111111;      
+      b   <= 16'1111111100000000;
+      cin <= 1;
+      
+      // End testbench simulation.
+      
+      #150;
+      
+    end  
+    
+    else begin
+      $display ("An invalid number was chosen for SIM_CHOICE.");      
+    end
+    
+  end
+    
+endmodule

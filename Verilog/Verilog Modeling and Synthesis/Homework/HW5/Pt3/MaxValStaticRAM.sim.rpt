@@ -1,0 +1,387 @@
+Simulator report for MaxValStaticRAM
+Sun Mar 21 21:18:23 2010
+Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. |MaxValStaticRAM|lpm_ram_dp0:inst|altsyncram:altsyncram_component|altsyncram_e3v1:auto_generated|ALTSYNCRAM
+  6. Coverage Summary
+  7. Complete 1/0-Value Coverage
+  8. Missing 1-Value Coverage
+  9. Missing 0-Value Coverage
+ 10. Simulator INI Usage
+ 11. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 134 nodes    ;
+; Simulation Coverage         ;      52.23 % ;
+; Total Number of Transitions ; 3959         ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
+; Device                      ; EP2C35F672C6 ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Timing     ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++-------------------------------------------------------------------------------------------------------------+
+; |MaxValStaticRAM|lpm_ram_dp0:inst|altsyncram:altsyncram_component|altsyncram_e3v1:auto_generated|ALTSYNCRAM ;
++-------------------------------------------------------------------------------------------------------------+
+Please refer to fitter text-based report (*.fit.rpt) to view logical memory report content in ASCII.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      52.23 % ;
+; Total nodes checked                                 ; 134          ;
+; Total output ports checked                          ; 157          ;
+; Total output ports with complete 1/0-value coverage ; 82           ;
+; Total output ports with no 1/0-value coverage       ; 60           ;
+; Total output ports with no 1-value coverage         ; 63           ;
+; Total output ports with no 0-value coverage         ; 72           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                                                                                                                                                ;
++---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+------------------+
+; Node Name                                                                                                     ; Output Port Name                                                                                        ; Output Port Type ;
++---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+------------------+
+; |MaxValStaticRAM|lpm_ram_dp0:inst|altsyncram:altsyncram_component|altsyncram_e3v1:auto_generated|ram_block1a4 ; |MaxValStaticRAM|lpm_ram_dp0:inst|altsyncram:altsyncram_component|altsyncram_e3v1:auto_generated|q_b[4] ; portbdataout0    ;
+; |MaxValStaticRAM|lpm_ram_dp0:inst|altsyncram:altsyncram_component|altsyncram_e3v1:auto_generated|ram_block1a4 ; |MaxValStaticRAM|lpm_ram_dp0:inst|altsyncram:altsyncram_component|altsyncram_e3v1:auto_generated|q_b[5] ; portbdataout1    ;
+; |MaxValStaticRAM|lpm_ram_dp0:inst|altsyncram:altsyncram_component|altsyncram_e3v1:auto_generated|ram_block1a0 ; |MaxValStaticRAM|lpm_ram_dp0:inst|altsyncram:altsyncram_component|altsyncram_e3v1:auto_generated|q_b[0] ; portbdataout0    ;
+; |MaxValStaticRAM|lpm_ram_dp0:inst|altsyncram:altsyncram_component|altsyncram_e3v1:auto_generated|ram_block1a0 ; |MaxValStaticRAM|lpm_ram_dp0:inst|altsyncram:altsyncram_component|altsyncram_e3v1:auto_generated|q_b[1] ; portbdataout1    ;
+; |MaxValStaticRAM|lpm_ram_dp0:inst|altsyncram:altsyncram_component|altsyncram_e3v1:auto_generated|ram_block1a0 ; |MaxValStaticRAM|lpm_ram_dp0:inst|altsyncram:altsyncram_component|altsyncram_e3v1:auto_generated|q_b[2] ; portbdataout2    ;
+; |MaxValStaticRAM|lpm_ram_dp0:inst|altsyncram:altsyncram_component|altsyncram_e3v1:auto_generated|ram_block1a0 ; |MaxValStaticRAM|lpm_ram_dp0:inst|altsyncram:altsyncram_component|altsyncram_e3v1:auto_generated|q_b[3] ; portbdataout3    ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[0]                                                                 ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[0]                                                           ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[1]                                                                 ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[1]                                                           ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[2]                                                                 ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[2]                                                           ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[3]                                                                 ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[3]                                                           ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[4]                                                                 ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[4]                                                           ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[5]                                                                 ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[5]                                                           ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|out[0]~8                                                                   ; |MaxValStaticRAM|maxMemValue:inst2|out[0]~8                                                             ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|out[0]~8                                                                   ; |MaxValStaticRAM|maxMemValue:inst2|out[0]~9                                                             ; cout             ;
+; |MaxValStaticRAM|maxMemValue:inst2|out[1]~10                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|out[1]~10                                                            ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|out[1]~10                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|out[1]~11                                                            ; cout             ;
+; |MaxValStaticRAM|maxMemValue:inst2|out[2]~12                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|out[2]~12                                                            ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|out[2]~12                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|out[2]~13                                                            ; cout             ;
+; |MaxValStaticRAM|maxMemValue:inst2|out[3]~14                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|out[3]~14                                                            ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|out[3]~14                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|out[3]~15                                                            ; cout             ;
+; |MaxValStaticRAM|maxMemValue:inst2|out[4]~16                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|out[4]~16                                                            ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|out[4]~16                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|out[4]~17                                                            ; cout             ;
+; |MaxValStaticRAM|maxMemValue:inst2|out[5]~18                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|out[5]~19                                                            ; cout             ;
+; |MaxValStaticRAM|maxMemValue:inst2|out[6]~20                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|out[6]~21                                                            ; cout             ;
+; |MaxValStaticRAM|maxMemValue:inst2|out[7]~22                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|out[7]~23                                                            ; cout             ;
+; |MaxValStaticRAM|maxMemValue:inst2|LessThan0~0                                                                ; |MaxValStaticRAM|maxMemValue:inst2|LessThan0~0                                                          ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[0]~10                                                              ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[0]~10                                                        ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[0]~10                                                              ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[0]~11                                                        ; cout             ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[1]~12                                                              ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[1]~12                                                        ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[1]~12                                                              ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[1]~13                                                        ; cout             ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[2]~14                                                              ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[2]~14                                                        ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[2]~14                                                              ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[2]~15                                                        ; cout             ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[3]~16                                                              ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[3]~16                                                        ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[3]~16                                                              ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[3]~17                                                        ; cout             ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[4]~18                                                              ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[4]~18                                                        ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[4]~18                                                              ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[4]~19                                                        ; cout             ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[5]~20                                                              ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[5]~20                                                        ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[5]~20                                                              ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[5]~21                                                        ; cout             ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[6]~22                                                              ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[6]~22                                                        ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[6]~22                                                              ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[6]~23                                                        ; cout             ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[7]~24                                                              ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[7]~24                                                        ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|LessThan1~1                                                                ; |MaxValStaticRAM|maxMemValue:inst2|LessThan1~1                                                          ; cout             ;
+; |MaxValStaticRAM|maxMemValue:inst2|LessThan1~3                                                                ; |MaxValStaticRAM|maxMemValue:inst2|LessThan1~3                                                          ; cout             ;
+; |MaxValStaticRAM|maxMemValue:inst2|LessThan1~5                                                                ; |MaxValStaticRAM|maxMemValue:inst2|LessThan1~5                                                          ; cout             ;
+; |MaxValStaticRAM|maxMemValue:inst2|LessThan1~7                                                                ; |MaxValStaticRAM|maxMemValue:inst2|LessThan1~7                                                          ; cout             ;
+; |MaxValStaticRAM|maxMemValue:inst2|LessThan1~9                                                                ; |MaxValStaticRAM|maxMemValue:inst2|LessThan1~9                                                          ; cout             ;
+; |MaxValStaticRAM|maxMemValue:inst2|LessThan1~11                                                               ; |MaxValStaticRAM|maxMemValue:inst2|LessThan1~11                                                         ; cout             ;
+; |MaxValStaticRAM|maxMemValue:inst2|LessThan1~13                                                               ; |MaxValStaticRAM|maxMemValue:inst2|LessThan1~13                                                         ; cout             ;
+; |MaxValStaticRAM|maxMemValue:inst2|LessThan1~14                                                               ; |MaxValStaticRAM|maxMemValue:inst2|LessThan1~14                                                         ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|Equal0~0                                                                   ; |MaxValStaticRAM|maxMemValue:inst2|Equal0~0                                                             ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|maxVal[4]                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|maxVal[4]                                                            ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|maxVal[3]                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|maxVal[3]                                                            ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|maxVal[2]                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|maxVal[2]                                                            ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|maxVal[1]                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|maxVal[1]                                                            ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|maxVal[0]                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|maxVal[0]                                                            ; regout           ;
+; |MaxValStaticRAM|busmux:inst4|lpm_mux:$00000|mux_5oc:auto_generated|result_node[0]~0                          ; |MaxValStaticRAM|busmux:inst4|lpm_mux:$00000|mux_5oc:auto_generated|result_node[0]~0                    ; combout          ;
+; |MaxValStaticRAM|busmux:inst4|lpm_mux:$00000|mux_5oc:auto_generated|result_node[1]~1                          ; |MaxValStaticRAM|busmux:inst4|lpm_mux:$00000|mux_5oc:auto_generated|result_node[1]~1                    ; combout          ;
+; |MaxValStaticRAM|busmux:inst4|lpm_mux:$00000|mux_5oc:auto_generated|result_node[2]~2                          ; |MaxValStaticRAM|busmux:inst4|lpm_mux:$00000|mux_5oc:auto_generated|result_node[2]~2                    ; combout          ;
+; |MaxValStaticRAM|busmux:inst4|lpm_mux:$00000|mux_5oc:auto_generated|result_node[3]~3                          ; |MaxValStaticRAM|busmux:inst4|lpm_mux:$00000|mux_5oc:auto_generated|result_node[3]~3                    ; combout          ;
+; |MaxValStaticRAM|busmux:inst4|lpm_mux:$00000|mux_5oc:auto_generated|result_node[4]~4                          ; |MaxValStaticRAM|busmux:inst4|lpm_mux:$00000|mux_5oc:auto_generated|result_node[4]~4                    ; combout          ;
+; |MaxValStaticRAM|busmux:inst4|lpm_mux:$00000|mux_5oc:auto_generated|result_node[5]~5                          ; |MaxValStaticRAM|busmux:inst4|lpm_mux:$00000|mux_5oc:auto_generated|result_node[5]~5                    ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|maxVal~4                                                                   ; |MaxValStaticRAM|maxMemValue:inst2|maxVal~4                                                             ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|maxVal~5                                                                   ; |MaxValStaticRAM|maxMemValue:inst2|maxVal~5                                                             ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|maxVal~6                                                                   ; |MaxValStaticRAM|maxMemValue:inst2|maxVal~6                                                             ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|maxVal~7                                                                   ; |MaxValStaticRAM|maxMemValue:inst2|maxVal~7                                                             ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|maxVal~8                                                                   ; |MaxValStaticRAM|maxMemValue:inst2|maxVal~8                                                             ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|maxVal~10                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|maxVal~10                                                            ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|maxVal~12                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|maxVal~12                                                            ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|maxVal~13                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|maxVal~13                                                            ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|maxVal~14                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|maxVal~14                                                            ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|maxVal~15                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|maxVal~15                                                            ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|maxVal~16                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|maxVal~16                                                            ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|maxVal~17                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|maxVal~17                                                            ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|maxVal~18                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|maxVal~18                                                            ; combout          ;
+; |MaxValStaticRAM|readOut[5]                                                                                   ; |MaxValStaticRAM|readOut[5]                                                                             ; padio            ;
+; |MaxValStaticRAM|readOut[4]                                                                                   ; |MaxValStaticRAM|readOut[4]                                                                             ; padio            ;
+; |MaxValStaticRAM|readOut[3]                                                                                   ; |MaxValStaticRAM|readOut[3]                                                                             ; padio            ;
+; |MaxValStaticRAM|readOut[2]                                                                                   ; |MaxValStaticRAM|readOut[2]                                                                             ; padio            ;
+; |MaxValStaticRAM|readOut[1]                                                                                   ; |MaxValStaticRAM|readOut[1]                                                                             ; padio            ;
+; |MaxValStaticRAM|readOut[0]                                                                                   ; |MaxValStaticRAM|readOut[0]                                                                             ; padio            ;
+; |MaxValStaticRAM|clk                                                                                          ; |MaxValStaticRAM|clk~corein                                                                             ; combout          ;
+; |MaxValStaticRAM|clk~clkctrl                                                                                  ; |MaxValStaticRAM|clk~clkctrl                                                                            ; outclk           ;
++---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                                                                                                                                                   ;
++---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+------------------+
+; Node Name                                                                                                     ; Output Port Name                                                                                        ; Output Port Type ;
++---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+------------------+
+; |MaxValStaticRAM|maxMemValue:inst2|out[7]                                                                     ; |MaxValStaticRAM|maxMemValue:inst2|out[7]                                                               ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|out[6]                                                                     ; |MaxValStaticRAM|maxMemValue:inst2|out[6]                                                               ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|out[5]                                                                     ; |MaxValStaticRAM|maxMemValue:inst2|out[5]                                                               ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|out[4]                                                                     ; |MaxValStaticRAM|maxMemValue:inst2|out[4]                                                               ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|out[3]                                                                     ; |MaxValStaticRAM|maxMemValue:inst2|out[3]                                                               ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|out[2]                                                                     ; |MaxValStaticRAM|maxMemValue:inst2|out[2]                                                               ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|out[1]                                                                     ; |MaxValStaticRAM|maxMemValue:inst2|out[1]                                                               ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|out[0]                                                                     ; |MaxValStaticRAM|maxMemValue:inst2|out[0]                                                               ; regout           ;
+; |MaxValStaticRAM|lpm_ram_dp0:inst|altsyncram:altsyncram_component|altsyncram_e3v1:auto_generated|ram_block1a4 ; |MaxValStaticRAM|lpm_ram_dp0:inst|altsyncram:altsyncram_component|altsyncram_e3v1:auto_generated|q_b[7] ; portbdataout3    ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[7]                                                                 ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[7]                                                           ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[8]                                                                 ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[8]                                                           ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[9]                                                                 ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[9]                                                           ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|out[6]~20                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|out[6]~20                                                            ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|out[7]~22                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|out[7]~22                                                            ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[7]~24                                                              ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[7]~25                                                        ; cout             ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[8]~26                                                              ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[8]~26                                                        ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[8]~26                                                              ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[8]~27                                                        ; cout             ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[9]~28                                                              ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[9]~28                                                        ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|Equal0~1                                                                   ; |MaxValStaticRAM|maxMemValue:inst2|Equal0~1                                                             ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|Equal0~2                                                                   ; |MaxValStaticRAM|maxMemValue:inst2|Equal0~2                                                             ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|ready~0                                                                    ; |MaxValStaticRAM|maxMemValue:inst2|ready~0                                                              ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|maxVal[7]                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|maxVal[7]                                                            ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|maxVal[6]                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|maxVal[6]                                                            ; regout           ;
+; |MaxValStaticRAM|busmux:inst4|lpm_mux:$00000|mux_5oc:auto_generated|result_node[7]~7                          ; |MaxValStaticRAM|busmux:inst4|lpm_mux:$00000|mux_5oc:auto_generated|result_node[7]~7                    ; combout          ;
+; |MaxValStaticRAM|busmux:inst4|lpm_mux:$00000|mux_5oc:auto_generated|result_node[8]~8                          ; |MaxValStaticRAM|busmux:inst4|lpm_mux:$00000|mux_5oc:auto_generated|result_node[8]~8                    ; combout          ;
+; |MaxValStaticRAM|busmux:inst4|lpm_mux:$00000|mux_5oc:auto_generated|result_node[9]~9                          ; |MaxValStaticRAM|busmux:inst4|lpm_mux:$00000|mux_5oc:auto_generated|result_node[9]~9                    ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|EN~0                                                                       ; |MaxValStaticRAM|maxMemValue:inst2|EN~0                                                                 ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|always0~0                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|always0~0                                                            ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|maxVal~0                                                                   ; |MaxValStaticRAM|maxMemValue:inst2|maxVal~0                                                             ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|maxVal~1                                                                   ; |MaxValStaticRAM|maxMemValue:inst2|maxVal~1                                                             ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|maxVal~2                                                                   ; |MaxValStaticRAM|maxMemValue:inst2|maxVal~2                                                             ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|maxVal~9                                                                   ; |MaxValStaticRAM|maxMemValue:inst2|maxVal~9                                                             ; combout          ;
+; |MaxValStaticRAM|rdy                                                                                          ; |MaxValStaticRAM|rdy                                                                                    ; padio            ;
+; |MaxValStaticRAM|maxValue[7]                                                                                  ; |MaxValStaticRAM|maxValue[7]                                                                            ; padio            ;
+; |MaxValStaticRAM|maxValue[6]                                                                                  ; |MaxValStaticRAM|maxValue[6]                                                                            ; padio            ;
+; |MaxValStaticRAM|maxValue[5]                                                                                  ; |MaxValStaticRAM|maxValue[5]                                                                            ; padio            ;
+; |MaxValStaticRAM|maxValue[4]                                                                                  ; |MaxValStaticRAM|maxValue[4]                                                                            ; padio            ;
+; |MaxValStaticRAM|maxValue[3]                                                                                  ; |MaxValStaticRAM|maxValue[3]                                                                            ; padio            ;
+; |MaxValStaticRAM|maxValue[2]                                                                                  ; |MaxValStaticRAM|maxValue[2]                                                                            ; padio            ;
+; |MaxValStaticRAM|maxValue[1]                                                                                  ; |MaxValStaticRAM|maxValue[1]                                                                            ; padio            ;
+; |MaxValStaticRAM|maxValue[0]                                                                                  ; |MaxValStaticRAM|maxValue[0]                                                                            ; padio            ;
+; |MaxValStaticRAM|readOut[7]                                                                                   ; |MaxValStaticRAM|readOut[7]                                                                             ; padio            ;
+; |MaxValStaticRAM|start                                                                                        ; |MaxValStaticRAM|start~corein                                                                           ; combout          ;
+; |MaxValStaticRAM|wr_en                                                                                        ; |MaxValStaticRAM|wr_en~corein                                                                           ; combout          ;
+; |MaxValStaticRAM|rd_en                                                                                        ; |MaxValStaticRAM|rd_en~corein                                                                           ; combout          ;
+; |MaxValStaticRAM|input[7]                                                                                     ; |MaxValStaticRAM|input[7]~corein                                                                        ; combout          ;
+; |MaxValStaticRAM|addr[0]                                                                                      ; |MaxValStaticRAM|addr[0]~corein                                                                         ; combout          ;
+; |MaxValStaticRAM|addr[1]                                                                                      ; |MaxValStaticRAM|addr[1]~corein                                                                         ; combout          ;
+; |MaxValStaticRAM|addr[2]                                                                                      ; |MaxValStaticRAM|addr[2]~corein                                                                         ; combout          ;
+; |MaxValStaticRAM|addr[3]                                                                                      ; |MaxValStaticRAM|addr[3]~corein                                                                         ; combout          ;
+; |MaxValStaticRAM|addr[4]                                                                                      ; |MaxValStaticRAM|addr[4]~corein                                                                         ; combout          ;
+; |MaxValStaticRAM|addr[5]                                                                                      ; |MaxValStaticRAM|addr[5]~corein                                                                         ; combout          ;
+; |MaxValStaticRAM|addr[6]                                                                                      ; |MaxValStaticRAM|addr[6]~corein                                                                         ; combout          ;
+; |MaxValStaticRAM|addr[7]                                                                                      ; |MaxValStaticRAM|addr[7]~corein                                                                         ; combout          ;
+; |MaxValStaticRAM|addr[8]                                                                                      ; |MaxValStaticRAM|addr[8]~corein                                                                         ; combout          ;
+; |MaxValStaticRAM|addr[9]                                                                                      ; |MaxValStaticRAM|addr[9]~corein                                                                         ; combout          ;
+; |MaxValStaticRAM|input[6]                                                                                     ; |MaxValStaticRAM|input[6]~corein                                                                        ; combout          ;
+; |MaxValStaticRAM|input[5]                                                                                     ; |MaxValStaticRAM|input[5]~corein                                                                        ; combout          ;
+; |MaxValStaticRAM|input[4]                                                                                     ; |MaxValStaticRAM|input[4]~corein                                                                        ; combout          ;
+; |MaxValStaticRAM|input[3]                                                                                     ; |MaxValStaticRAM|input[3]~corein                                                                        ; combout          ;
+; |MaxValStaticRAM|input[2]                                                                                     ; |MaxValStaticRAM|input[2]~corein                                                                        ; combout          ;
+; |MaxValStaticRAM|input[1]                                                                                     ; |MaxValStaticRAM|input[1]~corein                                                                        ; combout          ;
+; |MaxValStaticRAM|input[0]                                                                                     ; |MaxValStaticRAM|input[0]~corein                                                                        ; combout          ;
++---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                                                                                                                                                   ;
++---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+------------------+
+; Node Name                                                                                                     ; Output Port Name                                                                                        ; Output Port Type ;
++---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+------------------+
+; |MaxValStaticRAM|maxMemValue:inst2|out[7]                                                                     ; |MaxValStaticRAM|maxMemValue:inst2|out[7]                                                               ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|out[6]                                                                     ; |MaxValStaticRAM|maxMemValue:inst2|out[6]                                                               ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|out[5]                                                                     ; |MaxValStaticRAM|maxMemValue:inst2|out[5]                                                               ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|out[4]                                                                     ; |MaxValStaticRAM|maxMemValue:inst2|out[4]                                                               ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|out[3]                                                                     ; |MaxValStaticRAM|maxMemValue:inst2|out[3]                                                               ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|out[2]                                                                     ; |MaxValStaticRAM|maxMemValue:inst2|out[2]                                                               ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|out[1]                                                                     ; |MaxValStaticRAM|maxMemValue:inst2|out[1]                                                               ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|out[0]                                                                     ; |MaxValStaticRAM|maxMemValue:inst2|out[0]                                                               ; regout           ;
+; |MaxValStaticRAM|lpm_ram_dp0:inst|altsyncram:altsyncram_component|altsyncram_e3v1:auto_generated|ram_block1a4 ; |MaxValStaticRAM|lpm_ram_dp0:inst|altsyncram:altsyncram_component|altsyncram_e3v1:auto_generated|q_b[6] ; portbdataout2    ;
+; |MaxValStaticRAM|lpm_ram_dp0:inst|altsyncram:altsyncram_component|altsyncram_e3v1:auto_generated|ram_block1a4 ; |MaxValStaticRAM|lpm_ram_dp0:inst|altsyncram:altsyncram_component|altsyncram_e3v1:auto_generated|q_b[7] ; portbdataout3    ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[6]                                                                 ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[6]                                                           ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[7]                                                                 ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[7]                                                           ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[8]                                                                 ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[8]                                                           ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[9]                                                                 ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[9]                                                           ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|out[5]~18                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|out[5]~18                                                            ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|out[6]~20                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|out[6]~20                                                            ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|out[7]~22                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|out[7]~22                                                            ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[7]~24                                                              ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[7]~25                                                        ; cout             ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[8]~26                                                              ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[8]~26                                                        ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[8]~26                                                              ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[8]~27                                                        ; cout             ;
+; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[9]~28                                                              ; |MaxValStaticRAM|maxMemValue:inst2|rd_addr[9]~28                                                        ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|ready                                                                      ; |MaxValStaticRAM|maxMemValue:inst2|ready                                                                ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|EN[0]                                                                      ; |MaxValStaticRAM|maxMemValue:inst2|EN[0]                                                                ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|Equal0~1                                                                   ; |MaxValStaticRAM|maxMemValue:inst2|Equal0~1                                                             ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|Equal0~2                                                                   ; |MaxValStaticRAM|maxMemValue:inst2|Equal0~2                                                             ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|ready~0                                                                    ; |MaxValStaticRAM|maxMemValue:inst2|ready~0                                                              ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|maxVal[7]                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|maxVal[7]                                                            ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|maxVal[6]                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|maxVal[6]                                                            ; regout           ;
+; |MaxValStaticRAM|maxMemValue:inst2|maxVal[5]                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|maxVal[5]                                                            ; regout           ;
+; |MaxValStaticRAM|inst11                                                                                       ; |MaxValStaticRAM|inst11                                                                                 ; combout          ;
+; |MaxValStaticRAM|busmux:inst4|lpm_mux:$00000|mux_5oc:auto_generated|result_node[6]~6                          ; |MaxValStaticRAM|busmux:inst4|lpm_mux:$00000|mux_5oc:auto_generated|result_node[6]~6                    ; combout          ;
+; |MaxValStaticRAM|busmux:inst4|lpm_mux:$00000|mux_5oc:auto_generated|result_node[7]~7                          ; |MaxValStaticRAM|busmux:inst4|lpm_mux:$00000|mux_5oc:auto_generated|result_node[7]~7                    ; combout          ;
+; |MaxValStaticRAM|busmux:inst4|lpm_mux:$00000|mux_5oc:auto_generated|result_node[8]~8                          ; |MaxValStaticRAM|busmux:inst4|lpm_mux:$00000|mux_5oc:auto_generated|result_node[8]~8                    ; combout          ;
+; |MaxValStaticRAM|busmux:inst4|lpm_mux:$00000|mux_5oc:auto_generated|result_node[9]~9                          ; |MaxValStaticRAM|busmux:inst4|lpm_mux:$00000|mux_5oc:auto_generated|result_node[9]~9                    ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|EN~0                                                                       ; |MaxValStaticRAM|maxMemValue:inst2|EN~0                                                                 ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|EN~1                                                                       ; |MaxValStaticRAM|maxMemValue:inst2|EN~1                                                                 ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|maxVal~0                                                                   ; |MaxValStaticRAM|maxMemValue:inst2|maxVal~0                                                             ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|maxVal~1                                                                   ; |MaxValStaticRAM|maxMemValue:inst2|maxVal~1                                                             ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|maxVal~2                                                                   ; |MaxValStaticRAM|maxMemValue:inst2|maxVal~2                                                             ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|maxVal~3                                                                   ; |MaxValStaticRAM|maxMemValue:inst2|maxVal~3                                                             ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|maxVal~9                                                                   ; |MaxValStaticRAM|maxMemValue:inst2|maxVal~9                                                             ; combout          ;
+; |MaxValStaticRAM|maxMemValue:inst2|maxVal~11                                                                  ; |MaxValStaticRAM|maxMemValue:inst2|maxVal~11                                                            ; combout          ;
+; |MaxValStaticRAM|maxValue[7]                                                                                  ; |MaxValStaticRAM|maxValue[7]                                                                            ; padio            ;
+; |MaxValStaticRAM|maxValue[6]                                                                                  ; |MaxValStaticRAM|maxValue[6]                                                                            ; padio            ;
+; |MaxValStaticRAM|maxValue[5]                                                                                  ; |MaxValStaticRAM|maxValue[5]                                                                            ; padio            ;
+; |MaxValStaticRAM|maxValue[4]                                                                                  ; |MaxValStaticRAM|maxValue[4]                                                                            ; padio            ;
+; |MaxValStaticRAM|maxValue[3]                                                                                  ; |MaxValStaticRAM|maxValue[3]                                                                            ; padio            ;
+; |MaxValStaticRAM|maxValue[2]                                                                                  ; |MaxValStaticRAM|maxValue[2]                                                                            ; padio            ;
+; |MaxValStaticRAM|maxValue[1]                                                                                  ; |MaxValStaticRAM|maxValue[1]                                                                            ; padio            ;
+; |MaxValStaticRAM|maxValue[0]                                                                                  ; |MaxValStaticRAM|maxValue[0]                                                                            ; padio            ;
+; |MaxValStaticRAM|readOut[7]                                                                                   ; |MaxValStaticRAM|readOut[7]                                                                             ; padio            ;
+; |MaxValStaticRAM|readOut[6]                                                                                   ; |MaxValStaticRAM|readOut[6]                                                                             ; padio            ;
+; |MaxValStaticRAM|wr_en                                                                                        ; |MaxValStaticRAM|wr_en~corein                                                                           ; combout          ;
+; |MaxValStaticRAM|rd_en                                                                                        ; |MaxValStaticRAM|rd_en~corein                                                                           ; combout          ;
+; |MaxValStaticRAM|input[7]                                                                                     ; |MaxValStaticRAM|input[7]~corein                                                                        ; combout          ;
+; |MaxValStaticRAM|addr[0]                                                                                      ; |MaxValStaticRAM|addr[0]~corein                                                                         ; combout          ;
+; |MaxValStaticRAM|addr[1]                                                                                      ; |MaxValStaticRAM|addr[1]~corein                                                                         ; combout          ;
+; |MaxValStaticRAM|addr[2]                                                                                      ; |MaxValStaticRAM|addr[2]~corein                                                                         ; combout          ;
+; |MaxValStaticRAM|addr[3]                                                                                      ; |MaxValStaticRAM|addr[3]~corein                                                                         ; combout          ;
+; |MaxValStaticRAM|addr[4]                                                                                      ; |MaxValStaticRAM|addr[4]~corein                                                                         ; combout          ;
+; |MaxValStaticRAM|addr[5]                                                                                      ; |MaxValStaticRAM|addr[5]~corein                                                                         ; combout          ;
+; |MaxValStaticRAM|addr[6]                                                                                      ; |MaxValStaticRAM|addr[6]~corein                                                                         ; combout          ;
+; |MaxValStaticRAM|addr[7]                                                                                      ; |MaxValStaticRAM|addr[7]~corein                                                                         ; combout          ;
+; |MaxValStaticRAM|addr[8]                                                                                      ; |MaxValStaticRAM|addr[8]~corein                                                                         ; combout          ;
+; |MaxValStaticRAM|addr[9]                                                                                      ; |MaxValStaticRAM|addr[9]~corein                                                                         ; combout          ;
+; |MaxValStaticRAM|input[6]                                                                                     ; |MaxValStaticRAM|input[6]~corein                                                                        ; combout          ;
+; |MaxValStaticRAM|input[5]                                                                                     ; |MaxValStaticRAM|input[5]~corein                                                                        ; combout          ;
+; |MaxValStaticRAM|input[4]                                                                                     ; |MaxValStaticRAM|input[4]~corein                                                                        ; combout          ;
+; |MaxValStaticRAM|input[3]                                                                                     ; |MaxValStaticRAM|input[3]~corein                                                                        ; combout          ;
+; |MaxValStaticRAM|input[2]                                                                                     ; |MaxValStaticRAM|input[2]~corein                                                                        ; combout          ;
+; |MaxValStaticRAM|input[1]                                                                                     ; |MaxValStaticRAM|input[1]~corein                                                                        ; combout          ;
+; |MaxValStaticRAM|input[0]                                                                                     ; |MaxValStaticRAM|input[0]~corein                                                                        ; combout          ;
++---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.1 Build 222 10/21/2009 SJ Web Edition
+    Info: Processing started: Sun Mar 21 21:18:22 2010
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off MaxValStaticRAM -c MaxValStaticRAM
+Info: Using vector source file "C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW5/Pt3/MaxValStaticRAM.vwf"
+Info: Inverted registers were found during simulation
+    Info: Register: |MaxValStaticRAM|maxMemValue:inst2|ready
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      52.23 %
+Info: Number of transitions in simulation is 3959
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 114 megabytes
+    Info: Processing ended: Sun Mar 21 21:18:23 2010
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

@@ -1,0 +1,29 @@
+{C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 3/CompArch_CPU.v} {1 {vlog -work work -nocovercells {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 3/CompArch_CPU.v}
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module CompArch_CPU
+
+Top level modules:
+	CompArch_CPU
+
+} {} {}} {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 3/Controller.v} {1 {vlog -work work -nocovercells {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 3/Controller.v}
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module Controller
+
+Top level modules:
+	Controller
+
+} {} {}} {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 3/CompArch_CPU_Tester.v} {1 {vlog -work work -nocovercells {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 3/CompArch_CPU_Tester.v}
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module CompArch_CPU_Tester
+
+Top level modules:
+	CompArch_CPU_Tester
+
+} {} {}} {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 3/Datapath.v} {1 {vlog -work work -nocovercells {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 3/Datapath.v}
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module Datapath
+
+Top level modules:
+	Datapath
+
+} {} {}}

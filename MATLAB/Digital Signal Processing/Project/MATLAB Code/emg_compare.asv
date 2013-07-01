@@ -1,0 +1,58 @@
+% Carlos Lazo
+% ECE 503 Final Project
+% MATLAB Simulation of EMG Signal Filtering Techniques
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The function emg_compare() serves to output a scalar representation %
+% of how close the filtered, noisy signal is to the actual clean      %
+% EMG generated at the beginning of the simulation.                   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% The following are inputs to the function:
+%   EMG_sigC    = EMG signal without interference (clean)
+%   EMG_sigF    = EMG signal with 60Hz interference removed (filtered)
+
+
+% The following are outputs to the function:
+%   Rel_Mag     = relative magnitude of noise with respect to EMG
+
+function comp_val = emg_compare(EMG_sigC, EMG_sigF)
+
+% Define all static variables:
+
+RMS_C       = sqrt (mean (EMG_sigC .^ 2));
+RMS_F       = sqrt (mean (EMG_sigC .^ 2));
+
+% !!!!!!!!!!!!!!!!!!!!!!!! %
+% ! Function Declaration ! %
+% !!!!!!!!!!!!!!!!!!!!!!!! %
+
+% With both of the RMS values of the signals computed,
+% Subtract the 
+
+randn ('state', sum (100*clock));
+
+EMG_sig     = randn(1, n);
+
+% Create a 4th-order Butterworth lowpass filter, and pass
+% the EMG signal through it.  Cutoff frequency is at 150Hz.
+% The resulting signal will be the "clean" EMG.
+% Eliminate the startup transient from the lowpass filter.
+
+[b, a]      = butter(N_filt, (Fc)/(Fs/2), 'low');
+EMG_sigC    = filter(b, a, EMG_sig);
+
+EMG_sigC    = EMG_sigC (N_filt : n);
+
+% Compute the RMS value of the "clean" EMG.
+
+RMS         = sqrt (mean (EMG_sigC .^ 2));
+
+% Create an appropriately-scaled signal to model the 60Hz
+% power-line interference.
+
+Noise_sig   = RMS * Rel_Mag * sin(2 * pi * (Fn / Fs) * (1:n) );
+
+% Add the power line interference into the clean signal.
+
+EMG_sigN    = EMG_sigC + Noise_sig;

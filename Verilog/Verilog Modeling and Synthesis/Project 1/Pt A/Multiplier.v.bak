@@ -1,0 +1,38 @@
+// Carlos Lazo
+// ECE574
+// Project Part 1
+
+// Part A: DataPath Design
+// Multiplier Definition
+
+`timescale 1ns/100ps
+
+module Multiplier (input [7:0] MultiplicationOp1, MultiplicationOp2,
+                   input clk, Multiply,
+                   output [15:0] Multiplication_Output,
+                   output Multiplication_Done);
+
+  reg t_done;
+  reg [15:0] t_result;
+  
+  always @(posedge clk) begin
+    
+    if (Multiply) begin
+      
+      // Perform multiplication by doing a twos complement sign
+      // extension on the 8-bit operands brought in.
+      
+      t_done   = 0;
+      t_result = { {8{MultiplicationOp1[7]}}, MultiplicationOp1 } * { {8{MultiplicationOp2[7]}}, MultiplicationOp2 };
+      t_done = 1;
+      
+    end
+  end
+  
+  // Assign output variables to intermediate variables used for computation
+  // when performing the multiplication operation.
+  
+  assign Multiplication_Done   = t_done;
+  assign Multiplication_Output = t_result; 
+                   
+endmodule

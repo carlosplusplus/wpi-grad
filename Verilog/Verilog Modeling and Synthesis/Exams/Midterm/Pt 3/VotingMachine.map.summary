@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Mar 09 22:21:05 2010
+Quartus II Version : 9.1 Build 222 10/21/2009 SJ Web Edition
+Revision Name : VotingMachine
+Top-level Entity Name : VotingMachine
+Family : Cyclone II
+Total logic elements : 963
+    Total combinational functions : 963
+    Dedicated logic registers : 337
+Total registers : 337
+Total pins : 18
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

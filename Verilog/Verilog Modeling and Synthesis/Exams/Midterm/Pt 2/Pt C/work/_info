@@ -1,0 +1,56 @@
+m255
+K3
+13
+cModel Technology
+dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Exams\Midterm\Pt 2\Pt B
+vALU16bit
+I7jMHN<4T?212RW?^LEE9?2
+ViM0>A=5Ybm?]PogE7=doQ1
+Z0 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Exams\Midterm\Pt 2\Pt C
+w1268018702
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Exams/Midterm/Pt 2/Pt C/ALU16bit.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Exams/Midterm/Pt 2/Pt C/ALU16bit.v
+L0 10
+Z1 OV;L;6.5b;42
+r1
+31
+Z2 !s102 -nocovercells
+Z3 o-work work -nocovercells -O0
+n@a@l@u16bit
+!s100 nKlWle]ZG@@IlC=34:jGK1
+!s85 0
+!s101 -O0
+vALU16bitTimeTest
+I:lzH5V_V>n3HZbCE;0dmg1
+VkFz1DV7KfP41G2^Hbm53N0
+Z4 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Exams\Midterm\Pt 2\Pt C
+w1268018776
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Exams/Midterm/Pt 2/Pt C/ALU16bitTimeTest.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Exams/Midterm/Pt 2/Pt C/ALU16bitTimeTest.v
+L0 8
+R1
+r1
+31
+R2
+R3
+n@a@l@u16bit@time@test
+!s100 VSCC2N58=c`IQcmgGZHL12
+!s85 0
+!s101 -O0
+vALU2bit
+!s100 m4@oD[d[RZ9b5`zcC`k2e2
+IXGNPY6EY<kVJZ<d0o0dI81
+V=Cd10:IkCAN>oUV[FUd5:3
+R4
+w1268011474
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Exams/Midterm/Pt 2/Pt C/ALU2bit.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Exams/Midterm/Pt 2/Pt C/ALU2bit.v
+L0 10
+R1
+r1
+!s85 0
+31
+!s101 -O0
+R2
+R3
+n@a@l@u2bit

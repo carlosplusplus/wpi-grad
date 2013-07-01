@@ -1,0 +1,15 @@
+{C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Exams/Midterm/Pt 3/ModelSim Debug/VotingControl.v} {1 {vlog -work work -nocovercells {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Exams/Midterm/Pt 3/ModelSim Debug/VotingControl.v}
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module VotingControl
+
+Top level modules:
+	VotingControl
+
+} {} {}} {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Exams/Midterm/Pt 3/ModelSim Debug/VotingMachineTester.v} {1 {vlog -work work -nocovercells {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Exams/Midterm/Pt 3/ModelSim Debug/VotingMachineTester.v}
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module VotingMachineTester
+
+Top level modules:
+	VotingMachineTester
+
+} {} {}}

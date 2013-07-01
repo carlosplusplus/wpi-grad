@@ -1,0 +1,45 @@
+// Carlos Lazo
+// ECE574
+// Project 2
+
+// DataPath Design
+// DataPath Definition
+
+`timescale 1ns/100ps
+
+module DataPath (input  [7:0] inData1, inData2, inData3, inData4,
+                 input dp1_on_bus, dp2_on_bus, dp3_on_bus, dp4_on_bus,
+                       clk, st_router, fw_router, input [3:0] inAddr, outAddr, input rst,
+                 output [7:0] output_port,
+                 output acknowledge, ready1, ready2, ready3, ready4, received);
+                 
+  wire [7:0] dp1_out, dp2_out,
+             dp3_out, dp4_out;  // Used to store data entering DataPorts.
+  wire [7:0] dp_bus;            // Output of DataPort multiplexer will go onto this bus.
+  wire [7:0] r_out;             // Current output seen at the Router.
+                 
+  // Instantiate 4 DataPort modules:
+  
+  DataPort dp1 (inData1, dp1_on_bus, dp1_out, ready1);
+  DataPort dp2 (inData2, dp2_on_bus, dp2_out, ready2);
+  DataPort dp3 (inData3, dp3_on_bus, dp3_out, ready3);
+  DataPort dp4 (inData4, dp4_on_bus, dp4_out, ready4);    
+
+  // Instantiate 1 Router module:
+  
+  Router portFwd (dp_bus, inAddr, outAddr, clk, st_router, fw_router,  rst,
+                  r_out, acknowledge, received);
+                  
+  // Assign dp_bus a value based on which DataPort is currently forward data:
+  
+  assign dp_bus = dp1_on_bus ? dp1_out :
+                   (dp2_on_bus ? dp2_out :
+                     (dp3_on_bus ? dp3_out :
+                       (dp4_on_bus ? dp4_out : 8'bX)));
+                       
+  // If en_out is asserted, the router is currently forwarding data bytes.
+  // Place output of the router onto the output bus.
+  
+  assign output_port = fw_router ? r_out : 8'bX;
+  
+endmodule

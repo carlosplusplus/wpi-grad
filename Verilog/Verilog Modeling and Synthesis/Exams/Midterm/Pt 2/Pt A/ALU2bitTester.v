@@ -1,0 +1,125 @@
+// Carlos Lazo
+// ECE574
+// Test 1
+
+// Part 2: Arithmtic Logic Unit (ALU)
+// Part A: 2-bit Cascadable ALU slice Test Bench
+
+`timescale 1ns/100ps
+
+module ALU2bitTester;
+  
+  // Declare all inputs as reg and outputs as wire:
+  
+  reg [1:0] A, B, S;
+  reg Ci;
+  
+  wire [1:0] R;
+  wire Co, V, Z;
+  
+  // Instantiate a FullAdder:
+  
+  ALU2bit UUT (A, B, S, Ci, R, Co, V, Z);
+  
+  initial begin
+    
+    A = 2'b00; B = 2'b00; S = 2'b00; Ci = 0;
+    
+  end
+  
+  // Create the testbench sequence, showing expected results.
+  
+  initial begin
+
+    #0;
+
+    // Scenario 1a (ADD): 
+    // Set A = 11 - expect R = 11, Co = V = Z = 0.
+
+    A <= 2'b11;
+    B <= 2'b00;
+    
+    #50;
+    
+    // Scenario 1b (ADD): 
+    // Set A = B = 10 - expect R = 00, Co = 1, V = 1, Z = 1.
+
+    A <= 2'b10;
+    B <= 2'b10;
+    
+    #50;
+    
+    // Scenario 1c (ADD): 
+    // Set A = B = 00 - expect R = 00, Co = 0, V = 0, Z = 1.
+    
+    A <= 2'b00;
+    B <= 2'b00;
+    
+    #50;
+    
+    // Scenario 1d (ADD): 
+    // Set A = B = 01, Ci = 1 - expect R = 11, Co = 0, V = 1, Z = 0.
+    
+    A  <= 2'b01;
+    B  <= 2'b01;
+    Ci <= 1'b1;
+    
+    #50;
+    
+    // Scenario 2a (XOR)
+    // Set A = 01, B = 10 - expect R = 11, Z = 0
+    
+    S <= 2'b01;
+    
+    A <= 2'b01;
+    B <= 2'b10;
+    
+    #50;
+    
+    // Scenario 2b (XOR)
+    // Set A = 10, B = 11 - expect R = 01, Z = 0
+    
+    A <= 2'b10;
+    B <= 2'b11;
+    
+    #50;
+    
+    // Scenario 3a (AND)
+    // Set A = 00, B = 11 - expect R = 00, Z = 1
+    
+    S <= 2'b10;
+    
+    A <= 2'b00;
+    B <= 2'b11;
+    
+    #50;
+    
+    // Scenario 3b (AND)
+    // Set A = 01, B = 11 - expect R = 01, Z = 0
+    
+    A <= 2'b01;
+    B <= 2'b11;
+    
+    #50;
+    
+    // Scenario 4a (Transparent)
+    // Set A = 00, B = 00 - expect R = 00
+    
+    S <= 2'b11;
+    
+    A <= 2'b00;
+    B <= 2'b00;
+    
+    #50;
+    
+    // Scenario 4b (Transparent)
+    // Set A = 10, B = 11 - expect R = 10
+    
+    A <= 2'b10;
+    B <= 2'b11;
+    
+    #50;
+
+  end
+  
+endmodule

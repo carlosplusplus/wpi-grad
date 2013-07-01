@@ -1,0 +1,22 @@
+{C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 2/Pt 3/Pt B/P2SC_Tester.v} {1 {vlog -work work -nocovercells {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 2/Pt 3/Pt B/P2SC_Tester.v}
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module P2SC_Tester
+
+Top level modules:
+	P2SC_Tester
+
+} {} {}} {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 2/Pt 3/Pt B/P2SC_Controller.v} {1 {vlog -work work -nocovercells {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 2/Pt 3/Pt B/P2SC_Controller.v}
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module P2SC_Controller
+
+Top level modules:
+	P2SC_Controller
+
+} {} {}} {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 2/Pt 3/Pt B/P2SC.v} {1 {vlog -work work -nocovercells {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 2/Pt 3/Pt B/P2SC.v}
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module P2SC
+
+Top level modules:
+	P2SC
+
+} {} {}}

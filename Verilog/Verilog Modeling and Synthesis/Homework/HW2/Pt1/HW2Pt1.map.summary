@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sun Feb 14 13:17:08 2010
+Quartus II Version : 9.1 Build 222 10/21/2009 SJ Web Edition
+Revision Name : HW2Pt1
+Top-level Entity Name : HW2Pt1
+Family : Cyclone II
+Total logic elements : 32
+    Total combinational functions : 0
+    Dedicated logic registers : 32
+Total registers : 32
+Total pins : 49
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

@@ -1,0 +1,75 @@
+// Carlos Lazo
+// ECE574
+// Test 1
+
+// Part 1: Moore Sequence Detector: 11011 & 11101
+
+`timescale 1ns/100ps
+
+module MooreSeqDetector (input a, clk, rst, output w);
+  
+  // Define states for sequence detection of 11011:
+  
+  parameter [2:0] sA1 = 3'b000, sB1 = 3'b001, sC1 = 3'b010, sD1 = 3'b011, sE1 = 3'b100, sF1 = 3'b101;
+  
+  // Define states for sequence detection of 11101:
+  
+  parameter [2:0] sA2 = 3'b000, sB2 = 3'b001, sC2 = 3'b010, sD2 = 3'b011, sE2 = 3'b100, sF2 = 3'b101;
+  
+  // Define variables to keep track of the current state:
+  
+  reg [2:0] current1, current2;
+  
+  // Initialize the current state to start at the initial state for each sequence:
+  
+  initial begin
+    current1 <= sA1;
+    current2 <= sA2;
+  end
+  
+  // Define always loop and appropriate case-statements for each sequence detector:
+  
+  always @ (posedge clk) begin
+    
+    #1; // Delay needed in order to wait for input change from test bench.
+    
+    // Reset variable will be used at the start of each new input sequence.
+    
+    if (rst) begin
+      
+      current1 <= sA1;
+      current2 <= sA2;
+      
+    end
+    
+    else begin
+      
+      // Definition of the 11011 Moore sequence detector:
+    
+      case (current1) 
+        sA1: if (a) current1 <= sB1; else current1 <= sA1;
+        sB1: if (a) current1 <= sC1; else current1 <= sA1;
+        sC1: if (a) current1 <= sC1; else current1 <= sD1;
+        sD1: if (a) current1 <= sE1; else current1 <= sA1;
+        sE1: if (a) current1 <= sF1; else current1 <= sA1;
+        sF1: if (a) current1 <= sC1; else current1 <= sD1;      
+      endcase
+    
+      // Definition of the 11101 Moore sequence detector:
+  
+      case (current2) 
+        sA2: if (a) current2 <= sB2; else current2 <= sA2;
+        sB2: if (a) current2 <= sC2; else current2 <= sA2;
+        sC2: if (a) current2 <= sD2; else current2 <= sA2;
+        sD2: if (a) current2 <= sD2; else current2 <= sE2;
+        sE2: if (a) current2 <= sF2; else current2 <= sA2;
+        sF2: if (a) current2 <= sC2; else current2 <= sA2;      
+      endcase
+    end
+  end
+  
+  // If any of the sequences are in the final state, set output = 1.
+  
+  assign w = (current1 == sF1 || current2 == sF2) ? 1 : 0;
+  
+endmodule

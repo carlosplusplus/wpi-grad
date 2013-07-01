@@ -1,0 +1,30 @@
+% Carlos Lazo
+% ECE 503
+% Homework #1
+% Due: 2/1/10
+
+% 1) Discrete Sequences, Part d.
+
+fprintf('Testing to see if function HW01_even_odd_signal works as intended.\n');
+fprintf('Use Problem 1c) homework vector - x(k) = [2 3 4 5 6]:\n\n');
+
+
+x = [2 3 4 5 6];
+
+[x_e x_o] = HW01_even_odd_signal (x);
+
+fprint('Even portion of vector x(k):\n');
+pretty(x_e);
+fprint('\n');
+
+fprint('Odd portion of vector x(k):\n');
+pretty(x_o);
+fprint('\n\n');
+
+fprint('Check to see if x_e(k) + x_o(k) = x(k):\n\n');
+
+e_o_sum = x_e + x_o;
+
+if (x == e_o_sum)
+    pretty(e_o_sum);
+    fprint

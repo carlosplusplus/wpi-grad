@@ -1,0 +1,29 @@
+{C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 2/Pt 3/Pt A/S2PC_Controller.v} {1 {vlog -work work -nocovercells {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 2/Pt 3/Pt A/S2PC_Controller.v}
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module S2PC_Controller
+
+Top level modules:
+	S2PC_Controller
+
+} {} {}} {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 2/Pt 3/Pt A/S2PC.v} {1 {vlog -work work -nocovercells {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 2/Pt 3/Pt A/S2PC.v}
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module S2PC
+
+Top level modules:
+	S2PC
+
+} {} {}} {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 2/Pt 3/Pt A/S2PC_Tester.v} {1 {vlog -work work -nocovercells {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 2/Pt 3/Pt A/S2PC_Tester.v}
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module S2PC_Tester
+
+Top level modules:
+	S2PC_Tester
+
+} {} {}} {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 2/Pt 3/Pt A/S2PC_Datapath.v} {1 {vlog -work work -nocovercells {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 2/Pt 3/Pt A/S2PC_Datapath.v}
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module S2PC_Datapath
+
+Top level modules:
+	S2PC_Datapath
+
+} {} {}}

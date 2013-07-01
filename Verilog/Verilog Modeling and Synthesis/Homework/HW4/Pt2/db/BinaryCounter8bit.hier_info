@@ -1,0 +1,116 @@
+|BinaryCounter8bit
+Cout <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+DataOut[0] <= FullAdder8bit:inst.s[0]
+DataOut[1] <= FullAdder8bit:inst.s[1]
+DataOut[2] <= FullAdder8bit:inst.s[2]
+DataOut[3] <= FullAdder8bit:inst.s[3]
+DataOut[4] <= FullAdder8bit:inst.s[4]
+DataOut[5] <= FullAdder8bit:inst.s[5]
+DataOut[6] <= FullAdder8bit:inst.s[6]
+DataOut[7] <= FullAdder8bit:inst.s[7]
+Cin => FullAdder8bit:inst.cin
+Clk => Reg8:inst1.clock
+ClkEn => Reg8:inst1.enable
+Clr => inst9.IN0
+B[0] => FullAdder8bit:inst.b[0]
+B[1] => FullAdder8bit:inst.b[1]
+B[2] => FullAdder8bit:inst.b[2]
+B[3] => FullAdder8bit:inst.b[3]
+B[4] => FullAdder8bit:inst.b[4]
+B[5] => FullAdder8bit:inst.b[5]
+B[6] => FullAdder8bit:inst.b[6]
+B[7] => FullAdder8bit:inst.b[7]
+
+
+|BinaryCounter8bit|FullAdder8bit:inst
+a[0] => Add0.IN8
+a[1] => Add0.IN7
+a[2] => Add0.IN6
+a[3] => Add0.IN5
+a[4] => Add0.IN4
+a[5] => Add0.IN3
+a[6] => Add0.IN2
+a[7] => Add0.IN1
+b[0] => Add0.IN16
+b[1] => Add0.IN15
+b[2] => Add0.IN14
+b[3] => Add0.IN13
+b[4] => Add0.IN12
+b[5] => Add0.IN11
+b[6] => Add0.IN10
+b[7] => Add0.IN9
+cin => Add1.IN18
+s[0] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+s[1] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+s[2] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+s[3] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+s[4] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+s[5] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+s[6] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+s[7] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+cout <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BinaryCounter8bit|Reg8:inst1
+aclr => aclr.IN1
+clock => clock.IN1
+data[0] => data[0].IN1
+data[1] => data[1].IN1
+data[2] => data[2].IN1
+data[3] => data[3].IN1
+data[4] => data[4].IN1
+data[5] => data[5].IN1
+data[6] => data[6].IN1
+data[7] => data[7].IN1
+enable => enable.IN1
+q[0] <= lpm_ff:lpm_ff_component.q
+q[1] <= lpm_ff:lpm_ff_component.q
+q[2] <= lpm_ff:lpm_ff_component.q
+q[3] <= lpm_ff:lpm_ff_component.q
+q[4] <= lpm_ff:lpm_ff_component.q
+q[5] <= lpm_ff:lpm_ff_component.q
+q[6] <= lpm_ff:lpm_ff_component.q
+q[7] <= lpm_ff:lpm_ff_component.q
+
+
+|BinaryCounter8bit|Reg8:inst1|lpm_ff:lpm_ff_component
+data[0] => dffs[0].DATAIN
+data[1] => dffs[1].DATAIN
+data[2] => dffs[2].DATAIN
+data[3] => dffs[3].DATAIN
+data[4] => dffs[4].DATAIN
+data[5] => dffs[5].DATAIN
+data[6] => dffs[6].DATAIN
+data[7] => dffs[7].DATAIN
+clock => dffs[7].CLK
+clock => dffs[6].CLK
+clock => dffs[5].CLK
+clock => dffs[4].CLK
+clock => dffs[3].CLK
+clock => dffs[2].CLK
+clock => dffs[1].CLK
+clock => dffs[0].CLK
+enable => dffs[7].ENA
+enable => dffs[6].ENA
+enable => dffs[5].ENA
+enable => dffs[4].ENA
+enable => dffs[3].ENA
+enable => dffs[2].ENA
+enable => dffs[1].ENA
+enable => dffs[0].ENA
+aclr => dffs[7].IN0
+aset => ~NO_FANOUT~
+aload => ~NO_FANOUT~
+sclr => ~NO_FANOUT~
+sset => ~NO_FANOUT~
+sload => ~NO_FANOUT~
+q[0] <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= dffs[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= dffs[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= dffs[3].DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= dffs[4].DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= dffs[5].DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= dffs[6].DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= dffs[7].DB_MAX_OUTPUT_PORT_TYPE
+
+

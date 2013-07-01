@@ -1,0 +1,79 @@
+// Carlos Lazo
+// ECE574
+// Project 2
+
+// DataPath Design
+// Router Definition
+
+`timescale 1ns/100ps
+
+module Router (input  [7:0] dp_bus,
+               input  [3:0] inAddr, outAddr,
+               input  clk, st_router, fw_router, rst,
+               output [7:0] r_out,
+               output acknowledge, received);
+    
+  // Define the buffer for the router.
+  
+  reg [7:0] buffer [0:15];
+  
+  // Define intermediate varibles for storage.            
+  
+  reg [7:0] t_out;
+  reg t_rec;
+  
+  integer i;
+
+  // All operations are to be performed at the positive edge of the clock.
+  
+  always @(posedge clk) begin
+    
+    // Reset all values to prevent any latches from occuring.
+    
+    t_rec = 0;
+    
+    if (rst) begin
+      
+      for (i = 0; i < 16; i = i + 1)
+        buffer[i] = 0;
+    end
+    
+    // If st_router is asserted, then perform store the value in coming in
+    // from dp_bus into the buffer at the specified inputAddr.
+    
+    else if (st_router) begin
+
+      buffer[inAddr]   = dp_bus;
+      t_rec             = 1;
+      t_out             = 8'bX;
+      
+    end
+    
+    // If fw_router is asserted, then forward the value located in the buffer
+    // at outputAddr to the r_out output bus.
+    
+    else if (fw_router) begin
+      
+      t_oAddr = outAddr;
+      t_out             = buffer[t_oAddr];
+      
+    end
+      
+    // Otherwise, set the router output to be all X.
+      
+    else
+      t_out             = 8'bX;
+      
+  end
+  
+  // Set the router acknowledge = 1 when the router is not in either
+  // the store or forward state of operation.
+  
+  assign acknowledge  = ~(st_router || fw_router);
+  
+  // Assign the output buffer and received 
+  
+  assign r_out        = t_out;
+  assign received     = t_rec;
+  
+endmodule

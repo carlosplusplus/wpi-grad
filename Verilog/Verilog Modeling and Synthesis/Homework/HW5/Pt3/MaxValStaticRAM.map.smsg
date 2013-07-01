@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at maxMemValue.v(41): always construct contains both blocking and non-blocking assignments

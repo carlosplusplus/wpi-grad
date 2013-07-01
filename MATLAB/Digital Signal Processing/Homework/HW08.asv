@@ -1,0 +1,144 @@
+% Carlos Lazo
+% ECE 503
+% Homework #8
+% Due: 3/22/10
+
+%% 2) MATLAB Programming and Filter Comparison
+
+clear all; close all; clc;
+
+% a. Chebyshev Filter Design & Comparison
+
+% Design the 1st filter:
+% 
+%   N  = 4      ; This is a 4th order filter
+%   R  = 0.25   ; This is the ripple(dB) in the passband.
+%   Wp =        ; 0 < Wp < 1.0, where the 1.0 maps to 1/2 Fs
+%                 With Fs = 1000Hz, 1.0 maps to 500Hz.
+%                 Wp = .35, which is the cutoff Fp (normalized)
+%   type = 'low'; Specying a lowpass filter.
+
+[b1 a1] = cheby1(4,.25,.35,'low');
+
+[H1, w1] = freqz(b1,a1,100);
+
+h1 = real(ifft(H1));
+
+% Design the 2nd filter:
+% 
+%   N  = 4      ; This is a 4th order filter
+%   R  = 5.00   ; This is the ripple(dB) in the passband.
+%   Wp =        ; 0 < Wp < 1.0, where the 1.0 maps to 1/2 Fs
+%                 With Fs = 1000Hz, 1.0 maps to 500Hz.
+%                 Wp = .35, which is the cutoff Fp (normalized)
+%   type = 'low'; Specying a lowpass filter.
+
+[b2 a2] = cheby1(4,5.0,.35,'low');
+
+[H2, w2] = freqz(b2,a2,100);
+
+h2 = real(ifft(H2));
+
+figure;
+subplot(2,2,1);
+
+plot(w1,abs(H1));
+xlabel('Frequency in radians');
+ylabel('Magnitude');
+title('Chebychev Filter #1 - Magnitude Response (Passband Ripple = 0.25dB)');
+grid on;
+
+subplot(2,2,2);
+
+stem(h1);
+xlabel('Discrete-Time Index');
+ylabel('Impulse Response');
+title('Chebychev Filter #1 - Impulse Response (N = 100)');
+grid on;
+
+subplot(2,2,3);
+
+plot(w2,abs(H2));
+xlabel('Frequency in radians');
+ylabel('Magnitude');
+title('Chebychev Filter #2 - Magnitude Response (Passband Ripple = 5.00dB)');
+grid on;
+
+subplot(2,2,4);
+
+stem(h2);
+xlabel('Discrete-Time Index');
+ylabel('Impulse Response');
+title('Chebychev Filter #2 - Impulse Response (N = 100)');
+grid on;
+
+%% 2) MATLAB Programming and Filter Comparison
+
+clear all; close all; clc;
+
+% b. Elliptical Filter Design & Comparison
+
+% Design the 1st filter:
+% 
+%   N  = 2       ; This is a 2nd order filter
+%   Rp = 1.00    ; This is the ripple(dB) in the passband
+%   Rs = 20      ; This is the minimum stopband attentuation (dB) passband
+%   Wp = .80     ; 0 < Wp < 1.0, where the 1.0 maps to 1/2 Fs.
+%                  With Fs = 1000Hz, 1.0 maps to 500Hz.
+%                  Wp = .80, which is the cutoff Fp (normalized).
+%   type = 'high'; Specying a highpass filter.
+
+[b1 a1] = ellip(2,1,20,.8,'high');
+
+[H1, w1] = freqz(b1,a1,25);
+
+h1 = real(ifft(H1));
+
+% Design the 2nd filter:
+% 
+%   N  = 2       ; This is a 2nd order filter
+%   Rp = 0.25    ; This is the ripple(dB) in the passband
+%   Rs = 60      ; This is the minimum stopband attentuation (dB) passband
+%   Wp = .80     ; 0 < Wp < 1.0, where the 1.0 maps to 1/2 Fs.
+%                  With Fs = 1000Hz, 1.0 maps to 500Hz.
+%                  Wp = .80, which is the cutoff Fp (normalized).
+%   type = 'high'; Specying a highpass filter.
+
+[b1 a1] = ellip(2,0.25,60,.8,'high');
+
+[H1, w1] = freqz(b1,a1,25);
+
+h1 = real(ifft(H1));
+
+figure;
+subplot(2,2,1);
+
+plot(w1,abs(H1));
+xlabel('Frequency in radians');
+ylabel('Magnitude');
+title('Chebychev Filter #1 - Magnitude Response (Passband Ripple = 0.25dB)');
+grid on;
+
+subplot(2,2,2);
+
+stem(h1);
+xlabel('Discrete-Time Index');
+ylabel('Impulse Response');
+title('Chebychev Filter #1 - Impulse Response (N = 100)');
+grid on;
+
+subplot(2,2,3);
+
+plot(w2,abs(H2));
+xlabel('Frequency in radians');
+ylabel('Magnitude');
+title('Chebychev Filter #2 - Magnitude Response (Passband Ripple = 5.00dB)');
+grid on;
+
+subplot(2,2,4);
+
+stem(h2);
+xlabel('Discrete-Time Index');
+ylabel('Impulse Response');
+title('Chebychev Filter #2 - Impulse Response (N = 100)');
+grid on;

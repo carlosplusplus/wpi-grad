@@ -1,0 +1,282 @@
+% Carlos Lazo
+% ECE 503
+% Homework #6
+% Due: 3/9/10
+
+%% 1) The FFT and Frequency-Domain Representation
+
+clear all; close all; clc;
+
+% b. P&M 8.36
+
+% Part (1)
+
+% Initialize all sequences and N values:
+
+x_na = ones(1,16);
+Na   = 64;
+
+x_nb = ones(1,8);
+Nb   = 64;
+
+x_nc = x_na;
+Nc   = 128;
+
+x_nd = 10.*exp(j*(pi/8)*[1:64]);
+Nd   = 64;
+
+% Plot the N-point DFTs (using zero-padding):
+
+X_ka = fft(x_na, Na);
+X_kb = fft(x_nb, Nb);
+X_kc = fft(x_nc, Nc);
+X_kd = fft(x_nd, Nd);
+
+% Plot the phase response of all DFTs:
+
+figure;
+plot (abs(X_ka));
+ylabel('Magnitude');
+title('|X(k)|, part a)');
+
+figure;
+plot (abs(X_kb));
+ylabel('Magnitude');
+title('|X(k)|, part b)');
+
+figure;
+plot (abs(X_kc));
+ylabel('Magnitude');
+title('|X(k)|, part c)');
+
+figure;
+plot (abs(X_kd));
+ylabel('Magnitude');
+title('|X(k)|, part d)');
+
+% Part (2)
+
+fprintf('Xk_a(0) is: '); real(X_ka(1))
+fprintf('Xk_b(0) is: '); real(X_kb(1))
+fprintf('Xk_c(0) is: '); real(X_kc(1))
+fprintf('Xk_d(0) is: '); real(X_kd(1))
+
+% **************
+% *** OUTPUT ***
+% **************
+
+% Xk_a(0) is: 
+% ans =
+% 
+%     16
+% 
+% Xk_b(0) is: 
+% ans =
+% 
+%      8
+% 
+% Xk_c(0) is: 
+% ans =
+% 
+%     16
+% 
+% Xk_d(0) is: 
+% ans =
+% 
+%  -7.7729e-014
+
+%% 1) The FFT and Frequency-Domain Representation
+
+clear all; close all; clc;
+
+% e. DFT Arithmetic Resolution
+
+% First, create the given input sequence and its DFT:
+
+x_n = [1:64];
+  N = length(x_n);
+  
+X_k  = fft(x_n);
+
+format long;
+
+% Now, to implement a precision reduction algorithm:
+
+RMS_reg = sqrt ( (sum(x_n.^2)) / length (x_n));
+
+x_nerr = zeros(1,15);
+err    = zeros(1,15);
+
+% My precision reduction algorithm takes advantage of the
+% MATLAB Symbolic Toolbox. Using the VPA function (Variable
+% Point Arithmetic), I'm setting the default format for all
+% variable to be 16 bits. With VPA, I'm reducing the # of
+% decimal points (bits) that will be used in each value of
+% X_k. I then reconvert the value from a symbolic variable
+% back to a reduced-precision double, and find it's IFFT.
+% Finally, the RMS error is calculated.
+
+% The overall algorithm reduces bit size by 15 bits, the
+% maximum number allowed so you still have somewhat decent
+% value representation.
+
+for i = 1:15
+    
+    X_kerr  = vpa(X_k, 16 - i);
+    x_nerr  = ifft(double(X_kerr));
+    
+    RMS_err = sqrt ( (sum(x_nerr.^2)) / length (x_nerr));
+    
+    err(i) = abs(RMS_reg - RMS_err);
+    
+    fprintf (['X(k) reduction by' num2str(i) ' bits yield an RMS error of: ' num2str(err(i)) '\n']);
+end
+
+figure;
+
+plot(err, '-ob');
+xlabel('Variable point arithmetic, Bit Reduction Quantity');
+ylabel('RMS Error');
+title('Bit reduction on X(k) ==> RMS effects on x(n)');
+
+% **************
+% *** OUTPUT ***
+% **************
+
+% X(k) reduction by 1 bits yield an RMS error of: 0
+% X(k) reduction by 2 bits yield an RMS error of: 7.1054e-015
+% X(k) reduction by 3 bits yield an RMS error of: 6.3949e-014
+% X(k) reduction by 4 bits yield an RMS error of: 1.2008e-012
+% X(k) reduction by 5 bits yield an RMS error of: 1.09e-011
+% X(k) reduction by 6 bits yield an RMS error of: 2.3419e-011
+% X(k) reduction by 7 bits yield an RMS error of: 8.5807e-010
+% X(k) reduction by 8 bits yield an RMS error of: 4.9924e-008
+% X(k) reduction by 9 bits yield an RMS error of: 7.6377e-007
+% X(k) reduction by 10 bits yield an RMS error of: 2.764e-006
+% X(k) reduction by 11 bits yield an RMS error of: 5.0148e-005
+% X(k) reduction by 12 bits yield an RMS error of: 0.00027055
+% X(k) reduction by 13 bits yield an RMS error of: 0.0019331
+% X(k) reduction by 14 bits yield an RMS error of: 0.25912
+% X(k) reduction by 15 bits yield an RMS error of: 0.76402
+
+%% 2) DFT Implementation
+
+clear all; close all; clc;
+
+format long;
+
+% d. Filter Arithmetic Resolution
+
+% First, create the given input sequence:
+
+x_n = ones(1,32);
+
+% Create the linear filter:
+
+[b, a] = butter(4, 0.5);
+
+% Filter to produce the output sequence:
+
+y_n = filter(b, a, x_n);
+
+% Now, to implement a precision reduction algorithm:
+
+RMS_reg = sqrt ( (sum(y_n.^2)) / length (y_n));
+
+% This implementation uses bit reduction, reducing the
+% total amount of possible significant figures used to 
+% represent the values return into a & b to 4, 2, and 1
+% significant digits, respectively.
+
+% The new coefficients are computed below:
+
+a_err4  = vpa(a,4);
+b_err4  = vpa(b,4);
+
+a_err2  = vpa(a,2);
+b_err2  = vpa(b,2);
+
+a_err1  = vpa(a,1);
+b_err1  = vpa(b,1);
+
+% Now filter each of the sequences and find their RMS errors.
+% Must divide by 10e4 to account for retransmission:
+
+y_nerr4 = filter(double(b_err4), double(a_err4), x_n);
+y_nerr2 = filter(double(b_err2), double(a_err2), x_n);
+y_nerr1 = filter(double(b_err1), double(a_err1), x_n);
+
+RMS_err4 = sqrt ( (sum(y_nerr4.^2)) / length (y_nerr4));
+RMS_err2 = sqrt ( (sum(y_nerr2.^2)) / length (y_nerr2));
+RMS_err1 = sqrt ( (sum(y_nerr1.^2)) / length (y_nerr1));
+
+err(1) = RMS_reg - RMS_err4;
+err(2) = RMS_reg - RMS_err2;
+err(3) = RMS_reg - RMS_err1;
+
+figure;
+
+subplot(2,1,1);
+
+plot(y_n, '-'); hold on;
+plot(y_nerr4, '--or'); hold on;
+plot(y_nerr2, ':xb'); hold on;
+plot(y_nerr1, '-.^g'); hold off;
+
+xlabel('n');
+ylabel('y(n)');
+title('Bit Reduction on a & b Filter Coefficients');
+legend('Original Functio');
+
+subplot(2,1,2);
+
+stem (err);
+
+%%
+
+X_k  = fft(x_n);
+
+format long;
+
+% Now, to implement a precision reduction algorithm:
+
+RMS_reg = sqrt ( (sum(x_n.^2)) / length (x_n));
+
+x_nerr = zeros(1,15);
+err    = zeros(1,15);
+
+% My precision reduction algorithm takes advantage of the
+% MATLAB Symbolic Toolbox. Using the VPA function (Variable
+% Point Arithmetic), I'm setting the default format for all
+% variable to be 16 bits. With VPA, I'm reducing the # of
+% decimal points (bits) that will be used in each value of
+% X_k. I then reconvert the value from a symbolic variable
+% back to a reduced-precision double, and find it's IFFT.
+% Finally, the RMS error is calculated.
+
+% The overall algorithm reduces bit size by 15 bits, the
+% maximum number allowed so you still have somewhat decent
+% value representation.
+
+for i = 1:15
+    
+    X_kerr  = vpa(X_k, 16 - i);
+    x_nerr  = ifft(double(X_kerr));
+    
+    RMS_err = sqrt ( (sum(x_nerr.^2)) / length (x_nerr));
+    
+    err(i) = abs(RMS_reg - RMS_err);
+    
+    fprintf (['X(k) reduction by' num2str(i) ' bits yield an RMS error of: ' num2str(err(i)) '\n']);
+end
+
+figure;
+
+plot(err, '-ob');
+xlabel('Variable point arithmetic, Bit Reduction Quantity');
+ylabel('RMS Error');
+title('Bit reduction on X(k) ==> RMS effects on x(n)');
+
+
+
+format long;

@@ -1,0 +1,314 @@
+
+@2 ns	MASTER 5 is requesting access to device after waiting << 2 seconds.
+	* MASTER 5 granted access to device and needs it for 10 seconds.
+
+@3 ns	MASTER 3 is requesting access to device after waiting << 3 seconds.
+	* MASTER 3 granted access to device and needs it for 3 seconds.
+
+@4 ns	MASTER 1 is requesting access to device after waiting << 4 seconds.
+	* MASTER 1 granted access to device and needs it for 8 seconds.
+
+@5 ns	MASTER 2 is requesting access to device after waiting << 5 seconds.
+	* MASTER 2 granted access to device and needs it for 9 seconds.
+
+@5 ns	MASTER 4 is requesting access to device after waiting << 5 seconds.
+	!!! MASTER 4 denied access to device. !!!
+
+@6 ns	MASTER 3 releases semaphore back to device. Count = 1
+
+@8 ns	MASTER 4 is requesting access to device after waiting << 3 seconds.
+	* MASTER 4 granted access to device and needs it for 8 seconds.
+
+@9 ns	MASTER 3 is requesting access to device after waiting << 3 seconds.
+	!!! MASTER 3 denied access to device. !!!
+
+@12 ns	MASTER 1 releases semaphore back to device. Count = 1
+
+@12 ns	MASTER 5 releases semaphore back to device. Count = 2
+
+@13 ns	MASTER 5 is requesting access to device after waiting << 1 seconds.
+	* MASTER 5 granted access to device and needs it for 4 seconds.
+
+@14 ns	MASTER 2 releases semaphore back to device. Count = 2
+
+@14 ns	MASTER 3 is requesting access to device after waiting << 5 seconds.
+	* MASTER 3 granted access to device and needs it for 8 seconds.
+
+@16 ns	MASTER 1 is requesting access to device after waiting << 4 seconds.
+	* MASTER 1 granted access to device and needs it for 9 seconds.
+
+@16 ns	MASTER 4 releases semaphore back to device. Count = 1
+
+@17 ns	MASTER 2 is requesting access to device after waiting << 3 seconds.
+	* MASTER 2 granted access to device and needs it for 3 seconds.
+
+@17 ns	MASTER 5 releases semaphore back to device. Count = 1
+
+@19 ns	MASTER 4 is requesting access to device after waiting << 3 seconds.
+	* MASTER 4 granted access to device and needs it for 2 seconds.
+
+@20 ns	MASTER 2 releases semaphore back to device. Count = 1
+
+@20 ns	MASTER 5 is requesting access to device after waiting << 3 seconds.
+	* MASTER 5 granted access to device and needs it for 7 seconds.
+
+@21 ns	MASTER 2 is requesting access to device after waiting << 1 seconds.
+	!!! MASTER 2 denied access to device. !!!
+
+@21 ns	MASTER 4 releases semaphore back to device. Count = 1
+
+@22 ns	MASTER 3 releases semaphore back to device. Count = 2
+
+@23 ns	MASTER 2 is requesting access to device after waiting << 2 seconds.
+	* MASTER 2 granted access to device and needs it for 2 seconds.
+
+@25 ns	MASTER 1 releases semaphore back to device. Count = 2
+
+@25 ns	MASTER 2 releases semaphore back to device. Count = 3
+
+@26 ns	MASTER 2 is requesting access to device after waiting << 1 seconds.
+	* MASTER 2 granted access to device and needs it for 5 seconds.
+
+@26 ns	MASTER 3 is requesting access to device after waiting << 4 seconds.
+	* MASTER 3 granted access to device and needs it for 4 seconds.
+
+@26 ns	MASTER 4 is requesting access to device after waiting << 5 seconds.
+	* MASTER 4 granted access to device and needs it for 2 seconds.
+
+@27 ns	MASTER 5 releases semaphore back to device. Count = 1
+
+@28 ns	MASTER 4 releases semaphore back to device. Count = 2
+
+@28 ns	MASTER 5 is requesting access to device after waiting << 1 seconds.
+	* MASTER 5 granted access to device and needs it for 7 seconds.
+
+@29 ns	MASTER 4 is requesting access to device after waiting << 1 seconds.
+	* MASTER 4 granted access to device and needs it for 1 seconds.
+
+@30 ns	MASTER 1 is requesting access to device after waiting << 5 seconds.
+	!!! MASTER 1 denied access to device. !!!
+
+@30 ns	MASTER 3 releases semaphore back to device. Count = 1
+
+@30 ns	MASTER 4 releases semaphore back to device. Count = 2
+
+@31 ns	MASTER 1 is requesting access to device after waiting << 1 seconds.
+	* MASTER 1 granted access to device and needs it for 2 seconds.
+
+@31 ns	MASTER 2 releases semaphore back to device. Count = 2
+
+@32 ns	MASTER 3 is requesting access to device after waiting << 2 seconds.
+	* MASTER 3 granted access to device and needs it for 3 seconds.
+
+@33 ns	MASTER 1 releases semaphore back to device. Count = 2
+
+@33 ns	MASTER 2 is requesting access to device after waiting << 2 seconds.
+	* MASTER 2 granted access to device and needs it for 1 seconds.
+
+@34 ns	MASTER 2 releases semaphore back to device. Count = 2
+
+@34 ns	MASTER 4 is requesting access to device after waiting << 4 seconds.
+	* MASTER 4 granted access to device and needs it for 5 seconds.
+
+@35 ns	MASTER 3 releases semaphore back to device. Count = 2
+
+@35 ns	MASTER 5 releases semaphore back to device. Count = 3
+
+@36 ns	MASTER 1 is requesting access to device after waiting << 3 seconds.
+	* MASTER 1 granted access to device and needs it for 6 seconds.
+
+@36 ns	MASTER 2 is requesting access to device after waiting << 2 seconds.
+	* MASTER 2 granted access to device and needs it for 4 seconds.
+
+@37 ns	MASTER 5 is requesting access to device after waiting << 2 seconds.
+	* MASTER 5 granted access to device and needs it for 8 seconds.
+
+@39 ns	MASTER 3 is requesting access to device after waiting << 4 seconds.
+	!!! MASTER 3 denied access to device. !!!
+
+@39 ns	MASTER 4 releases semaphore back to device. Count = 1
+
+@40 ns	MASTER 2 releases semaphore back to device. Count = 2
+
+@40 ns	MASTER 4 is requesting access to device after waiting << 1 seconds.
+	* MASTER 4 granted access to device and needs it for 6 seconds.
+
+@41 ns	MASTER 2 is requesting access to device after waiting << 1 seconds.
+	* MASTER 2 granted access to device and needs it for 8 seconds.
+
+@42 ns	MASTER 1 releases semaphore back to device. Count = 1
+
+@43 ns	MASTER 1 is requesting access to device after waiting << 1 seconds.
+	* MASTER 1 granted access to device and needs it for 8 seconds.
+
+@43 ns	MASTER 3 is requesting access to device after waiting << 4 seconds.
+	!!! MASTER 3 denied access to device. !!!
+
+@45 ns	MASTER 5 releases semaphore back to device. Count = 1
+
+@46 ns	MASTER 3 is requesting access to device after waiting << 3 seconds.
+	* MASTER 3 granted access to device and needs it for 5 seconds.
+
+@46 ns	MASTER 4 releases semaphore back to device. Count = 1
+
+@47 ns	MASTER 5 is requesting access to device after waiting << 2 seconds.
+	* MASTER 5 granted access to device and needs it for 5 seconds.
+
+@49 ns	MASTER 2 releases semaphore back to device. Count = 1
+
+@50 ns	MASTER 4 is requesting access to device after waiting << 4 seconds.
+	* MASTER 4 granted access to device and needs it for 8 seconds.
+
+@51 ns	MASTER 1 releases semaphore back to device. Count = 1
+
+@51 ns	MASTER 3 releases semaphore back to device. Count = 2
+
+@52 ns	MASTER 5 releases semaphore back to device. Count = 3
+
+@53 ns	MASTER 2 is requesting access to device after waiting << 4 seconds.
+	* MASTER 2 granted access to device and needs it for 7 seconds.
+
+@54 ns	MASTER 1 is requesting access to device after waiting << 3 seconds.
+	* MASTER 1 granted access to device and needs it for 10 seconds.
+
+@55 ns	MASTER 3 is requesting access to device after waiting << 4 seconds.
+	* MASTER 3 granted access to device and needs it for 3 seconds.
+
+@56 ns	MASTER 5 is requesting access to device after waiting << 4 seconds.
+	!!! MASTER 5 denied access to device. !!!
+
+@58 ns	MASTER 3 releases semaphore back to device. Count = 1
+
+@58 ns	MASTER 4 releases semaphore back to device. Count = 2
+
+@60 ns	MASTER 2 releases semaphore back to device. Count = 3
+
+@60 ns	MASTER 4 is requesting access to device after waiting << 2 seconds.
+	* MASTER 4 granted access to device and needs it for 7 seconds.
+
+@61 ns	MASTER 3 is requesting access to device after waiting << 3 seconds.
+	* MASTER 3 granted access to device and needs it for 8 seconds.
+
+@61 ns	MASTER 5 is requesting access to device after waiting << 5 seconds.
+	* MASTER 5 granted access to device and needs it for 3 seconds.
+
+@62 ns	MASTER 2 is requesting access to device after waiting << 2 seconds.
+	!!! MASTER 2 denied access to device. !!!
+
+@64 ns	MASTER 1 releases semaphore back to device. Count = 1
+
+@64 ns	MASTER 5 releases semaphore back to device. Count = 2
+
+@65 ns	MASTER 5 is requesting access to device after waiting << 1 seconds.
+	* MASTER 5 granted access to device and needs it for 7 seconds.
+
+@66 ns	MASTER 1 is requesting access to device after waiting << 2 seconds.
+	* MASTER 1 granted access to device and needs it for 2 seconds.
+
+@66 ns	MASTER 2 is requesting access to device after waiting << 4 seconds.
+	!!! MASTER 2 denied access to device. !!!
+
+@67 ns	MASTER 4 releases semaphore back to device. Count = 1
+
+@68 ns	MASTER 1 releases semaphore back to device. Count = 2
+
+@69 ns	MASTER 3 releases semaphore back to device. Count = 3
+
+@71 ns	MASTER 2 is requesting access to device after waiting << 5 seconds.
+	* MASTER 2 granted access to device and needs it for 4 seconds.
+
+@71 ns	MASTER 3 is requesting access to device after waiting << 2 seconds.
+	* MASTER 3 granted access to device and needs it for 5 seconds.
+
+@71 ns	MASTER 4 is requesting access to device after waiting << 4 seconds.
+	* MASTER 4 granted access to device and needs it for 9 seconds.
+
+@72 ns	MASTER 1 is requesting access to device after waiting << 4 seconds.
+	!!! MASTER 1 denied access to device. !!!
+
+@72 ns	MASTER 5 releases semaphore back to device. Count = 1
+
+@75 ns	MASTER 1 is requesting access to device after waiting << 3 seconds.
+	* MASTER 1 granted access to device and needs it for 4 seconds.
+
+@75 ns	MASTER 2 releases semaphore back to device. Count = 1
+
+@76 ns	MASTER 3 releases semaphore back to device. Count = 2
+
+@77 ns	MASTER 5 is requesting access to device after waiting << 5 seconds.
+	* MASTER 5 granted access to device and needs it for 3 seconds.
+
+@78 ns	MASTER 2 is requesting access to device after waiting << 3 seconds.
+	* MASTER 2 granted access to device and needs it for 7 seconds.
+
+@79 ns	MASTER 1 releases semaphore back to device. Count = 1
+
+@79 ns	MASTER 3 is requesting access to device after waiting << 3 seconds.
+	* MASTER 3 granted access to device and needs it for 5 seconds.
+
+@80 ns	MASTER 1 is requesting access to device after waiting << 1 seconds.
+	!!! MASTER 1 denied access to device. !!!
+
+@80 ns	MASTER 4 releases semaphore back to device. Count = 1
+
+@80 ns	MASTER 5 releases semaphore back to device. Count = 2
+
+@82 ns	MASTER 1 is requesting access to device after waiting << 2 seconds.
+	* MASTER 1 granted access to device and needs it for 2 seconds.
+
+@82 ns	MASTER 4 is requesting access to device after waiting << 2 seconds.
+	* MASTER 4 granted access to device and needs it for 6 seconds.
+
+@84 ns	MASTER 1 releases semaphore back to device. Count = 1
+
+@84 ns	MASTER 3 releases semaphore back to device. Count = 2
+
+@85 ns	MASTER 2 releases semaphore back to device. Count = 3
+
+@85 ns	MASTER 3 is requesting access to device after waiting << 1 seconds.
+	* MASTER 3 granted access to device and needs it for 8 seconds.
+
+@85 ns	MASTER 5 is requesting access to device after waiting << 5 seconds.
+	* MASTER 5 granted access to device and needs it for 10 seconds.
+
+@87 ns	MASTER 1 is requesting access to device after waiting << 3 seconds.
+	* MASTER 1 granted access to device and needs it for 9 seconds.
+
+@88 ns	MASTER 2 is requesting access to device after waiting << 3 seconds.
+	!!! MASTER 2 denied access to device. !!!
+
+@88 ns	MASTER 4 releases semaphore back to device. Count = 1
+
+@89 ns	MASTER 2 is requesting access to device after waiting << 1 seconds.
+	* MASTER 2 granted access to device and needs it for 8 seconds.
+
+@92 ns	MASTER 4 is requesting access to device after waiting << 4 seconds.
+	!!! MASTER 4 denied access to device. !!!
+
+@93 ns	MASTER 3 releases semaphore back to device. Count = 1
+
+@95 ns	MASTER 3 is requesting access to device after waiting << 2 seconds.
+	* MASTER 3 granted access to device and needs it for 9 seconds.
+
+@95 ns	MASTER 5 releases semaphore back to device. Count = 1
+
+@96 ns	MASTER 1 releases semaphore back to device. Count = 2
+
+@97 ns	MASTER 2 releases semaphore back to device. Count = 3
+
+@97 ns	MASTER 4 is requesting access to device after waiting << 5 seconds.
+	* MASTER 4 granted access to device and needs it for 2 seconds.
+
+@99 ns	MASTER 4 releases semaphore back to device. Count = 3
+
+@100 ns	MASTER 2 is requesting access to device after waiting << 3 seconds.
+	* MASTER 2 granted access to device and needs it for 9 seconds.
+
+@100 ns	MASTER 4 is requesting access to device after waiting << 1 seconds.
+	* MASTER 4 granted access to device and needs it for 7 seconds.
+
+@100 ns	MASTER 5 is requesting access to device after waiting << 5 seconds.
+	* MASTER 5 granted access to device and needs it for 6 seconds.
+
+@101 ns	MASTER 1 is requesting access to device after waiting << 5 seconds.
+	!!! MASTER 1 denied access to device. !!!

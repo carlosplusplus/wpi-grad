@@ -1,0 +1,39 @@
+m255
+K3
+13
+cModel Technology
+dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Homework\HW4\Pt1
+vMooreSeqDetector
+I^igPRZLbK[EacQR>9H]@]1
+Veg;e<`5I>dk@N;5jgRKhN3
+Z0 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Exams\Midterm\Pt 1
+w1267981184
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Exams/Midterm/Pt 1/MooreSeqDetector.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Exams/Midterm/Pt 1/MooreSeqDetector.v
+L0 9
+Z1 OV;L;6.5b;42
+r1
+31
+Z2 !s102 -nocovercells
+Z3 o-work work -nocovercells -O0
+n@moore@seq@detector
+!s100 Xjb45KOJYL<ASWTBWCjf10
+!s85 0
+!s101 -O0
+vMooreSeqDetectorTester
+!s100 F[iUm2F2H;jK24;ITNKdP2
+I0nNia=VH<ze6lL@4;<RYo3
+V=fKJBTf?UHm@BSV9kjl^`1
+Z4 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Exams\Midterm\Pt 1
+w1267981151
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Exams/Midterm/Pt 1/MooreSeqDetectorTester.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Exams/Midterm/Pt 1/MooreSeqDetectorTester.v
+L0 9
+R1
+r1
+!s85 0
+31
+!s101 -O0
+R2
+R3
+n@moore@seq@detector@tester

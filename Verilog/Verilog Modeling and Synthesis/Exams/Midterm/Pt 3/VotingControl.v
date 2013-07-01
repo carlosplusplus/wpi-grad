@@ -1,0 +1,228 @@
+// Carlos Lazo
+// ECE574
+// Test 1
+
+// Part 3: Voting Machine
+
+// ASSUMPTION: 
+//
+// Valid inputs will only contain one 1 and seven 0's.
+// In other words, you can only "vote" for "one" input.
+
+`timescale 1ns/100ps
+
+module VotingControl (data, clk, rst, out);
+
+	// Define inputs and outputs:
+	
+	input [7:0] data;
+	input		clk, rst;
+	
+	output reg	[7:0] out;
+	
+	// Define Clock and State Counters	
+	
+	integer  clk_count;
+	integer  v1_count, v2_count, v3_count, v4_count;
+	integer  v5_count, v6_count, v7_count, v8_count;
+	
+	integer   h_count;
+	integer   EN;
+	
+	reg 	 [7:0] currHighState; 
+	
+	// Initialize all variables to start at 0.
+	
+	initial begin
+	
+		clk_count = 0;
+		
+		EN = 0;
+		
+		v1_count = 0;
+		v2_count = 0;
+		v3_count = 0;
+		v4_count = 0;
+		v5_count = 0;
+		v6_count = 0;
+		v7_count = 0;
+		v8_count = 0;
+		
+		h_count  = 0;
+		
+	end
+	
+	// Perform all operations on the positive edge of the clock:
+	
+	always @(posedge clk) begin
+	
+		// If the circuit has seen a synchronous pulse on reset,
+		// then begin the counting process.
+		
+		if (EN) begin
+		
+			// First, check to see if at the 10th clock pulse.
+			// Print out greatest # of repetitions and end program.
+			
+			if (clk_count == 9) begin
+			
+				out = h_count;
+			
+				#10;
+				$stop;
+			
+			end
+			
+			// Second, check to see if at the 9th clock pulse.
+			// Print out which state received the most votes.
+			
+			if (clk_count == 8) begin
+		
+				out = currHighState;
+				
+				clk_count = clk_count + 1;
+				
+			end
+			
+			// Otherwise, incremement counter of the respective
+			// state represented by data. Also keep track of the
+			// state with the highest current amount of repetitions
+			// and that repetition amount.
+			
+			if (clk_count < 9) begin
+			
+				// If we get a 1st state vote, increment count
+				// and check to see if it's the highest count.
+			
+				if (data == 8'b00000001) begin
+					v1_count = v1_count + 1;
+					
+					if (v1_count > h_count) begin
+						
+						h_count = v1_count;
+						currHighState = 8'b00000001;
+					end
+					
+					clk_count = clk_count + 1;
+					
+				end
+				
+				// If we get a 2nd state vote, increment count
+				// and check to see if it's the highest count.
+			
+				if (data == 8'b00000010) begin
+					v2_count = v2_count + 1;
+					
+					if (v2_count > h_count) begin
+						
+						h_count = v2_count;
+						currHighState = 8'b00000010;
+					end
+					
+					clk_count = clk_count + 1;
+				end
+				
+				// If we get a 3rd state vote, increment count
+				// and check to see if it's the highest count.
+			
+				if (data == 8'b00000100) begin
+					v3_count = v3_count + 1;
+					
+					if (v3_count > h_count) begin
+						
+						h_count = v3_count;
+						currHighState = 8'b00000100;
+					end
+					
+					clk_count = clk_count + 1;
+				end
+				
+				// If we get a 4th state vote, increment count
+				// and check to see if it's the highest count.
+			
+				if (data == 8'b00001000) begin
+					v4_count = v4_count + 1;
+					
+					if (v4_count > h_count) begin
+						
+						h_count = v4_count;
+						currHighState = 8'b00001000;
+					end
+					
+					clk_count = clk_count + 1;
+				end
+				
+				// If we get a 5th state vote, increment count
+				// and check to see if it's the highest count.
+			
+				if (data == 8'b00010000) begin
+					v5_count = v5_count + 1;
+					
+					if (v5_count > h_count) begin
+						
+						h_count = v5_count;
+						currHighState = 8'b00010000;
+					end
+					
+					clk_count = clk_count + 1;
+				end
+				
+				// If we get a 6th state vote, increment count
+				// and check to see if it's the highest count.
+			
+				if (data == 8'b00100000) begin
+					v6_count = v6_count + 1;
+					
+					if (v6_count > h_count) begin
+						
+						h_count = v6_count;
+						currHighState = 8'b00100000;
+					end
+					
+					clk_count = clk_count + 1;
+				end
+				
+				// If we get a 7th state vote, increment count
+				// and check to see if it's the highest count.
+			
+				if (data == 8'b01000000) begin
+					v7_count = v7_count + 1;
+					
+					if (v7_count > h_count) begin
+						
+						h_count = v7_count;
+						currHighState = 8'b01000000;
+					end
+					
+					clk_count = clk_count + 1;
+				end
+				
+				// If we get a 8th state vote, increment count
+				// and check to see if it's the highest count.
+			
+				if (data == 8'b10000000) begin
+					v8_count = v8_count + 1;
+					
+					if (v8_count > h_count) begin
+						
+						h_count = v8_count;
+						currHighState = 8'b10000000;
+					end
+					
+					clk_count = clk_count + 1;
+				end
+			
+			end
+	
+		end
+	
+		// Check to see if rst is 1.
+		// If it is, enable the counting portion of the circuit.
+		// Begin counting on the next pulse of the clock.
+		
+		if ((rst == 1) && (EN == 0))
+			EN = 1;
+
+	end
+	
+endmodule

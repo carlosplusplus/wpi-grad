@@ -1,0 +1,67 @@
+// Carlos Lazo
+// ECE505
+// Homework 02 - Pt3
+
+// P2SC to S2PC TestBench
+
+`timescale 1ns/100ps
+
+module P2SC_To_S2PC_Tester;
+  
+  // Initialize shared inputs and outputs:
+  
+  reg clk;
+  
+  // Initialize inputs and outputs for P2SC:
+  
+  reg [7:0] p_in;
+  reg p_start;
+  
+  wire p_ready, sout;
+  
+  // Instantiate a S2PC module:
+  
+  P2SC p_UUT (p_in, clk, p_start, sout, p_ready);
+
+  // Initialize inputs and outputs for S2PC:
+  
+  reg  s_start;
+  
+  wire [8:0] parout;
+  wire s_ready;
+  
+  // Instantiate a S2PC module, using sout from P2SC as s_in:
+  
+  S2PC s_UUT (clk, s_start, sout, parout, s_ready);
+  
+  // Initialize all registers to initial values:
+  
+  initial begin
+    
+    clk   = 0;
+    p_start = 0; s_start = 0;
+    p_in = 0;
+    
+  end
+  
+  // Initialize the clock:
+  
+  initial repeat (50) #10 clk = ~clk;
+  
+  // Assign the parallel input to a random value every 7ns
+  
+  initial repeat (70) #7 p_in = $random;
+  
+  // Generate the testbench timeline:
+  
+  initial begin
+    
+    p_start <= #25 1;
+    p_start <= #35 0;
+    
+    s_start <= #25 1;
+    s_start <= #35 0;
+    
+  end
+      
+endmodule

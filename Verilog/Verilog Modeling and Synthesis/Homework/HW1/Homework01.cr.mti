@@ -1,0 +1,29 @@
+C:/Users/Sequi/Desktop/HW1/MealyDetector1101.v {1 {vlog -work work -nocovercells C:/Users/Sequi/Desktop/HW1/MealyDetector1101.v
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module MealyDetector1101
+
+Top level modules:
+	MealyDetector1101
+
+} {} {}} C:/Users/Sequi/Desktop/HW1/MooreDetector1101Tester.v {1 {vlog -work work -nocovercells C:/Users/Sequi/Desktop/HW1/MooreDetector1101Tester.v
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module MooreDetector1101Tester
+
+Top level modules:
+	MooreDetector1101Tester
+
+} {} {}} C:/Users/Sequi/Desktop/HW1/MooreDetector1101.v {1 {vlog -work work -nocovercells C:/Users/Sequi/Desktop/HW1/MooreDetector1101.v
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module MooreDetector1101
+
+Top level modules:
+	MooreDetector1101
+
+} {} {}} C:/Users/Sequi/Desktop/HW1/MealyAndMoore1101Tester.v {1 {vlog -work work -nocovercells C:/Users/Sequi/Desktop/HW1/MealyAndMoore1101Tester.v
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module MealyAndMoore1101Tester
+
+Top level modules:
+	MealyAndMoore1101Tester
+
+} {} {}}

@@ -1,0 +1,209 @@
+// Carlos Lazo
+// ECE505
+// Homework 03
+
+// Controller of 16-bit CPU
+
+`define Reset   2'b00
+`define Fetch   2'b01
+`define Execute 2'b10
+`define Halt    2'b11
+
+`timescale 1ns/100ps
+
+module Controller (
+    input [2:0] op_code,
+    input clk, reset, zero,
+    output reg [1:0] ALU_op,
+    output reg ACC_ON_DBUS, enACC, enIR, enPC, MuxAsel, MuxBsel,
+               rd_mem, wr_mem);
+    
+  // Define state variables:
+  
+  reg [1:0] present_state, next_state;
+  
+  // Define logic to change state, with a synchronous reset variable:
+  
+  always @ (posedge clk)
+    if (reset) present_state <= `Reset;
+    else       present_state <= next_state;
+  
+  // Implement all Controller logic and set all appropriate signals:
+  
+  always @ (present_state or reset) begin
+    
+    // Initialize all signals to 0 to prevent latches:
+    
+    ALU_op = 2'bz; ACC_ON_DBUS = 0; enACC = 0;
+    enIR = 0; enPC = 0; MuxAsel = 0; MuxBsel = 0;
+    rd_mem = 0; wr_mem = 0;
+    
+    case (present_state)
+
+      // Define Reset (idle) state. While Reset == 1, stay in Reset state.
+      // Begin fetching instructions once Reset deasserts (becomes 0).      
+      
+      `Reset : next_state = reset ? `Reset : `Fetch;
+          
+      // Define Fetch state.  Place the PC address on the addr_bus.
+      // By setting rd_mem = 1, place information from mem[PC_addr] on data_bus.
+      // Load the 16'b received into the IR, and increment PC by 1.
+      
+      `Fetch : begin
+        
+        next_state = `Execute;
+        MuxAsel = 0;
+        rd_mem  = 1;
+        
+        #2; // Necessary delay needed for memory reading.
+    
+        enIR = 1;
+  
+        #1;
+        
+        MuxAsel = 0; MuxBsel = 1; ALU_op = 2'b11;
+        
+        #1;
+        
+        enPC = 1;
+      end
+        
+      // Define Execute state. Perform data analysis based on the op_code.
+      
+      `Execute: begin
+        
+        next_state = `Fetch;  // Will always be true, unless `Halt is seen.
+        
+        case (op_code)
+          
+          // Define signals for the Load ACC operation.
+          
+          // Place the IR information on the addr_bus, then read mem[addr_bus]
+          // into data_bus. Place data_bus on MuxB, and have it pass through
+          // the ALU, then load it into the ACC.
+          
+          3'b000: begin
+            
+            MuxAsel = 1;
+            rd_mem = 1;
+        
+            #2; // Necessary delay needed for memory reading.
+            
+            MuxBsel = 0;
+            ALU_op = 2'b00;
+            
+            #1; // Necessary for ALU resolution.
+                      
+            enACC = 1;
+            
+          end
+          
+          // Define signals for the Store ACC opeartion.
+          
+          // Place current ACC data onto the data_bus.  Place IR data onto the
+          // addr_bus.  Write into mem[addr_bus].
+          
+          3'b001: begin
+            
+            ACC_ON_DBUS = 1; MuxAsel = 1; wr_mem = 1;
+            
+          end
+          
+          // Define signals for adding addressed memory to ACC operation.
+          
+          // Place the IR information on the addr_bus, then read mem[addr_bus]
+          // into the data_bus.  Place data_bus on MuxB, and add it to the current
+          // contents of ACC.  Then store results back into ACC.
+          
+          3'b010: begin
+            
+            MuxAsel = 1;
+            rd_mem = 1;
+            
+            #2; // Necessary delay needed for memory reading.
+            
+            MuxBsel = 0; ALU_op = 2'b10;
+            
+            #1; // Necessary for ALU resolution.
+            
+            enACC = 1;
+            
+          end
+          
+          // Define signals for subtracting addressed memory from ACC operation.
+          
+          // Place the IR information on the addr_bus, then read mem[addr_bus]
+          // into the data_bus.  Place data_bus on MuxB, and subtract it from the 
+          // current contents of ACC.  Then store results back into ACC.
+          
+          3'b011: begin
+            
+            MuxAsel = 1; rd_mem = 1;
+            
+            #2; // Necessary delay needed for memory reading.
+            
+            MuxBsel = 0; ALU_op = 2'b01;
+            
+            #1; // Necessary for ALU resolution.
+            
+            enACC = 1; 
+            
+          end
+          
+          // Define signals for the unconditional direct jump operation.
+          
+          // Place the IR information on the addr_bus.  Place addr_bus on MuxB,
+          // then pass it through and store it into PC.
+          
+          3'b100: begin
+            MuxAsel = 1;
+            
+            #1; // Necessary for bus resolution.
+            
+            MuxBsel = 1; ALU_op = 2'b00;
+            
+            #1; // Necessary for ALU resolution.
+            
+            enPC = 1; 
+          end
+          
+          // Define signals for the conditional direct jump operation.
+          
+          // If the ACC is 0 (based on zero signal), place the IR information
+          // on the addr_bus.  Place addr_bus on MuxB, then pass it through and store it into PC.
+          
+          3'b101: 
+          
+            if (zero) begin
+              
+              MuxAsel = 1;
+            
+              #1; // Necessary for bus resolution.
+            
+              MuxBsel = 1; ALU_op = 2'b00;
+            
+              #1; // Necessary for ALU resolution.
+            
+              enPC = 1;
+                
+            end
+ 
+          // Define signals for the halt operation.
+          
+          // If this instruction is seen, the next state is the halt state.
+          
+          3'b110: begin
+            next_state = reset ? `Reset : `Halt;
+          
+        endcase
+      end
+      
+      // Define Halt state.  Stay in this state until reset = 1.
+      
+      `Halt : next_state = reset ? `Reset : `Halt;
+      
+    endcase
+    
+  end
+  
+endmodule

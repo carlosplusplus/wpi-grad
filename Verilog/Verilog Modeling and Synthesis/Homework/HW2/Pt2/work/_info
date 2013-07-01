@@ -1,0 +1,39 @@
+m255
+K3
+13
+cModel Technology
+dC:\altera\91\modelsim_ase\examples
+vMemoryModel
+IjNBCZSc>0OkBB3KhD6fnA1
+VFcL24gnDW[de78@]3FIYh3
+Z0 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Homework\HW2\Pt2
+w1266374426
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW2/Pt2/MemoryModel.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW2/Pt2/MemoryModel.v
+L0 10
+Z1 OV;L;6.5b;42
+r1
+31
+Z2 !s102 -nocovercells
+Z3 o-work work -nocovercells -O0
+n@memory@model
+!s100 ;3QDF:CRgG<FjSQI`DWJn3
+!s85 0
+!s101 -O0
+vMemoryModelTester
+!s100 Oj0Ba6L_62;`h3io_m]Ek0
+I]k6j`MNzkMlJmSk1k@=KC3
+VjSA5ccMTO2>1YU2146chm0
+Z4 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Homework\HW2\Pt2
+w1266374150
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW2/Pt2/MemoryModelTester.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW2/Pt2/MemoryModelTester.v
+L0 10
+R1
+r1
+!s85 0
+31
+!s101 -O0
+R2
+R3
+n@memory@model@tester

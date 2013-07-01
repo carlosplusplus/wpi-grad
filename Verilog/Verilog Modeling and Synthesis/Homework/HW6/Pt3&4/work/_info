@@ -1,0 +1,38 @@
+m255
+K3
+13
+cModel Technology
+dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Homework\HW6\Pt1&2
+vmult
+!s100 `QZD;0bA`A7JWGlX@obC70
+IlFn05HJaAKA?6W90b[:iV1
+ViR4__Qh9i]>Ji542Vko:L2
+Z0 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Homework\HW6\Pt3&4
+w1269799982
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW6/Pt3&4/multFault.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW6/Pt3&4/multFault.v
+L0 10
+Z1 OV;L;6.5b;42
+r1
+!s85 0
+31
+!s101 -O0
+Z2 !s102 -nocovercells
+Z3 o-work work -nocovercells -O0
+vmultTester
+ImT_<JF=[8Jh6A[0Yo<A[12
+V;4XYF1BPo5VgKD?TjUClN3
+Z4 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Homework\HW6\Pt3&4
+w1269801211
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW6/Pt3&4/multFaultTester.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW6/Pt3&4/multFaultTester.v
+L0 10
+R1
+r1
+31
+R2
+R3
+nmult@tester
+!s100 mS6bLRiOER2^S_HgLXgZU0
+!s85 0
+!s101 -O0

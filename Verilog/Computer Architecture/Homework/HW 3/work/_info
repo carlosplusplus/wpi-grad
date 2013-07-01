@@ -1,0 +1,73 @@
+m255
+K3
+13
+cModel Technology
+dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 505 - Computer Architecture\Homework\HW 2\Pt 3\Pt D
+vCompArch_CPU
+I1A9CIeDl@;zzZ;k]TI2^G2
+V;_i01J9h3CL@aUjh=U44Z1
+Z0 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 505 - Computer Architecture\Homework\HW 3
+w1278878258
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 3/CompArch_CPU.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 3/CompArch_CPU.v
+L0 9
+Z1 OV;L;6.5b;42
+r1
+31
+Z2 !s102 -nocovercells
+Z3 o-work work -nocovercells -O0
+n@comp@arch_@c@p@u
+!s100 Oe7U?d_>5FNL0V2LhSzW83
+!s85 0
+!s101 -O0
+vCompArch_CPU_Tester
+!s100 <nd>lEO`i5J@zI8SMAUZG2
+I>S84BDhfN392]<V1A=]`i3
+V5HgSaXN^klzMDWeWE1FDV3
+Z4 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 505 - Computer Architecture\Homework\HW 3
+w1278900538
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 3/CompArch_CPU_Tester.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 3/CompArch_CPU_Tester.v
+L0 9
+R1
+r1
+!s85 0
+31
+!s101 -O0
+R2
+R3
+n@comp@arch_@c@p@u_@tester
+vController
+Ii9PizY6m7CKQblcnP>;HD1
+Viz6AIeoRk221W;ZQ@]h=m3
+R4
+w1278891742
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 3/Controller.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 3/Controller.v
+L0 14
+R1
+r1
+31
+R2
+R3
+n@controller
+!s100 E6FQz7o]JgmXBWWb43<TS0
+!s85 0
+!s101 -O0
+vDatapath
+IM]7cjO[4een?EMXO]RG8e2
+VQhm1M`5kVCc;RbSo1X3bT3
+R4
+w1278889209
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 3/Datapath.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 3/Datapath.v
+L0 9
+R1
+r1
+31
+R2
+R3
+n@datapath
+!s100 @Mg^41iW?aUOjnC1D`PVd0
+!s85 0
+!s101 -O0

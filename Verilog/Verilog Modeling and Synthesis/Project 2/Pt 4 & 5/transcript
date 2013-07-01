@@ -1,0 +1,74 @@
+# Reading C:/altera/91/modelsim_ase/tcl/vsim/pref.tcl 
+# OpenFile {C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 2/Pt 4 & 5/rtlRouter.mpf} 
+# Loading project rtlRouter
+# Error opening C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 2/Pt 4/rtlRouterTester.v
+# Path name 'C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 2/Pt 4/rtlRouterTester.v' doesn't exist.
+# Error opening C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 2/Pt 4/DataPort.v
+# Path name 'C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 2/Pt 4/DataPort.v' doesn't exist.
+# Error opening C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 2/Pt 4/DataPath.v
+# Path name 'C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 2/Pt 4/DataPath.v' doesn't exist.
+# Error opening C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 2/Pt 4/rtlRouter.v
+# Path name 'C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 2/Pt 4/rtlRouter.v' doesn't exist.
+# Error opening C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 2/Pt 4/Controller.v
+# Path name 'C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 2/Pt 4/Controller.v' doesn't exist.
+# Error opening C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 2/Pt 4/Router.v
+# Path name 'C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Project 2/Pt 4/Router.v' doesn't exist.
+# Compile of rtlRouterTester.v was successful.
+# Compile of Controller.v was successful.
+# Compile of DataPath.v was successful.
+# Compile of DataPort.v was successful.
+# Compile of Router.v was successful.
+# Compile of rtlRouter.v was successful.
+# 6 compiles, 0 failed with no errors. 
+quit
+# reading C:\altera\91\modelsim_ase\win32aloem/../modelsim.ini
+# Loading project rtlRouter
+vsim -gui work.rtlRouterTester
+# vsim -gui work.rtlRouterTester 
+# Loading work.rtlRouterTester
+# Loading work.rtlRouter
+# Loading work.DataPath
+# Loading work.DataPort
+# Loading work.Router
+# Loading work.Controller
+add wave \
+{sim:/rtlRouterTester/inData1 } \
+{sim:/rtlRouterTester/inData2 } \
+{sim:/rtlRouterTester/inData3 } \
+{sim:/rtlRouterTester/inData4 } \
+{sim:/rtlRouterTester/clk } \
+{sim:/rtlRouterTester/rst } \
+{sim:/rtlRouterTester/request1 } \
+{sim:/rtlRouterTester/request2 } \
+{sim:/rtlRouterTester/request3 } \
+{sim:/rtlRouterTester/request4 } \
+{sim:/rtlRouterTester/output_port } \
+{sim:/rtlRouterTester/ready1 } \
+{sim:/rtlRouterTester/ready2 } \
+{sim:/rtlRouterTester/ready3 } \
+{sim:/rtlRouterTester/ready4 } 
+add wave \
+{sim:/rtlRouterTester/UUT/cu/inAddr } \
+{sim:/rtlRouterTester/UUT/cu/outAddr } \
+{sim:/rtlRouterTester/UUT/cu/present_state } \
+{sim:/rtlRouterTester/UUT/cu/next_state } 
+add wave \
+{sim:/rtlRouterTester/UUT/dp/portFwd/acknowledge } \
+{sim:/rtlRouterTester/UUT/dp/portFwd/received } \
+{sim:/rtlRouterTester/UUT/dp/portFwd/buffer } 
+run -all
+# Compile of rtlRouterTester.v was successful.
+restart -f
+# Loading work.rtlRouterTester
+run -all
+# Compile of rtlRouterTester.v was successful.
+restart -f -nolist -nowave
+# Loading work.rtlRouterTester
+vsim -gui work.rtlRouterTester
+# vsim -gui work.rtlRouterTester 
+# Loading work.rtlRouterTester
+# Loading work.rtlRouter
+# Loading work.DataPath
+# Loading work.DataPort
+# Loading work.Router
+# Loading work.Controller

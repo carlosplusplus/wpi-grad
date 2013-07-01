@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Mar 20 11:10:38 2010
+Quartus II Version : 9.1 Build 222 10/21/2009 SJ Web Edition
+Revision Name : StaticRAM_Tester
+Top-level Entity Name : StaticRAM_Tester
+Family : Cyclone II
+Total logic elements : 0
+    Total combinational functions : 0
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 29
+Total virtual pins : 0
+Total memory bits : 8,192
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

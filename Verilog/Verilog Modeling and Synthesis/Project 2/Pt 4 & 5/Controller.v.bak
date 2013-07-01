@@ -1,0 +1,121 @@
+// Carlos Lazo
+// ECE574
+// Project 2
+
+// Controller Design
+// Controller Definition
+
+`timescale 1ns/100ps
+
+`define Idle    2'b00
+`define ACK     2'b01
+`define Store   2'b10
+`define Forward 2'b11
+
+module Controller (input request1, request2, request3, request4,
+                         clk, rst, acknowledge, received,
+                   output reg dp1_on_bus, dp2_on_bus, dp3_on_bus, dp4_on_bus,
+                          st_router, fw_router, output reg [3:0] inAddr, outAddr);
+                          
+  reg [1:0] present_state, next_state;  // Will keep track of current and next state.
+  
+  initial begin
+    dp1_on_bus = 0; dp2_on_bus = 0; dp3_on_bus = 0; dp4_on_bus = 0;
+    st_router = 0; fw_router = 0; inAddr = -1; outAddr = -1;
+  end
+  
+  // Utilize the clock for all state transitions:
+
+  always @(posedge clk) begin
+    
+    if (rst) begin
+      
+      present_state <= `Idle;
+      
+      // Continue resetting these values until a new request is established.
+      
+      dp1_on_bus = 0; dp2_on_bus = 0; dp3_on_bus = 0; dp4_on_bus = 0;
+      st_router = 0; fw_router = 0; inAddr = -1; outAddr = -1;
+       
+    end
+    
+    else begin
+      
+      present_state <= next_state;
+      
+      if (next_state == `Store)
+        inAddr  = inAddr + 1;
+      if (next_state == `Forward)
+        outAddr = outAddr + 1;
+        
+    end
+      
+  end
+  
+  // Whenever the present_state a new request is seen, begin router processing:
+  
+  always @ (present_state or received or 
+            posedge request1 or posedge request2 or posedge request3 or request4
+            or inAddr or outAddr) begin
+    
+    // Program all respective state transitions:
+    
+    case (present_state)
+      
+      `Idle     : begin
+        
+        // Check to see which DataPort made the request,
+        // so that we send data from *that* port to the Router.
+        
+        if (request1) dp1_on_bus = 1;
+        if (request2) dp2_on_bus = 1;
+        if (request3) dp3_on_bus = 1;
+        if (request4) dp4_on_bus = 1;
+          
+        // If a request has been made, go to the `ACK state.
+        // If not, stay in the `Idle state.
+        
+        next_state = (request1 || request2 || request3 || request4) 
+                        ? `ACK : `Idle;
+      end
+      
+      `ACK      : begin
+        
+        // If we receive an ACK from the Router, implying that it is
+        // not currently in a store or forward mode, proceed to begin
+        // storing data elements to its buffer.
+        
+        next_state = acknowledge ? `Store : `Idle;
+        
+      end
+      
+      `Store    : begin
+        
+        // Allow storing into the Router buffer for a total
+        // of 16 clocks.  Keep revisiting state until all
+        // input has been acquired.
+        
+        st_router = 1;
+        fw_router = 0;
+        
+        next_state = (inAddr == 15) ? `Forward : `Store;
+        
+      end
+      
+      `Forward  : begin
+        
+        // Allow forwarding from the Router buffer to the output port
+        // for a total of 16 clocks.  Keep revisiting state until all
+        // output has been forwarded.
+        
+        st_router = 0;
+        fw_router = 1;
+        
+        next_state = (outAddr == 15) ? `Idle : `Forward;
+        
+      end
+      
+      default: next_state = `Idle;
+    endcase
+  end
+endmodule

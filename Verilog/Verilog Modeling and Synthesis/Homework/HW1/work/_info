@@ -1,0 +1,73 @@
+m255
+K3
+13
+cModel Technology
+dC:\altera\91\modelsim_ase\examples
+vMealyAndMoore1101Tester
+!s100 93e9Noi7doMb9:UmeQ1jX0
+IXTFfSELJS7NVEOcR6Y]_F2
+VIkzJMdPM7JMf7F=@eP>3V1
+Z0 dC:\Users\Sequi\Desktop\HW1
+w1265583393
+8C:/Users/Sequi/Desktop/HW1/MealyAndMoore1101Tester.v
+FC:/Users/Sequi/Desktop/HW1/MealyAndMoore1101Tester.v
+L0 3
+Z1 OV;L;6.5b;42
+r1
+!s85 0
+31
+!s101 -O0
+Z2 !s102 -nocovercells
+Z3 o-work work -nocovercells -O0
+n@mealy@and@moore1101@tester
+vMealyDetector1101
+I4>jL4D<ERWG5W_106EoU70
+VM7:A?UXcK7RV^eg@DNiW>3
+Z4 dC:\Users\Sequi\Desktop\HW1
+w1265581483
+8C:/Users/Sequi/Desktop/HW1/MealyDetector1101.v
+FC:/Users/Sequi/Desktop/HW1/MealyDetector1101.v
+L0 3
+R1
+r1
+31
+R2
+R3
+n@mealy@detector1101
+!s100 flTN2:6iYhX=_k5kgCLKJ0
+!s85 0
+!s101 -O0
+vMooreDetector1101
+I6VmeD_QahSU?^l2`:]]hl3
+VK^lM=B:ZC;_bfU=ZEMhP23
+R4
+w1265581445
+8C:/Users/Sequi/Desktop/HW1/MooreDetector1101.v
+FC:/Users/Sequi/Desktop/HW1/MooreDetector1101.v
+L0 3
+R1
+r1
+31
+R2
+R3
+n@moore@detector1101
+!s100 n^UQI[Ca=ff3O`ilASHNN2
+!s85 0
+!s101 -O0
+vMooreDetector1101Tester
+Ih3MZ@J3WOkbAE4>TR[6B31
+Vbcag44LiU@Bd=<_B^AIAZ1
+R4
+w1265566997
+8C:/Users/Sequi/Desktop/HW1/MooreDetector1101Tester.v
+FC:/Users/Sequi/Desktop/HW1/MooreDetector1101Tester.v
+L0 3
+R1
+r1
+31
+R2
+R3
+n@moore@detector1101@tester
+!s100 ToI=aNz=Vo5@2jRE]]RlG3
+!s85 0
+!s101 -O0

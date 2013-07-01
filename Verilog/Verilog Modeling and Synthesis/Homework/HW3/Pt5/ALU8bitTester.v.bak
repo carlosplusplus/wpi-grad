@@ -1,0 +1,207 @@
+// Carlos Lazo
+// ECE574
+// Homework #3
+
+// Part 5: Arithmetic Logic Unit (ALU), 8 bit testbench.
+
+`timescale 1ns/100ps
+
+module ALU8bitTester;
+  
+  // Define a parameter so that the ALU can be any size:
+  
+  parameter SIZE = 8;
+   
+  // Declare all inputs as reg and outputs as wire:
+  
+  reg  [SIZE-1:0] Ain, Bin;
+  reg       [1:0] Fn;
+  reg  CI;
+  
+  wire [SIZE-1:0] Result;
+  wire CO, OV;
+  
+  wire [SIZE-1:0] Result_PS;
+  wire CO_PS, OV_PS;
+  
+  // Instantiate a FullAdder4bit:
+  
+  ALU8bit    UUT1 (Ain, Bin, Fn, CI, Result, CO, OV);
+  ALU8bit_PS UUT2 (Ain, Bin, Fn, CI, Result_PS, CO_PS, OV_PS);
+    
+  // Define a parameter to choose the appropriate simulation:
+  
+  parameter SIM_CHOICE = 1;
+  
+  // Create the testbench sequences:
+  
+  initial begin
+    
+    // Simulation #1:
+    // Set values of Ain and Bin accordingly, and test the Ain + Bin function:
+    
+    if (SIM_CHOICE == 1) begin
+      
+      // Set the simulation to add Ain to Bin.
+      
+      Fn    <= 2'b00;
+      
+      // Perform a regular addition:
+      
+      Ain   <= 8'b00001111;      
+      Bin   <= 8'b11110000;
+      CI    <= 0;
+      
+      #25;
+      
+      // Perform one more regular addition:
+      
+      Ain   <= 8'b10000000;      
+      Bin   <= 8'b00110110;
+      CI    <= 0;
+      
+      #25;
+      
+      // Perform an addition with a CI.
+      // This should give a CO and cause an overflow.
+      
+      Ain   <= 8'b00001111;      
+      Bin   <= 8'b11110000;
+      CI    <= 1;
+      
+      #25;
+      
+      // Perform an addition that will force an overflow.
+      
+      Ain   <= 8'b11111111;      
+      Bin   <= 8'b11111111;
+      CI    <= 1;
+      
+      #25;
+      
+    end 
+
+    // Simulation #2:
+    // Set values of Ain and Bin accordingly, and test the Ain + 0.5Bin function:
+      
+    else if (SIM_CHOICE == 2) begin
+        
+      // Set the simulation to add Ain to 0.5 Bin.
+      
+      Fn    <= 2'b01;
+      
+      // Test #1:
+      
+      Ain   <= 8'b00001111;      
+      Bin   <= 8'b11110000;
+      CI    <= 0;
+      
+      #10;
+      
+      // Test #2:
+      
+      Ain   <= 8'b10000000;      
+      Bin   <= 8'b00110110;
+      CI    <= 0;
+      
+      #10;
+      
+      // Test #3:
+      
+      Ain   <= 8'b00001111;      
+      Bin   <= 8'b11110000;
+      CI    <= 1;
+      
+      #10;
+      
+      // Test #4:
+      
+      Ain   <= 8'b11111111;      
+      Bin   <= 8'b11111111;
+      CI    <= 1;
+      
+      #10;
+      
+    end
+         
+    // Simulation #3:
+    // Set values of Ain and Bin accordingly, and test the Ain AND Bin function:
+    
+    else if (SIM_CHOICE == 3) begin
+      
+      // Set the simulation to perform Ain & Bin.
+            
+      Fn    <= 2'b10;
+            
+      // Test 1:
+            
+      Ain   <= 8'b00001111;      
+      Bin   <= 8'b11110000;
+            
+      #10;
+            
+      // Test 2:
+            
+      Ain   <= 8'b10100100;      
+      Bin   <= 8'b10110110;
+            
+      #10;
+            
+      // Test 3:
+            
+      Ain   <= 8'b11001111;      
+      Bin   <= 8'b11110011;
+            
+      #10;
+            
+      // Test 4:
+            
+      Ain   <= 8'b11111111;      
+      Bin   <= 8'b11111111;
+            
+      #10;
+            
+    end
+    
+    // Simulation #4:
+    // Set values of Ain and Bin accordingly, and test the NOT Ain function:
+    
+    else if (SIM_CHOICE == 4) begin
+    
+      // Set the simulation to perform Ain & Bin.
+            
+      Fn    <= 2'b11;
+            
+      // Test 1:
+            
+      Ain   <= 8'b00001111;      
+            
+      #10;
+            
+      // Test 2:
+            
+      Ain   <= 8'b10100100;      
+            
+      #10;
+            
+      // Test 3:
+            
+      Ain   <= 8'b11001111;      
+            
+      #10;
+            
+      // Test 4:
+            
+      Ain   <= 8'b11111111;      
+            
+      #10;
+      
+    end  
+    
+    else begin
+      $display ("An invalid number was chosen for SIM_CHOICE.");      
+    end
+    
+  end
+    
+endmodule

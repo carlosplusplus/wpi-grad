@@ -1,0 +1,73 @@
+m255
+K3
+13
+cModel Technology
+dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Homework\HW3\Pt5
+vBinaryCounter8bit
+If;4V`YY41:1_>BOJDZie^0
+VW0oh8]^j2]2U:TPXZfN;R2
+Z0 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Homework\HW4\Pt1
+w1267278878
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW4/Pt1/BinaryCounter8bit.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW4/Pt1/BinaryCounter8bit.v
+L0 10
+Z1 OV;L;6.5b;42
+r1
+31
+Z2 !s102 -nocovercells
+Z3 o-work work -nocovercells -O0
+n@binary@counter8bit
+!s100 HHbY;k_H]A^NCfAOD5foD2
+!s85 0
+!s101 -O0
+vBinaryCounter8bitTester
+!s100 J<lSz5@cMLd=O67T<jEUI0
+IWdaJoZGNXPUk76><5_m;J0
+VQAgFo`UWlD142edW4D`=O2
+Z4 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Homework\HW4\Pt1
+w1267282658
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW4/Pt1/BinaryCounter8bitTester.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW4/Pt1/BinaryCounter8bitTester.v
+L0 9
+R1
+r1
+!s85 0
+31
+!s101 -O0
+R2
+R3
+n@binary@counter8bit@tester
+vCounterCell
+IAL?c^;n<m@JJbTl?:B74n2
+V:Pl<8j_lI1D30?BzjBKlC1
+R4
+Z5 w1267280061
+Z6 8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW4/Pt1/CounterCell.v
+Z7 FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Homework/HW4/Pt1/CounterCell.v
+L0 31
+R1
+r1
+31
+R2
+R3
+n@counter@cell
+!s100 XV]akd;dPN1DCcI[cO`0_2
+!s85 0
+!s101 -O0
+vDFlipFlop
+IZ@R0dPPO[>8ZcRK;mm8eL2
+Vf3>4EoBbXIgA87e63l^ZV3
+R4
+R5
+R6
+R7
+L0 12
+R1
+r1
+31
+R2
+R3
+n@d@flip@flop
+!s100 1Iz0cFOSGfLb_XCmRI?mL1
+!s85 0
+!s101 -O0

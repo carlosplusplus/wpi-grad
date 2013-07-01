@@ -1,0 +1,87 @@
+// Carlos Lazo
+// ECE574
+// Project Part 1
+
+// Part C: CPU Design
+// CPU Tester
+
+`timescale 1ns/100ps
+
+module aluCPUTester;
+  
+  // Declare all inputs and outputs:
+  
+  reg [15:0] DataInput;
+  reg  [2:0] instruction;
+  reg clk, new_instruction, rst;
+  
+  wire [15:0] DataOutput;
+  wire ready;
+  
+  // Instantiate an aluCPU module:
+  
+  aluCPU UUT (DataInput, instruction, clk, new_instruction, rst,
+              DataOutput, ready);
+  
+  initial begin
+    
+    DataInput = 0;
+    clk = 0;
+    instruction = 0;
+    new_instruction = 0;
+    rst = 1;
+    
+  end
+  
+  initial repeat (40) #25 clk = ~clk;
+  
+  initial begin
+    
+    rst <= #50 0;
+    
+    // 000: Clear the accumulator.
+    
+    new_instruction <= #50   1;
+    new_instruction <= #100  0;
+    
+    // 001: Increment the accumulator.
+    
+    instruction     <= #150 3'b011;
+    new_instruction <= #150 1;
+    new_instruction <= #200 0;
+    
+    // 101: Complement the accumulator.
+    
+    instruction     <= #250 3'b101;
+    new_instruction <= #250 1;
+    new_instruction <= #300 0;
+    
+    // 110: Multiply and store in the accumulator.
+    
+    instruction     <= #350 3'b110;
+    DataInput       <= #350 16'b11001101_00000000;
+    new_instruction <= #350 1;
+    new_instruction <= #400 0;
+    
+    // 001: Right shift on the accumulator.
+    
+    instruction     <= #500 3'b001;
+    new_instruction <= #500 1;
+    new_instruction <= #550 0;
+    
+    // 001: Swap MSB's and LSB's of the accumulator.
+    
+    instruction     <= #600 3'b100;
+    new_instruction <= #600 1;
+    new_instruction <= #650 0;
+    
+    // 010: Add input to the accumulator.
+    
+    instruction     <= #700 3'b010;
+    DataInput       <= #700 16'b11001101_00001111;
+    new_instruction <= #700 1;
+    new_instruction <= #750 0;
+    
+  end
+
+endmodule

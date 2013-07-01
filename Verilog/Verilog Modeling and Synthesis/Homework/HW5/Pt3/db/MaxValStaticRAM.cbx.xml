@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="MaxValStaticRAM">
+		<CBX_INST_ENTRY INSTANCE_NAME="|MaxValStaticRAM|BUSMUX:inst4|lpm_mux:$00000" CBX_FILE_NAME="mux_5oc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|MaxValStaticRAM|lpm_ram_dp0:inst|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_e3v1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

@@ -1,0 +1,266 @@
+// Carlos Lazo
+// ECE505
+// Homework 02 - Pt1
+
+// Controller Design
+// Controller Definition
+
+`timescale 1ns/100ps
+
+`define idle    4'b0000
+`define init    4'b0001
+`define s1      4'b0010
+`define s2      4'b0011
+`define s3      4'b0100
+`define s4      4'b0101
+`define s5      4'b0110
+`define s6      4'b0111
+`define h1      4'b1000
+`define h2      4'b1001
+`define h3      4'b1010
+
+module Controller (input clk, start, grant, received,
+                   output reg ready, busy, request, avail, 
+                          comp_en, ld_reg, in_on_bus, out_on_bus,
+                   output reg [2:0] addr);
+                          
+  reg [3:0] current;  // Will keep track of current state.
+  
+  // Initialize the current state to be idle at first.
+  
+  initial begin
+    
+    current = 0;
+    
+  end
+  
+  // Initialize all variables upon module instantiation.
+  
+  initial begin
+    
+    ready = 1; busy = 0; request = 0; avail = 0;
+    comp_en = 0; ld_reg = 0; in_on_bus = 0; out_on_bus = 0;
+    addr = -1;
+  end
+  
+  always @ (current, start) begin
+    
+    
+  
+    case (current)
+      
+      // If start = 0, then the only signal that should be asserted
+      // is the ready signal, indicating that G6 is ready to go.
+      
+      `idle:
+          if (~start) begin
+            
+            ready = 1; busy = 0; request = 0; avail = 0;
+            comp_en = 0; ld_reg = 0; in_on_bus = 0; out_on_bus = 0;
+          end
+      
+      // At this point, we are waiting for start = 0 to indicate that
+      // one complete pulse has passed, so hold onto all signals as is.
+      
+      `init: begin
+        
+        ready = 1; busy = 0; request = 0; avail = 0;
+        comp_en = 0; ld_reg = 0; in_on_bus = 0; out_on_bus = 0;
+      
+      end
+      
+      // Now in the multiplier states, deassert ready, indicate that G6
+      // is busy, enable input on the bus and into the register.
+      
+      `s1,`s2,`s3,`s4,`s5,`s6: begin
+        
+        ready = 0; busy = 1; request = 0; avail = 0;
+        comp_en = 0; ld_reg = 1; in_on_bus = 1; out_on_bus = 0;
+        
+      end
+      
+      // In this state, G6 issues a request to output data onto iobus.
+      // We are also done with input, so disable input to iobus.
+      
+      `h1: begin
+        
+        ready = 0; busy = 1; request = 1; avail = 0;
+        comp_en = 1; ld_reg = 0; in_on_bus = 0; out_on_bus = 0;
+        
+      end
+      
+      // G6 will wait in this state until the grant signal is issued,
+      // so mimic the same signals as the previous state.  Also, at 
+      // this point, set busy = 0, since result has been computed.
+      
+      `h2: begin
+        
+        ready = 0; busy = 0; request = 1; avail = 0;
+        comp_en = 1; ld_reg = 0; in_on_bus = 0; out_on_bus = 0;
+        
+      end
+      
+      // Once grant has been received, deassert the request signal,
+      // place result on iobus, and set avail = 1 until received is
+      // returned as a 1. Once that happens, circuit goes back to `idle.
+      
+      `h3: begin
+        
+        ready = 0; busy = 0; request = 1; avail = 1;
+        comp_en = 1; ld_reg = 0; in_on_bus = 0; out_on_bus = 1;
+        
+      end
+          
+      // If none of these states are hit, then by default,
+      // reset all signals as if the system was in `idle state.
+          
+      default: begin
+        
+        ready = 1; busy = 0; request = 0; avail = 0;
+        comp_en = 0; ld_reg = 0; in_on_bus = 0; out_on_bus = 0;
+        
+      end
+            
+    endcase
+    
+  end
+  
+  always @ (posedge clk) begin
+    
+    case (current)
+      
+      // While start = 0, remain in the idle state.
+      
+      `idle:  current <= ~start ? `idle : `init;
+      
+      // Once a clk pulse is seen on start, remain in init state
+      // until the clk pulse is done (start = 0).
+      
+      `init:  current <= start ? `init : `s1;
+      
+      // Increment through the 6 different states of data collection.
+      
+      `s1, `s2, `s3, `s4, `s5, `s6 :
+              current <= current + 1;
+      
+      // Enable output of comparator and send a request to output data.
+              
+      `h1:    current <= `h2;
+      
+      // Stay in this state until access to iobus has been granted (grant = 1).
+      
+      `h2:    current <= ~grant ? `h2 : `h3;
+      
+      // Stay in this state until it is known that the data has been received
+      // (received = 1).  Once this is done, reset the state machine back to `Idle.
+      
+      `h3:    current <= ~received ? `h3 : `idle;
+      
+    endcase
+    
+  end
+  
+endmodule
+  
+/*
+  
+  
+  
+  
+  // Utilize the clock for all state transitions:
+
+  always @(posedge clk) begin
+    
+    if (rst) begin
+      
+      present_state <= `Idle;
+      
+      // Continue resetting these values until a new request is established.
+      
+      dp1_on_bus = 0; dp2_on_bus = 0; dp3_on_bus = 0; dp4_on_bus = 0;
+      st_router = 0; fw_router = 0; inAddr = -1; outAddr = -1;
+       
+    end
+    
+    else begin
+      
+      present_state <= next_state;
+      
+      if (next_state == `Store)
+        inAddr  = inAddr + 1;
+      if (next_state == `Forward)
+        outAddr = outAddr + 1;
+        
+    end
+      
+  end
+  
+  // Whenever the present_state a new request is seen, begin router processing:
+  
+  always @ (present_state or received or 
+            posedge request1 or posedge request2 or posedge request3 or posedge request4
+            or inAddr or outAddr) begin
+    
+    // Program all respective state transitions:
+    
+    case (present_state)
+      
+      `Idle     : begin
+        
+        // Check to see which DataPort made the request,
+        // so that we send data from *that* port to the Router.
+        
+        if (request1) dp1_on_bus = 1;
+        if (request2) dp2_on_bus = 1;
+        if (request3) dp3_on_bus = 1;
+        if (request4) dp4_on_bus = 1;
+          
+        // If a request has been made, go to the `ACK state.
+        // If not, stay in the `Idle state.
+        
+        next_state = (request1 || request2 || request3 || request4) 
+                        ? `ACK : `Idle;
+      end
+      
+      `ACK      : begin
+        
+        // If we receive an ACK from the Router, implying that it is
+        // not currently in a store or forward mode, proceed to begin
+        // storing data elements to its buffer.
+        
+        next_state = acknowledge ? `Store : `Idle;
+        
+      end
+      
+      `Store    : begin
+        
+        // Allow storing into the Router buffer for a total
+        // of 16 clocks.  Keep revisiting state until all
+        // input has been acquired.
+        
+        st_router = 1;
+        fw_router = 0;
+        
+        next_state = (inAddr == 15) ? `Forward : `Store;
+        
+      end
+      
+      `Forward  : begin
+        
+        // Allow forwarding from the Router buffer to the output port
+        // for a total of 16 clocks.  Keep revisiting state until all
+        // output has been forwarded.
+        
+        st_router = 0;
+        fw_router = 1;
+        
+        next_state = (outAddr == 15) ? `Idle : `Forward;
+        
+      end
+      
+      default: next_state = `Idle;
+    endcase
+  end
+endmodule
+
+*/

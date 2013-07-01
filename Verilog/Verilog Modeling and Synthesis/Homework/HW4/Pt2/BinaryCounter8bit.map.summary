@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Feb 27 12:33:40 2010
+Quartus II Version : 9.1 Build 222 10/21/2009 SJ Web Edition
+Revision Name : BinaryCounter8bit
+Top-level Entity Name : BinaryCounter8bit
+Family : Cyclone II
+Total logic elements : 12
+    Total combinational functions : 12
+    Dedicated logic registers : 8
+Total registers : 8
+Total pins : 21
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

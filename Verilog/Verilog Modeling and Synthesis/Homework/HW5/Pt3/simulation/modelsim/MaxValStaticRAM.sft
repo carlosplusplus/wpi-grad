@@ -1,0 +1,4 @@
+set tool_name "ModelSim-Altera (Verilog)"
+set corner_file_list {
+	{{"Slow Model"} {MaxValStaticRAM.vo MaxValStaticRAM_v.sdo}}
+}

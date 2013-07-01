@@ -1,0 +1,39 @@
+m255
+K3
+13
+cModel Technology
+dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Exams\Midterm\Pt 2\Pt D
+vVotingControl
+Izh_bjnDiFclTQjOCGAzg_3
+Vn]TXMiU2C]dF4]lmMfn532
+Z0 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Exams\Midterm\Pt 3\ModelSim Debug
+w1268190998
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Exams/Midterm/Pt 3/ModelSim Debug/VotingControl.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Exams/Midterm/Pt 3/ModelSim Debug/VotingControl.v
+L0 14
+Z1 OV;L;6.5b;42
+r1
+31
+Z2 !s102 -nocovercells
+Z3 o-work work -nocovercells -O0
+n@voting@control
+!s100 mEiahNMKlE0f]a80LmA?S2
+!s85 0
+!s101 -O0
+vVotingMachineTester
+!s100 aDk7PjH4OjIU4<6^3^6NZ2
+IPgEP7afkT[9m4b4LPL_go0
+VNelc<Eg>g7YJ5?Q<P75Gi0
+Z4 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 574 - Verilog Modeling and Synthesis\Exams\Midterm\Pt 3\ModelSim Debug
+w1268191091
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Exams/Midterm/Pt 3/ModelSim Debug/VotingMachineTester.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 574 - Verilog Modeling and Synthesis/Exams/Midterm/Pt 3/ModelSim Debug/VotingMachineTester.v
+L0 9
+R1
+r1
+!s85 0
+31
+!s101 -O0
+R2
+R3
+n@voting@machine@tester

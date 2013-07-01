@@ -1,0 +1,39 @@
+m255
+K3
+13
+cModel Technology
+dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 505 - Computer Architecture\Homework\HW 2\Pt 1
+vMooreDetector1011
+!s100 ;1XboIZc6_KGbjLi0z:hO0
+Ik1bki2_NJfiST2jL2YKH>1
+VjL<PV8IemDznF88KO:RUb3
+Z0 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 505 - Computer Architecture\Homework\HW 2\Pt 2
+w1277074538
+Z1 8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 2/Pt 2/MooreDetector1011.v
+Z2 FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 2/Pt 2/MooreDetector1011.v
+L0 9
+Z3 OV;L;6.5b;42
+r1
+!s85 0
+31
+!s101 -O0
+Z4 !s102 -nocovercells
+Z5 o-work work -nocovercells -O0
+n@moore@detector1011
+vMooreDetector1101
+I`1L]YEZLl@Q1D7Bl5ZOjR3
+VK^lM=B:ZC;_bfU=ZEMhP23
+Z6 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 505 - Computer Architecture\Homework\HW 2\Pt 2
+w1277073633
+R1
+R2
+L0 9
+R3
+r1
+31
+R5
+n@moore@detector1101
+R4
+!s100 ]ZM`Z;PR4P1H376UhcZ?f1
+!s85 0
+!s101 -O0

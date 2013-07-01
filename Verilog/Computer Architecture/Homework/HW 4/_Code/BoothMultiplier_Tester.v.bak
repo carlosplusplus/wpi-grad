@@ -1,0 +1,80 @@
+// Carlos Lazo
+// ECE505
+// Homework 04
+
+// Testbench of 16-bit Booth Multiplier
+
+`timescale 1ns/100ps
+
+module BoothMultiplier_Testbench;
+  
+  // Initialize all necessary variables:
+  
+  reg [15:0] mc, mp;
+  reg clk, start;
+  
+  wire [31:0] prod;
+  
+  // Instantiate the 16-bit Booth Multiplier:
+  
+  BoothMultiplier UUT (mc, mp, clk, start, prod);
+  
+  // Initialize all variables to default values: 
+  
+  initial begin  
+    clk   = 0;
+    start = 0;  
+    
+    mc = 0;
+    mp = 0;
+  end
+  
+  // Set the clock to invert every 5ns:
+  
+  always #3 clk = ~clk;
+  
+  // Test the Booth Multiplier with 3 simple cases:
+  
+  // C1: Pos * Neg = Neg
+  // C2: Neg * Pos = Neg
+  // C3: Neg * Neg = Pos 
+  
+  initial begin
+    
+    // Test #1: mc = 153, mp = -127
+    // Result should be: -19431
+    
+    start <= #2 1;
+    
+    mc <= #3  153;
+    mp <= #3 -127;
+    
+    start <= #4 0; 
+    
+    // Test #2: mc = -19, mp = 291
+    // Result should be: -5529
+    
+    start <= #128 1;
+    
+    mc <= #129   -19;
+    mp <= #129   291;
+    
+    start <= #130 0;
+    
+    // Test #3: mc = -191, mp = -7
+    // Result should be: 1337
+    
+    start <= #254 1;
+    
+    mc <= #129   -191;
+    mp <= #129     -7;
+    
+    start <= #256 0;
+    
+    #500;
+    
+    $finish;
+    
+  end
+  
+endmodule;

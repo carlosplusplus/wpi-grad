@@ -1,0 +1,56 @@
+% Carlos Lazo
+% ECE 503
+% Homework #1
+% Due: 2/1/10
+
+function [y Ty] = HW02_convolution (x,Tx,h,Th)
+
+% Compute the # of elements in each of the vectors.
+
+nx = length(x);
+nh = length(h);
+
+% The length of the output will be nx + nh - 1 in size.
+
+ny = nx + nh - 1;
+
+% Create new vectors with padded 0's for computational purposes.
+% This will force both vectors to be of equal length.
+
+X = [x, zeros(1,nh)];
+H = [h, zeros(1,nx)];
+
+% Now perform the convolution loop, going from 1 to ny:
+
+for ii = 1 : ny
+    
+    % Set each element in the output initially to 0.
+    y(ii) = 0;
+    
+    % Iterate across the first signal.
+    for jj = 1 : (nx)
+        
+        % Define kk, which will determine the existance of signal H.
+        kk = ii - jj + 1;
+        
+        % Assuming that the index is valid location for the current step,
+        % compute the convolution sum at that specific step.
+        
+        if (kk > 0)
+            y(ii) = y(ii) + X(jj) * H(kk);
+        end
+    end
+end
+
+% Define the time-step of the new output variable, and adjust the time
+% vector by the k 
+
+k = 0 : length(y) - 1;
+k = k - (Tx + Th - 2);
+
+figure;
+
+Ty = Tx + Th - 1;
+
+stem (k, y);
+xlabel({'h'; ['k = 0 located @ vector index: ' num2str(Ty)]}), ylabel('y(h)'), title('Convolution - x * h');

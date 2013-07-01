@@ -1,0 +1,120 @@
+// Carlos Lazo
+// ECE574
+// Homework #6
+
+// Part 2: 8-bit 2's Compliment Multiplier Testbench
+
+`timescale 1ns/100ps
+
+module multTester;
+
+  // Define inputs and outputs:
+  
+  reg [7:0] a, b;
+  reg start, clk;
+  
+  wire [15:0] r;
+  wire done;
+  
+  mult MUT (a, b, start, clk, r, done);
+  
+  // Define test bench initial values.
+  
+  initial begin
+    
+    a = 8'b00000000;
+    b = 8'b00000000;
+    
+    clk   = 0;
+    start = 0;
+    
+  end
+  
+// Tests to ensure multiplication works as expected:
+  
+  initial begin
+    
+    // Perform 5 multiplication operations given random input.
+    
+    repeat (5) begin
+      
+      start <= 1;
+      
+      a     <= $random;
+      b     <= $random;
+      
+      // After 1 full clock period, set start = 0.
+      
+      @ (posedge clk);
+      @ (negedge clk);
+      
+      start = 0;
+      
+      // Wait a total of 4 clock periods before starting
+      // the next multiplication operation. 
+      
+      repeat (4) begin
+        @ (posedge clk);
+        @ (negedge clk);
+      end 
+      
+    end
+    
+    // Perform a multiplication by two negative numbers.
+    
+    start <= 1;
+      
+    a     <= -8'b00000010;
+    b     <= -8'b00001111;
+      
+    @ (posedge clk);
+    @ (negedge clk);
+    
+    start <= 0;
+      
+    repeat (4) begin
+      @ (posedge clk);
+      @ (negedge clk);
+    end
+    
+    // Perform a multiplication by 0.
+    
+    start <= 1;
+      
+    a     <= $random;
+    b     <= 8'b00000000;
+      
+    @ (posedge clk);
+    @ (negedge clk);
+    
+    start <= 0;
+      
+    repeat (4) begin
+      @ (posedge clk);
+      @ (negedge clk);
+    end
+    
+    // Perform a multiplication by 1.
+    
+    start <= 1;
+      
+    a     <= $random;
+    b     <= 8'b00000001;
+      
+    @ (posedge clk);
+    @ (negedge clk);
+    
+    start = 0;
+      
+    repeat (4) begin
+      @ (posedge clk);
+      @ (negedge clk);
+    end 
+    
+    $finish;
+    
+  end
+  
+  always #5 clk = ~clk;
+  
+endmodule

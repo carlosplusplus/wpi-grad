@@ -1,0 +1,90 @@
+m255
+K3
+13
+cModel Technology
+dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 505 - Computer Architecture\Homework\HW 2\Pt 3\Pt A
+vP2SC
+ImA;W6cbL>Qh=dLYPEd3;e2
+V5W6odB=U1_X?JoQiB8gc93
+Z0 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 505 - Computer Architecture\Homework\HW 2\Pt 3\Pt B
+w1277171165
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 2/Pt 3/Pt B/P2SC.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 2/Pt 3/Pt B/P2SC.v
+L0 9
+Z1 OV;L;6.5b;42
+r1
+31
+Z2 !s102 -nocovercells
+Z3 o-work work -nocovercells -O0
+n@p2@s@c
+!s100 IPNn[J88HcnJB]NfC?zF?0
+!s85 0
+!s101 -O0
+vP2SC_Controller
+IN1]JTo]bYQ__c5LeccdM21
+VBiaDXcgK0_U0lRRHc8nH<3
+Z4 dC:\Documents and Settings\carlos.lazo\Desktop\ELDP\UNIV\Classes\ECE 505 - Computer Architecture\Homework\HW 2\Pt 3\Pt B
+w1277173232
+Z5 8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 2/Pt 3/Pt B/P2SC_Controller.v
+Z6 FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 2/Pt 3/Pt B/P2SC_Controller.v
+L0 20
+R1
+r1
+31
+R2
+R3
+n@p2@s@c_@controller
+!s100 @>fFf38Ck32=8]L@c[lJU3
+!s85 0
+!s101 -O0
+vP2SC_Datapath
+IIalJUXVf<<RVffRdHZhVz2
+VlFM]DaSQddFXLKZV_O0CZ2
+R4
+w1277173539
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 2/Pt 3/Pt B/P2SC_Datapath.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 2/Pt 3/Pt B/P2SC_Datapath.v
+L0 9
+R1
+r1
+31
+R2
+R3
+n@p2@s@c_@datapath
+!s100 R[K4IZYz0HXX[:JglA^Q92
+!s85 0
+!s101 -O0
+vP2SC_Tester
+!s100 jW`lZ6ZPU3H14J0Mf@QQ`1
+IKFelYEc=NALhih_H`4hT80
+Vi2z>6T:ThU@o04Z7Cn9GX3
+R4
+w1277171138
+8C:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 2/Pt 3/Pt B/P2SC_Tester.v
+FC:/Documents and Settings/carlos.lazo/Desktop/ELDP/UNIV/Classes/ECE 505 - Computer Architecture/Homework/HW 2/Pt 3/Pt B/P2SC_Tester.v
+L0 9
+R1
+r1
+!s85 0
+31
+!s101 -O0
+R2
+R3
+n@p2@s@c_@tester
+vS2PC_Controller
+IJz=Ql`TG;gKRPaKR0@^kD2
+VW1S=dll7l2GzN[nNbif;;1
+R4
+w1277170432
+R5
+R6
+L0 20
+R1
+r1
+31
+R2
+R3
+n@s2@p@c_@controller
+!s100 b4iFI=0`<gIT3L@36@3;01
+!s85 0
+!s101 -O0
